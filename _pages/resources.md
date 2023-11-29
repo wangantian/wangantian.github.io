@@ -7,8 +7,9 @@ redirect_from:
 ---
 
 ## Hardware Design 
-[Vivado ](https://wangantian.github.io//vivado/)
-[Vitis ](https://wangantian.github.io//vitis/)
+[Vivado usage memo](https://wangantian.github.io//vivado/)
+
+[Vitis usage memo](https://wangantian.github.io//vitis/)
 ## Privacy Preserving Machine Leraning
 
 ## Tool usage
