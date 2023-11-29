@@ -4,8 +4,8 @@
 # -----------------
 en: &DEFAULT_EN
   page                       : "Page"
-  pagination_previous        : "Previous"
-  pagination_next            : "Next"
+  #pagination_previous        : "Previous"
+  #pagination_next            : "Next"
   breadcrumb_home_label      : "Home"
   breadcrumb_separator       : "/"
   toc_label                  : "On This Page"
@@ -21,8 +21,8 @@ en: &DEFAULT_EN
   comments_title             : "Comments"
   more_label                 : "Learn More"
   related_label              : "You May Also Enjoy"
-  follow_label               : "Follow:"
-  feed_label                 : "Feed"
+  #follow_label               : "Follow:"
+  #feed_label                 : "Feed"
   powered_by                 : "Powered by"
   website_label              : "Website"
   email_label                : "Email"
