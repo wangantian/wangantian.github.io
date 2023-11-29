@@ -37,6 +37,9 @@ Clicking the menus in GUI/Project mode could be devastating. Use of the TCL scri
 
 Below is the TCL file we typically used. 
 
+<pre>
+cd [get_property DIRECTORY [current_project]]
+</pre>
 
 Xilinx also provide [TCL reference]() for exploration
 #Non-project mode Vivado workflow in Linux 
