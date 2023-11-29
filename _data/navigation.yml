@@ -20,5 +20,8 @@ main:
   - title: "Resources"
     url: /resources/
     
-  - title: "Future markdown page"
+  - title: "Future1"
     url: /future/
+    
+  - title: "Future2"
+    url: /future2/
