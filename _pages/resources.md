@@ -7,6 +7,6 @@ redirect_from:
 ---
 
 ## Hardware Design 
-[Vivado ](https://wangantian.github.io/vivado/)
+[Vivado ](https://wangantian.github.io//vivado/)
 
  
