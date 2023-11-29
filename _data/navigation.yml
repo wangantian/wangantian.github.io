@@ -20,8 +20,8 @@ main:
   - title: "Resources"
     url: /resources/
     
-  - title: "Future1"
-    url: /future/
+  # - title: "Future1"
+    # url: /future/
     
-  - title: "Future2"
-    url: /future2/
+  # - title: "Future2"
+    # url: /future2/
