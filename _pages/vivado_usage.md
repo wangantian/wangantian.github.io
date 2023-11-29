@@ -36,10 +36,21 @@ Though all FPGA boards available in Xilinx Vivado are called FPGA, there possibl
 Clicking the menus in GUI/Project mode could be devastating. Use of the TCL script can avoid the long waiting time after the design implementation is completed. 
 
 Below is the TCL file we typically used. 
-<pre lang = "tcl">
+<pre>
 cd [get_property DIRECTORY [current_project]]
 
+reset_run synth_1
+
+launch_runs synth_1
+wait_on_run synth_1
+open_run synth_1
+
+launch_runs impl_1
+wait_on_run impl_1
+open_run impl_1
+
 set date_time_str [clock format [clock seconds] -format {%Y%b%d%I%M%S%p}]
+
 
 create_clock -period 5.000 -name sysclk -waveform {0.000 2.500} [get_ports clk]
 set_false_path -setup -hold -rise -fall -from reset 
