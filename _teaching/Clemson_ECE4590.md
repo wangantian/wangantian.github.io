@@ -13,12 +13,9 @@ design; silicon foundries, custom and semicustom integrated circuits; computer-a
 software/hardware trends and future developments; hands-on use of CAD tools to design
 standard library cells; systems design considerations, testing, and packaging.
 
-
-Heading 1
+Lab materials
 ======
 
-Heading 2
-======
 
-Heading 3
+Final project
 ======
