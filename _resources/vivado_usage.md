@@ -7,7 +7,7 @@ redirect_from:
 ---
 Vivado is the software tools developed by [Xilinx](https://www.xilinx.com/products/silicon-devices/fpga.html) for designing and programming Xilinx [FPGAs](https://www.xilinx.com/products/silicon-devices/fpga/what-is-an-fpga.html) and SoCs, which are widely used in research. The workflow includes design, synthesis, implementation, and programming with simple clicks in project mode. 
 
-#GUI/Project mode Vivado workflow
+# GUI/Project mode Vivado workflow
 
 Typically we can use Xilinx for freely [downlable](https://www.xilinx.com/support/download.html) in Windows, and can let vivado sythesis in most of the FPGA boards available. The preferred edition is 2020.1 since it encompasses most of the widely used boards for implementation. 
 
