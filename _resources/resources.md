@@ -6,13 +6,12 @@ redirect_from:
   - /resources.html
 ---
 
-## Hardware Design 
+## Hardware Design and Tool usage 
 [Vivado usage memo](https://wangantian.github.io//vivado/)
 
 [Vitis usage memo](https://wangantian.github.io//vitis/)
 ## Privacy Preserving Machine Leraning
 [Homommorphic Encryption](https://wangantian.github.io//he/)
-## Tool usage
 
 ## Conference and Journal
 [China Computer Federation (CCF) Conference Journal Category Version 2019](http://wangantian.github.io/files/CCF_journal_conference-2019.pdf)
