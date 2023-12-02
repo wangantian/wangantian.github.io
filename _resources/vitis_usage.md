@@ -14,7 +14,7 @@ There exists platform to avoid the trouble of installing and configuring the Vit
 * [Vitis 2023.1 Developer AMI](https://aws.amazon.com/marketplace/pp/prodview-hxbanceez6tso)
 
 This AMI allows you to use latest configured Vitis tool to design for data center acceleration card. However the configured design is not usable for AWS F1 instance with [FPGA Developer AMI](https://aws.amazon.com/marketplace/pp/prodview-gimv3gqbpe57k), since [AWS's FPGA](https://github.com/aws/aws-fpga) runs on older version of the tool chain, and may not compatibable to the new features of the latest designs 
-* (Xilinx University Program)[https://www.xilinx.com/support/university/xup-hacc.html]
+* [Xilinx University Program](https://www.xilinx.com/support/university/xup-hacc.html)
 
 Xilinx provide the cluster for develop using Xilinx Alveo and Versal accelerator cards. You need to use your professional email address to access these resources. 
 
