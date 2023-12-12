@@ -15,7 +15,9 @@ standard library cells; systems design considerations, testing, and packaging.
 
 Lab materials
 ======
-The lab originate from previous offering of this course written in Hspice. In this semsester we use SPECTRE avlaible in Cadence to replicate similar lab setting in prior semesters. The following material is edited after this round of course offering. To make the lab runs smoothly, you need to load your SPECTRE, VITUROSO, and your library properly. In the majority part of the lab, you are expected to use 45nm standard voltage temperature CMOS model.   
+The lab originate from previous offering of this course written in Hspice. In this semsester we use SPECTRE avlaible in Cadence to replicate similar lab setting in prior semesters with introduction of Lab 4 and Lab 5 with more emprical experience with CMOS design. The following material is edited after the course offering 2023 Fall. 
+
+To make the lab runs smoothly, you need to load your SPECTRE, VITUROSO, and your library properly. In the majority part of the lab, you are expected to use 45nm standard voltage temperature CMOS model.   
 
 Lab 0 Familar with the tool.
 ======
