@@ -19,16 +19,22 @@ The lab originate from previous offering of this course written in Hspice. In th
 
 Lab 0 Familar with the tool.
 ======
+
 Lab 1 SPECTRE & DC analysis of NMOS and PMOS
 ======
+
 Lab 2 SPECTRE transient analysis and measurement
 ======
+
 Lab 3 Study of Inverter
 ======
+
 Lab 4 Delay of combinational logic
 ======
+
 Lab 5 Combinational Logic Family, Wire, Sequential Logic
 ======
+
 Lab 6 Final project 2-bit full adder
 ======
 
