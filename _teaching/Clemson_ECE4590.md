@@ -33,56 +33,77 @@ After that, you can type the command below to allow the wavefrom viewer pop out 
 viva &
 </pre>
 
-Below is an example inverter circuit connected as the figure shown in below.
+Below is an example inverter circuit, with complete file available [here](/file/teaching/459/lab0.scs)
 You need to identify the location of your cadence library for gpdk45, at the begining of the script.
-
+After run the command, you are expected to see three waveform 
+*An input-output voltage relation of an inverter with input voltage range from 0 to 1.1V, using dc analysis.
+*An input-output voltage relation of an inverter with input voltage range from 1.1V/2 to 1.1V, using dc analysis.
+*An input-output voltage relation of an inverter with input voltage as an pulse wave using transicent analysis.
 <pre>
+* define the simulator language
 simulator lang=spectre
-**spectre inv.scs +log inv.log
+*command to run the script below
+*spectre inv.scs +log inv.log
+*functionality of this code
 *simple inverter
 
+*Include the library for target technology, here is 45 nm.
+*You need to find this directory by yourself.
 include "YOUR_GPDK_LIBRARY.scs" section=tt
-parameters w_p=600n w_n=300n l_p=100n l_n=100n
 
-parameters vdd=1.1 vs0=0 vs1=0
+*below is use the parameterization of the circuit script
+parameters w_p=600n w_n=300n l_p=100n l_n=100n
+parameters vdd=1.1 vs0=0 vs1=0 vs2=0
+*Identify the power supply and ground for this entire circuit script
 global 0 vdd!
 *transistor name drain gate source body modulename W L
 mp0 (inv_out0 inv_in0 vdd! vdd!)	g45p1svt w=w_p l=l_p 
 mn0 (inv_out0 inv_in0 0 0) 		g45n1svt w=w_n l=l_n
 
-subckt invs_subckt inv_out1 inv_in1
-   mp1 (inv_out1 inv_in1 vdd! vdd!) g45p1svt w=w_p l=l_p 
-   mn1 (inv_out1 inv_in1 0 0) g45n1svt w=w_n l=l_n
+*Using subckt to define a CMOS logic gate. It is highly recommend to only use it once the internal structure is complicated and you do not want to change any parameters within this sub circuit/macro.
+subckt invs_subckt inv_out inv_in
+   mp1 (inv_out inv_in vdd! vdd!) g45p1svt w=w_p l=l_p 
+   mn1 (inv_out inv_in 0 0) g45n1svt w=w_n l=l_n
 ends invs_subckt
-inv_0 (inv_out inv_in) invs_subckt
-*this line indicate the power supply
+*Instantialize the subcircuit.
+inv_1 (inv_out1 inv_in1) invs_subckt
+*this line indicate the power supply.
 vdd_s (vdd! 0) vsource dc=vdd type=dc 
+
+*Define the voltage source of inverter input 
+v0 (inv_in0 0) vsource dc=vs0
+*define the dc analysis as dc_analy0
+dc_analy0 dc param=vs0 start=0 stop=vdd step=0.01
+*Define the voltage source of inverter input 
+v1 (inv_in1 0) vsource dc=vs1
+*define the dc analysis as dc_analy1
+dc_analy1 dc param=vs1 start=vdd/2 stop=vdd step=0.01
+*save the ids of mn0 within the subcircuit, ids is one of the transistor interior parameters/measurements.
+save inv_0.mn1:ids 
+*Or we just save everything 
+save inv_0.mp1:all
+*Or we just save everything 
+save mp0:all
+*Instantiate another inverter using sub circuit
+inv_2 (inv_out2 inv_in2) invs_subckt
+*Define a pulse wave with corrsponding initial value and period, rising time and fall time, pulse wave width.
+v1 (inv_in2 0) vsource dc=vs2 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u 
+*Define the starting time and end time of transient analysis.
+trans1 tran stop=50u method =trap 
+
 * this line indicate the simulation temperature
 simOptions options temp=25
 
-v0 (inv_in0 0) vsource dc=vs0
-dcs dc param=vs0 start=0 stop=vdd step=0.01
-v1 (inv_in1 0) vsource dc=vs1
-*dch dc param=vs1 start=vdd/2 stop=vdd step=0.01
-save inv_0.mn0:ids 
-
-save inv_0.mn0:all
-save inv_0.mp0:all
-
-save mp0:all
-
-v1 (inv_in0 0) vsource dc=vs0 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u 
-v1 (inv_in1 0) vsource dc=vs1 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u 
-trans1 tran stop=50u method =trap 
-
+* these lines indicatae saving some information within the log file.
 outputInfo info what=output where=logfile 
 element info what=inst where=logfile
 </pre>
 
 
-
 Lab 1 SPECTRE & DC analysis of NMOS and PMOS
 ======
+
+
 
 Lab 2 SPECTRE transient analysis and measurement
 ======
