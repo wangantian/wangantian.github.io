@@ -15,13 +15,26 @@ standard library cells; systems design considerations, testing, and packaging.
 
 Lab materials
 ======
-The lab originate from previous offering of this course written in Hspice. In this semsester we use SPECTRE avlaible in Cadence to replicate similar lab setting in prior semesters with introduction of Lab 4 and Lab 5 with more emprical experience with CMOS design. The following material is edited after the course offering 2023 Fall. 
+The lab originates from a previous offering of this course written in Hspice. This semester, we use SPECTRE, available in Cadence, to replicate similar lab settings in prior semesters with the introduction of Lab 4 and Lab 5, with more empirical experience with CMOS design. The following material is edited after the course offering 2023 Fall. 
 
-To make the lab runs smoothly, you need to load your SPECTRE, VITUROSO, and your library properly. In the majority part of the lab, you are expected to use 45nm standard voltage temperature CMOS model.   
+To make the lab run smoothly, you must load your SPECTRE, VIRTUOSO, and library properly. You are expected to use a 45nm standard voltage temperature CMOS model in most of the lab.   
+
+The lab content below originate from Cadence tutorials available within cadence site 
 
 Lab 0 Familar with the tool.
 ======
-This lab 
+This lab is expected to familarize with the tool.
+After load request a node with X11 forwarding capability using your prefered ssh tool. 
+You need to load the required cadence tool Virtuoso(IC/618) and SPECTRE(SPECTRE/211).
+
+After that, you can type 
+```console
+viva &
+```
+to allow the wavefrom viewer pop out.
+
+
+
 
 Lab 1 SPECTRE & DC analysis of NMOS and PMOS
 ======
