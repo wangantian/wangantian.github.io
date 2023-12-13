@@ -36,7 +36,7 @@ viva &
 Below is an example inverter circuit connected as the figure shown in below.
 You need to identify the location of your cadence library for gpdk45, at the begining of the script.
 
-```
+<pre>
 simulator lang=spectre
 **spectre inv.scs +log inv.log
 *simple inverter
@@ -77,7 +77,7 @@ trans1 tran stop=50u method =trap
 
 outputInfo info what=output where=logfile 
 element info what=inst where=logfile
-```
+</pre>
 
 
 
