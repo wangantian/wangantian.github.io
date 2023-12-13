@@ -32,44 +32,46 @@ After that, you can type the command below to allow the wavefrom viewer pop out 
 viva &
 ```
 
-
 Below is an example inverter circuit connected as the figure shown in below.
-You need to identify the location of your cadence library for gpdk45, at the begining of the script
-```spice
+You need to identify the location of your cadence library for gpdk45, at the begining of the script.
+
+```
 simulator lang=spectre
-*module load  cadence/IC/618 cadence/SPECTRE/211
-*spectre inv.scs +log inv.log
+**spectre inv.scs +log inv.log
 *simple inverter
 
-include "/software/commercial/cadence/pdk/gpdk045_v_6_0/models/spectre/gpdk045_mos.scs" section=tt
+include "YOUR_GPDK_LIBRARY.scs" section=tt
 parameters w_p=600n w_n=300n l_p=100n l_n=100n
 
-parameters vdd=1.1 vs=0
+parameters vdd=1.1 vs0=0 vs1=0
 global 0 vdd!
-*tranname drain gate source body modulename W L
-mp0 (inv_out inv_in vdd! vdd!)	g45p1svt w=w_p l=l_p 
-mn0 (inv_out inv_in 0 0) 		g45n1svt w=w_n l=l_n
+*transistor name drain gate source body modulename W L
+mp0 (inv_out0 inv_in0 vdd! vdd!)	g45p1svt w=w_p l=l_p 
+mn0 (inv_out0 inv_in0 0 0) 		g45n1svt w=w_n l=l_n
 
-* subckt invs1 inv_out inv_in
-    * mp0 (inv_out inv_in vdd! vdd!) g45p1svt w=w_p l=l_p 
-    * mn0 (inv_out inv_in 0 0) g45n1svt w=w_n l=l_n
-* ends invs1
-* inv_0 (inv_out inv_in) invs1
-
+subckt invs_subckt inv_out1 inv_in1
+   mp1 (inv_out1 inv_in1 vdd! vdd!) g45p1svt w=w_p l=l_p 
+   mn1 (inv_out1 inv_in1 0 0) g45n1svt w=w_n l=l_n
+ends invs_subckt
+inv_0 (inv_out inv_in) invs_subckt
+*this line indicate the power supply
 vdd_s (vdd! 0) vsource dc=vdd type=dc 
+* this line indicate the simulation temperature
 simOptions options temp=25
 
-* v0 (inv_in 0) vsource dc=vs
-* dcs dc param=vs start=0 stop=vdd step=0.01
+v0 (inv_in0 0) vsource dc=vs0
+dcs dc param=vs0 start=0 stop=vdd step=0.01
+v1 (inv_in1 0) vsource dc=vs1
+*dch dc param=vs1 start=vdd/2 stop=vdd step=0.01
+save inv_0.mn0:ids 
 
-*dch dc param=vs start=vdd/2 stop=vdd step=0.01
-*save inv_0.mn0:ids 
+save inv_0.mn0:all
+save inv_0.mp0:all
 
-* .mp0:all
-* save inv_0.mn0:all
-* save inv_0.mp0:all
+save mp0:all
 
-v1 (inv_in 0) vsource dc=vs type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u 
+v1 (inv_in0 0) vsource dc=vs0 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u 
+v1 (inv_in1 0) vsource dc=vs1 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u 
 trans1 tran stop=50u method =trap 
 
 outputInfo info what=output where=logfile 
