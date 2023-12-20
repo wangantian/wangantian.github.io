@@ -14,7 +14,7 @@ Introduction to designing, building, simulating and testing digital logic circui
 
 This lab is accompany with ECE 2010 Logic and Computing Devices at Clemson University. Students are expected to perform circuit board building using 74-series chips and gate level logic simulation using Logisim Evolution, with lab related simulation detials listed in [Logisim Evolution tutorial](#Logisim_Evolution_Tutorial). 
 
-Though the lab content is simple, while all these labs introduce concepts that with broad significance for students' future learning. It is summarized in [Extra materials for students' interests](#Extra_material)
+Though the lab content is simple, while all these labs introduce concepts that with broad significance for students' future learning. It is summarized in [Extra materials for students' interests](#Extra_material).
 
 This lab course uses Final/Capstone project as final evaluation. Students are expected to design a larger scale digital design to fulfill the course requirements. Students were provided with possible final project topics listed in [Lab final project prompts](#project_prompts), but they are free to choose their topics based on their interest. 
 
@@ -37,9 +37,8 @@ Note that there may be an issue with logisim evolution, making some download fil
 "Removing the registry key HKEY_CLASSES_ROOT\MIME\Database\Content Type\application/octet-stream\Extension instantly resolves the issue."
 
 
-<h3>Basic usage</h3>
-The draft of the basic usage is avalible here <embed src="https://wangantian.github.io/files/Teaching_Clemson/LogisimEvollution_Tutorial.pdf" width="100%" height="350px"/>
-<h3>Common issues</h3> 
+<h3>Basic usage tutorial</h3>
+The draft of the basic usage is avalible here <embed src="https://wangantian.github.io/files/Teaching_Clemson/LogisimEvollution_Tutorial.pdf" width="100%" height="350px"/> 
 
 <h2 id="Extra_material">Extra materials for students' interests</h2>
 
