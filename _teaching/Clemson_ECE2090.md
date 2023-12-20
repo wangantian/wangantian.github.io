@@ -14,15 +14,30 @@ Introduction to designing, building, simulating and testing digital logic circui
 
 This lab is accompany with ECE 2010 Logic and Computing Devices at Clemson University. Students are expected to perform circuit board building using 74-series chips and gate level logic simulation using Logisim Evolution, with lab related simulation detials listed in [Logisim Evolution tutorial](#Logisim_Evolution_Tutorial). 
 
-This lab course uses Final project as final evaluation. Students are expected to design a larger scale digital design to fulfill the course requirements. They were provided with possible final project topics listed in [Lab final project prompts](#project_prompts), but they are free to choose their topics of their interest. 
+This lab course uses Final/Capstone project as final evaluation. Students are expected to design a larger scale digital design to fulfill the course requirements. Students were provided with possible final project topics listed in [Lab final project prompts](#project_prompts), but they are free to choose their topics based on their interest.  The list in 
 
 <h2 id="Logisim_Evolution_Tutorial">Logisim Evolution tutorial</h2>
 <h3>Download address</h3>
+Logisim Evoluion is convinently avaliable from website [https://github.com/logisim-evolution/logisim-evolution](https://github.com/logisim-evolution/logisim-evolution)
+
+Download the package as listed for different operation systems. 
+Windows user, please use logisim-evolution-<version>.msi
+Mac user, please use logisim-evolution-<version>.dmg
+Linux user, please use logisim-evolution-<version>-1.x86_64.rpm.
+
+Note that there may be an issue with logisim evolution, making some download files to .circ extension. You can fix it using the method here. 
+
+[https://github.com/logisim-evolution/logisim-evolution/issues/1471#issuecomment-1332917265](https://github.com/logisim-evolution/logisim-evolution/issues/1471#issuecomment-1332917265)
+
+"Removing the registry key HKEY_CLASSES_ROOT\MIME\Database\Content Type\application/octet-stream\Extension instantly resolves the issue."
+
+
 <h3>Basic usage</h3>
 The draft of the basic usage is avalible here <embed src="https://wangantian.github.io/files/Teaching_Clemson/LogisimEvollution_Tutorial.pdf" width="100%" height="850px"/>
 <h3>Common issues</h3> 
 
 <h2 id="project_prompts">Lab final project possible topics</h2>
+This list is last updated by the end of Fall 2023.
 <h3> Final project objectives</h3>
 <h3> Final project components for simulation</h3>
 Basic logic gates
