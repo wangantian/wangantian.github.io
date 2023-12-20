@@ -39,13 +39,9 @@ The draft of the basic usage is avalible here <embed src="https://wangantian.git
 <h2 id="project_prompts">Lab final project possible topics</h2>
 This list is last updated by the end of Fall 2023.
 <h3> Final project objectives</h3>
-<h3> Final project components for simulation</h3>
-Basic logic gates
-Basic 74 series chips(including the Integrated counters)
-Memory(RAM/ROM/shift register)
-Seven-segment/Hex display/Color LED/ LED Matrix
-MUX/DeMUX
+This open-ended project involving design, simulation, and analysis of a digital circuit related to a concept of students' choice. Students are tasked with thoroughly exploring all available components within the simulation software. Additionally, students are encouraged to consider integrating this project into their future endeavors across various courses.
 
+<h3> Final project components for simulation</h3>
 
 <div markdown="1">
 <aside> 
@@ -53,7 +49,10 @@ MUX/DeMUX
 <ul>
 	<li>Basic gates(like AND/OR/NOT/XOR/XNOR/)</li>
 	<li>74 series IC(as provided in the lab kit)</li>
+	<li>Memory (RAM/ROM/shift register)</li>
 	<li>Display/interactive purpose components</li>
+	<li>Seven-segment/Hex display/Color LED/ LED Matrix</li>
+	<li>MUX/DeMUX</li>
 </ul>
 
 <p><a href="#calculator">Calculator with display in decimal.</a></p>
