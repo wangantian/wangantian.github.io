@@ -18,9 +18,6 @@ Though the lab content is simple, while all these labs introduce concepts that w
 
 This lab course uses Final/Capstone project as final evaluation. Students are expected to design a larger scale digital design to fulfill the course requirements. Students were provided with possible final project topics listed in [Lab final project prompts](#project_prompts), but they are free to choose their topics based on their interest. 
 
-
-
-
 <h2 id="Logisim_Evolution_Tutorial">Logisim Evolution tutorial</h2>
 <h3>Download address</h3>
 Logisim Evoluion is convinently avaliable from website [https://github.com/logisim-evolution/logisim-evolution](https://github.com/logisim-evolution/logisim-evolution)
@@ -36,11 +33,21 @@ Note that there may be an issue with logisim evolution, making some download fil
 
 "Removing the registry key HKEY_CLASSES_ROOT\MIME\Database\Content Type\application/octet-stream\Extension instantly resolves the issue."
 
-
 <h3>Basic usage tutorial</h3>
-The draft of the basic usage is avalible here <embed src="https://wangantian.github.io/files/Teaching_Clemson/LogisimEvollution_Tutorial.pdf" width="100%" height="350px"/> 
+The draft of the basic usage is avalible here <embed src="https://wangantian.github.io/files/Teaching_Clemson/LogisimEvollution_Tutorial.pdf" width="100%" height="50px"/> 
 
 <h2 id="Extra_material">Extra materials for students' interests</h2>
+There are 10 lab sessions of this lab courses, below is the collected extra materials that related to the corresponding lab content. 
+<h3> Lab 01 Introduction </h3>
+<h3> Lab 02 Introduction </h3>
+<h3> Lab 03 Introduction </h3>
+<h3> Lab 04 Introduction </h3>
+<h3> Lab 05 Introduction </h3>
+<h3> Lab 06 Introduction </h3>
+<h3> Lab 07 Introduction </h3>
+<h3> Lab 08 Introduction </h3>
+<h3> Lab 09 Introduction </h3>
+<h3> Lab 10 Introduction </h3>
 
 
 <h2 id="project_prompts">Lab final project possible topics</h2>
