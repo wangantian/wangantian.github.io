@@ -37,7 +37,7 @@ Note that there may be an issue with logisim evolution, making some download fil
 The draft of the basic usage is avalible here <embed src="https://wangantian.github.io/files/Teaching_Clemson/LogisimEvollution_Tutorial.pdf" width="100%" height="50px"/> 
 
 <h2 id="Extra_material">Extra materials for students' interests</h2>
-There are 10 lab sessions of this lab courses, below is the collected extra materials that related to the corresponding lab content. 
+There are 10 lab sessions of this lab courses, below is the collected extra materials that related to the corresponding lab content. The original webpage was designed for Canvas page. 
 <h3> Lab 01 Course Description </h3>
 What's inside the breadboard
 [![Everything Is AWESOME](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
