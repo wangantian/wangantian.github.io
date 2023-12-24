@@ -40,6 +40,8 @@ The draft of the basic usage is avalible here <embed src="https://wangantian.git
 There are 10 lab sessions of this lab courses, below is the collected extra materials that related to the corresponding lab content. 
 <h3> Lab 01 Course Description </h3>
 What's inside the breadboard
+[![Everything Is AWESOME](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
+What's inside Analog Discovery 2
 
 PCB manufacturation
 
