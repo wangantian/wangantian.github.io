@@ -42,7 +42,7 @@ There are 10 lab sessions of this lab courses, below is the collected extra mate
 
 What's inside the breadboard?
 
-[![Everything Is AWESOME](https://i.stack.imgur.com/q3ceS.png)](https://youtu.be/StTqXEQ2l-Y?t=35s "Everything Is AWESOME")
+[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
 
 
 What's inside Analog Discovery 2.
@@ -63,12 +63,113 @@ Switch mode power supply
 
 Blowing Up LEDs for Science
 <h3> Lab 02 Logic Gates  </h3>
+Decapping ICs 
+
+Introduction To Digital Logic
+
+Digi Comp II.
+
+Logic gates from transistor
+
+CPU built from TTL logic
+
+MEGAprocessor
+
+Another CPU built from TTL logic
+
+Gigatron TTL computer 
+
+A computer built from NOR gates: inside the Apollo Guidance Computer 
 <h3> Lab 03 Encoding/Decoding </h3>
+Nixie Tube display
+
+RGB LED Matrix display
+
+Bad apple on the LCD screen
+
+Bad apple on the oscilloscope 
+
+UTF-8/Unicode for general encoding
 <h3> Lab 04 Combinational Circuit  </h3>
+Quine–McCluskey algorithm
+
+ABC: System for Sequential Logic Synthesis and Formal Verification
+
+Error correction code
+
+Hamming code
+
+Hamming code inventor's famous talk: you and your research.
+
+A brief introduction to LDPC code
+
+LDPC code's inventor Prof Robert Gallager talks about his advisor Shannon, father of information theory
 <h3> Lab 05, 06, 07 Binary arithmetic, MSI circuit, Multiplier  </h3>
+Binary arithmetic extension
+
+Various adders(Brent–Kung adder, Kogge–Stone adder)
+
+Various multiplier trees(Wallace tree, Dadda tree)
+
+CORDIC algorithm for computing sin/cos/sqaure function
+
+How computer calculate
+
+Approximate computing 
+
+HDL tutorials
+
+Chisel 
+
+High level synthesis(HLS)
+
+FPGA introduction
+
+Karatsuba algorithm
 <h3> Lab 08 Mux and serial communication </h3>
+What is the difference between serial and parallel communication and why need serial communication
+
+Round-robin scheduling from the Operating system
+
+Difference between FDMA, TDMA, and CDMA from the communication system. 
+
+Hedy Lamarr  Inventor of CDMA 
+
+TDD and FDD in 4G LTE
+
+Screen Refresh rate experiment 
+
+Persistence of vision
+
+How does a Universal Serial Bus(USB) work
 <h3> Lab 09 Memory, Cache </h3>
+3.5 inch floppy disk(the A disk)
+
+5.25 inch Floppy disk(the B disk)
+
+World's Most Expensive Hard Drive Teardown 
+
+More detailed lecture on memory hierarchy 
+
+Block RAM/ROM in FPGA.
+
+BUS control/protocol
+
+Memresistor
+
+Advantages of Near Flash Computing with Arvind
+
+Rowhammer attack
+
+Universal Memory Interface 
 <h3> Lab 10 Sequential design </h3> 
+David Patterson: Computer Architecture and Data Storage
+
+View from the Top: Professor David Patterson
+
+New Golden Age for Computer Architecture - John Hennessy 
+
+Static timing analysis 
 
 
 <h2 id="project_prompts">Lab final project possible topics</h2>
