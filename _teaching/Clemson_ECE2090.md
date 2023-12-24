@@ -39,7 +39,8 @@ Note that there may be an issue with logisim evolution, making some download fil
 The draft of the basic usage is avalible below:<embed src="https://wangantian.github.io/files/Teaching_Clemson/LogisimEvollution_Tutorial.pdf" width="100%" height="50px"/> 
 
 <h2 id="Extra_material">Extra materials for students' interests</h2>
-There are 10 lab sessions of this lab courses, below are the collected extra materials that related to the corresponding lab content from theory, simulation, and circuit board building. The original webpage was designed for Canvas page.  
+There are 10 lab sessions of this lab courses, below are the collected extra materials that related to the corresponding lab content from theory, simulation, and circuit board building. The original webpage was designed for Canvas page.  You can click the image, and it will redirect you to the corresponding Youtube video url.
+
 <h3> Lab 01 Course Description </h3>
 
 What's inside the breadboard?
@@ -72,7 +73,7 @@ How to use IC pin straightener?
 
 Difference between TTL & CMOS, 74LS/74HC.
 
-[![Difference between TTL & CMOS, 74LS/74HC.](https://img.youtube.com/vi/x9gzjqkxvX0k/0.jpg)](https://youtu.be/x9gzjqkxvX0 "Difference between TTL & CMOS, 74LS/74HC.")
+[![Difference between TTL & CMOS, 74LS/74HC.](https://img.youtube.com/vi/x9gzjqkxvX0/0.jpg)](https://youtu.be/x9gzjqkxvX0 "Difference between TTL & CMOS, 74LS/74HC.")
 
 Switch mode power supply, Boost Converters and Buck Converters: Power Electronics
 
@@ -80,74 +81,82 @@ Switch mode power supply, Boost Converters and Buck Converters: Power Electronic
 
 Blowing Up LEDs for Science
 
-[![What's inside the breadboard](https://img.youtube.com/vi/8QaDqRBWZC4/0.jpg)](https://youtu.be/8QaDqRBWZC4 "What's inside the breadboard")
+[![Blowing Up LEDs for Science](https://img.youtube.com/vi/8QaDqRBWZC4/0.jpg)](https://youtu.be/8QaDqRBWZC4 "Blowing Up LEDs for Science")
 
 <h3> Lab 02 Logic Gates  </h3>
-Decapping ICs 
+Decapping ICs.
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Decapping ICs](https://img.youtube.com/vi/mT1FStxAVz4/0.jpg)](https://youtu.be/mT1FStxAVz4 "Decapping ICs ")
 
-Introduction to digital logic
+Introduction to digital logic.
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Introduction to digital logic I](https://img.youtube.com/vi/7bVnsXHO6Uw/0.jpg)](https://youtu.be/7bVnsXHO6Uw "Introduction to digital logic I")
+[![Introduction to digital logic II](https://img.youtube.com/vi/hFvqEfZfMtA/0.jpg)](https://youtu.be/hFvqEfZfMtA "Introduction to digital logic II")
 
 Digi Comp II.
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Digi Comp II](https://img.youtube.com/vi/6KetJ3WpGGE/0.jpg)](https://youtu.be/6KetJ3WpGGE "Digi Comp II")
 
 Logic gates from transistor
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Logic gates from transistor](https://img.youtube.com/vi/SW2Bwc17_wA/0.jpg)](https://youtu.be/SW2Bwc17_wA "Logic gates from transistor")
 
 CPU built from TTL logic
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[http://www.magic-1.org](http://www.magic-1.org)
+
+[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/0jRgpTp8pR8 "What's inside the breadboard")
 
 MEGAprocessor
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[https://www.megaprocessor.com/index.html](https://www.megaprocessor.com/index.html)
 
 Another CPU built from TTL logic
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[https://www.ttlcpu.com//articles/4-bit-ttl-scratchbuilt-computer](https://www.ttlcpu.com//articles/4-bit-ttl-scratchbuilt-computer)
 
+ 
 Gigatron TTL computer 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Gigatron TTL computer ](https://img.youtube.com/vi/QUfdASs82Lw/0.jpg)](https://youtu.be/QUfdASs82Lw "Gigatron TTL computer")
 
 A computer built from NOR gates: inside the Apollo Guidance Computer 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[https://www.righto.com/2019/09/a-computer-built-from-nor-gates-inside.html](https://www.righto.com/2019/09/a-computer-built-from-nor-gates-inside.html)
 <h3> Lab 03 Encoding/Decoding </h3>
 Nixie Tube display
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Nixie Tube display](https://img.youtube.com/vi/7uogKucrPks/0.jpg)](https://youtu.be/7uogKucrPks "Nixie Tube display")
 
 RGB LED Matrix display
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![RGB LED Matrix display](https://img.youtube.com/vi/h6NH_3KpWe8/0.jpg)](https://youtu.be/h6NH_3KpWe8 "RGB LED Matrix display")
 
 Bad apple on the LCD screen
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Bad apple on the LCD screen](https://img.youtube.com/vi/7ZWeEIJo95U/0.jpg)](https://youtu.be/7ZWeEIJo95U "Bad apple on the LCD screen")
 
 Bad apple on the oscilloscope 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Bad apple on the oscilloscope](https://img.youtube.com/vi/7pzvEouWino/0.jpg)](https://youtu.be/7pzvEouWino "Bad apple on the oscilloscope ")
 
 UTF-8/Unicode for general encoding
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[https://en.wikipedia.org/wiki/UTF-8](https://en.wikipedia.org/wiki/UTF-8)
+
+[![UTF-8/Unicode](https://img.youtube.com/vi/ut74oHojxqo/0.jpg)](https://youtu.be/ut74oHojxqo "UTF-8/Unicode")
 <h3> Lab 04 Combinational Circuit  </h3>
 Quine–McCluskey algorithm
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[https://en.wikipedia.org/wiki/Quine%E2%80%93McCluskey_algorithm](https://en.wikipedia.org/wiki/Quine%E2%80%93McCluskey_algorithm)
 
 ABC: System for Sequential Logic Synthesis and Formal Verification
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[https://github.com/berkeley-abc/abc](https://github.com/berkeley-abc/abc)
 
 Error correction code
+
+[https://en.wikipedia.org/wiki/Error_correction_code](https://en.wikipedia.org/wiki/Error_correction_code)
 
 [![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
 
