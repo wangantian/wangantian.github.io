@@ -347,3 +347,6 @@ Static timing analysis 
 This list was last updated by the end of Fall 2023. The list will no longer updated here in this site. Feel free to use it if you needed. 
 <h3> Final project objectives</h3>
 This open-ended project involving design, simulation, and analysis of a digital circuit related to a concept of students' choice. Students are tasked with thoroughly exploring all available components within the simulation software. Additionally, students are encouraged to consider integrating this project into their future endeavors across various courses.
+<h3>Elements allowed and forbidden for simulation-only designs</h3>
+
+<h3> Final project possible topics</h3>
