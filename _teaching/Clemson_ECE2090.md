@@ -40,16 +40,20 @@ The draft of the basic usage is avalible here <embed src="https://wangantian.git
 There are 10 lab sessions of this lab courses, below is the collected extra materials that related to the corresponding lab content. The original webpage was designed for Canvas page. 
 <h3> Lab 01 Course Description </h3>
 
-[[!What's inside the breadboard](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
-What's inside Analog Discovery 2
+What's inside the breadboard?
 
-PCB manufacturation
+[![Everything Is AWESOME](https://i.stack.imgur.com/q3ceS.png)](https://youtu.be/StTqXEQ2l-Y?t=35s "Everything Is AWESOME")
 
-First 74 series chip 
 
-Resistor value distribution
+What's inside Analog Discovery 2.
 
-Why Resistor burned?
+PCB manufacturation.
+
+First 74 series chip.
+
+Resistor value distribution.
+
+Why resistor is burned?
 
 How to use ic pin straightener?
 
