@@ -105,7 +105,7 @@ CPU built from TTL logic
 
 [http://www.magic-1.org](http://www.magic-1.org)
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/0jRgpTp8pR8 "What's inside the breadboard")
+[![What's inside the breadboard](https://img.youtube.com/vi/0jRgpTp8pR8/0.jpg)](https://youtu.be/0jRgpTp8pR8 "What's inside the breadboard")
 
 MEGAprocessor
 
@@ -157,155 +157,191 @@ ABC: System for Sequential Logic Synthesis and Formal Verification
 Error correction code
 
 [https://en.wikipedia.org/wiki/Error_correction_code](https://en.wikipedia.org/wiki/Error_correction_code)
-
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+ 
 
 Hamming code
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Hamming code](https://img.youtube.com/vi/X8jsijhllIA/0.jpg)](https://youtu.be/X8jsijhllIA "Hamming code")
 
-Hamming code inventor's famous talk: you and your research.
+Hamming code inventor's famous talk: You and your research.
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![You and your research](https://img.youtube.com/vi/a1zDuOPkMSw/0.jpg)](https://youtu.be/a1zDuOPkMSw "You and your research")
 
 A brief introduction to LDPC code
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![A brief introduction to LDPC code ](https://img.youtube.com/vi/RWUxtGh-guY/0.jpg)](https://youtu.be/RWUxtGh-guY "A brief introduction to LDPC code ")
 
 LDPC code's inventor Prof Robert Gallager talks about his advisor Shannon, father of information theory
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Prof Robert Gallager's talk](https://img.youtube.com/vi/neA0NJNUEfM/0.jpg)](https://youtu.be/neA0NJNUEfM "Prof Robert Gallager's talk")
 <h3> Lab 05, 06, 07 Binary arithmetic, MSI circuit, Multiplier  </h3>
 Binary arithmetic extension
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+Floating point [https://en.wikipedia.org/wiki/Floating-point_arithmetic](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
+
+unum (posit) [https://en.wikipedia.org/wiki/Unum_(number_format)](https://en.wikipedia.org/wiki/Unum_(number_format))
+ 
 
 Various adders(Brent–Kung adder, Kogge–Stone adder)
+Brent–Kung adder [https://en.wikipedia.org/wiki/Brent%E2%80%93Kung_adder](https://en.wikipedia.org/wiki/Brent%E2%80%93Kung_adder) 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+Kogge–Stone adder [https://en.wikipedia.org/wiki/Kogge%E2%80%93Stone_adder](https://en.wikipedia.org/wiki/Kogge%E2%80%93Stone_adder)
+ 
+Sklansky adder 
+
+Han-Carlson
+
+Ladner-Fischer
+
+Knowles [2,1,1,1]
+
+Adder circuit generator (https://github.com/IamFlea/AdderCircuitGenerator/blob/master/README.md)[https://github.com/IamFlea/AdderCircuitGenerator/blob/master/README.md]
+
+
 
 Various multiplier trees(Wallace tree, Dadda tree)
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+Wallace tree [https://en.wikipedia.org/wiki/Wallace_tree](https://en.wikipedia.org/wiki/Wallace_tree)
+
+Dadda tree [https://en.wikipedia.org/wiki/Dadda_multiplier](https://en.wikipedia.org/wiki/Dadda_multiplier)
+
+Overturned tree [https://ieeexplore.ieee.org/document/156536](https://ieeexplore.ieee.org/document/156536)
 
 CORDIC algorithm for computing sin/cos/sqaure function
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+CORDIC algorithm [https://en.wikipedia.org/wiki/CORDIC](https://en.wikipedia.org/wiki/CORDIC)
+ 
 
-How computer calculate
+How computer calculate?
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![How computer calculate?](https://img.youtube.com/vi/1I5ZMmrOfnA/0.jpg)](https://youtu.be/1I5ZMmrOfnA "How computer calculate?")
 
 Approximate computing 
 
+[https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9165786](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9165786)
+[https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9170586](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9170586)
+
 HDL tutorials
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[https://inst.eecs.berkeley.edu/~cs61c/resources/verilog.pdf](https://inst.eecs.berkeley.edu/~cs61c/resources/verilog.pdf)
 
+[https://inst.eecs.berkeley.edu/~eecs151/fa23/](https://inst.eecs.berkeley.edu/~eecs151/fa23/)
+
+[https://en.wikipedia.org/wiki/Verilog](https://en.wikipedia.org/wiki/Verilog)
+
+[https://en.wikipedia.org/wiki/VHDL](https://en.wikipedia.org/wiki/VHDL)
+
+[http://vhdl.us/](http://vhdl.us/)
+ 
 Chisel 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Chisel](https://img.youtube.com/vi/OhMuPQcyynY/0.jpg)](https://youtu.be/OhMuPQcyynY "Chisel")
 
-High level synthesis(HLS)
+High level synthesis (HLS)
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![High level synthesis](https://img.youtube.com/vi/7c-bTCK8kYY/0.jpg)](https://www.youtube.com/watch?v=7c-bTCK8kYY "High level synthesis")
 
 FPGA introduction
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![FPGA introduction](https://img.youtube.com/vi/lLg1AgA2Xoo/0.jpg)](https://youtu.be/lLg1AgA2Xoo "FPGA introduction")
 
 Karatsuba algorithm
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Karatsuba algorithm](https://img.youtube.com/vi/JCbZayFr9RE/0.jpg)](https://youtu.be/JCbZayFr9RE "Karatsuba algorithm")
 <h3> Lab 08 Mux and serial communication </h3>
 What is the difference between serial and parallel communication and why need serial communication
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Serial/Parallel communication](https://img.youtube.com/vi/myU2x27FIIc/0.jpg)](https://youtu.be/myU2x27FIIc "Serial/Parallel communication")
 
 Round-robin scheduling from the Operating system
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Round-robin scheduling](https://img.youtube.com/vi/YzBBJYfwdi8/0.jpg)](https://youtu.be/YzBBJYfwdi8 "Round-robin scheduling")
 
 Difference between FDMA, TDMA, and CDMA from the communication system. 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[https://www.geeksforgeeks.org/difference-between-fdma-tdma-and-cdma/](https://www.geeksforgeeks.org/difference-between-fdma-tdma-and-cdma/)
 
 Hedy Lamarr: Inventor of CDMA 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[https://en.wikipedia.org/wiki/Hedy_Lamarr](https://en.wikipedia.org/wiki/Hedy_Lamarr)
+[![Hedy Lamarr ](https://img.youtube.com/vi/Ck8-_DNV4bs/0.jpg)](https://youtu.be/Ck8-_DNV4bs "Hedy Lamarr ")
 
 TDD and FDD in 4G LTE
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![TDD and FDD in 4G LTE](https://img.youtube.com/vi/rFfB5op7380/0.jpg)](https://youtu.be/rFfB5op7380 "TDD and FDD in 4G LTE")
 
 Screen Refresh rate experiment 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Screen Refresh rate](https://img.youtube.com/vi/LjSLIeiotvk/0.jpg)](https://youtu.be/LjSLIeiotvk "Screen Refresh rate")
 
 Persistence of vision
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
-
+[https://en.wikipedia.org/wiki/Persistence_of_vision](https://en.wikipedia.org/wiki/Persistence_of_vision)
+ 
+[![Persistence of vision](https://img.youtube.com/vi/geqZdldOz3Y/0.jpg)](https://youtu.be/geqZdldOz3Y "Persistence of vision")
+  
 How does a Universal Serial Bus(USB) work
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![USB](https://img.youtube.com/vi/wdgULBpRoXk/0.jpg)](https://youtu.be/wdgULBpRoXk "USB")
 <h3> Lab 09 Memory, Cache </h3>
 3.5 inch floppy disk(the A disk)
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![A disk](https://img.youtube.com/vi/tJCMzdzh4Tw/0.jpg)](https://youtu.be/tJCMzdzh4Tw "A disk")
 
 5.25 inch Floppy disk(the B disk)
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![B disk](https://img.youtube.com/vi/9juPRLA6lGg/0.jpg)](https://youtu.be/9juPRLA6lGg "B disk")
 
 World's Most Expensive Hard Drive Teardown 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Hard Drive Teardown ](https://img.youtube.com/vi/CBjoWMA5d84/0.jpg)](https://youtu.be/CBjoWMA5d84 "Hard Drive Teardown ")
 
 More detailed lecture on memory hierarchy 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![memory hierarchy](https://img.youtube.com/vi/J6jkrDlgflo/0.jpg)](https://youtu.be/J6jkrDlgflo "What's inside the breadboard")
 
 Block RAM/ROM in FPGA.
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Block RAM/ROM in FPGA](https://img.youtube.com/vi/fqUuvwl4QJA/0.jpg)](https://youtu.be/fqUuvwl4QJA "Block RAM/ROM in FPGA")
 
 BUS control/protocol
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![BUS control/protocol](https://img.youtube.com/vi/VSoqiGwCd-Q/0.jpg)](https://youtu.be/VSoqiGwCd-Q "BUS control/protocol")
 
 Memresistor
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Memresistor 1](https://img.youtube.com/vi/B9Z2Ktacd4s/0.jpg)](https://youtu.be/B9Z2Ktacd4s "Memresistor")
+[![Memresistor 2](https://img.youtube.com/vi/rvA5r4LtVnc/0.jpg)](https://youtu.be/rvA5r4LtVnc "Memresistor")
+
 
 Advantages of Near Flash Computing with Arvind
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[https://cap.csail.mit.edu/podcasts/advantages-near-flash-computing-arvind](https://cap.csail.mit.edu/podcasts/advantages-near-flash-computing-arvind)
 
 Rowhammer attack
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Rowhammer attack](https://img.youtube.com/vi/sgd7PHQQ1AI/0.jpg)](https://youtu.be/sgd7PHQQ1AI "Rowhammer attack")
 
 Universal Memory Interface 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[https://github.com/zeroasiccorp/umi](https://github.com/zeroasiccorp/umi)
 
 <h3> Lab 10 Sequential design </h3> 
 David Patterson: Computer Architecture and Data Storage
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Computer Architecture and Data Storage](https://img.youtube.com/vi/ctwj53r07yI/0.jpg)](https://youtu.be/ctwj53r07yI "Computer Architecture and Data Storage")
 
 View from the Top: Professor David Patterson
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![View from the Top](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "View from the Top")
 
 New Golden Age for Computer Architecture - John Hennessy 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![New Golden Age for Computer Architecture](https://img.youtube.com/vi/bfPV4x-HrUI/0.jpg)](https://youtu.be/bfPV4x-HrUI "New Golden Age for Computer Architecture")
 
 Static timing analysis 
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![STA](https://img.youtube.com/vi/jcKVrkEvoA8/0.jpg)](https://youtu.be/jcKVrkEvoA8 "Static timing analysis ")
 
 <h2 id="project_prompts">Lab final project possible topics</h2>
 This list was last updated by the end of Fall 2023. The list will no longer updated here in this site. Feel free to use it if you needed. 
