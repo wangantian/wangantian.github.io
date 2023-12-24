@@ -38,16 +38,31 @@ The draft of the basic usage is avalible here <embed src="https://wangantian.git
 
 <h2 id="Extra_material">Extra materials for students' interests</h2>
 There are 10 lab sessions of this lab courses, below is the collected extra materials that related to the corresponding lab content. 
-<h3> Lab 01 Introduction </h3>
-<h3> Lab 02 Introduction </h3>
-<h3> Lab 03 Introduction </h3>
-<h3> Lab 04 Introduction </h3>
-<h3> Lab 05 Introduction </h3>
-<h3> Lab 06 Introduction </h3>
-<h3> Lab 07 Introduction </h3>
-<h3> Lab 08 Introduction </h3>
-<h3> Lab 09 Introduction </h3>
-<h3> Lab 10 Introduction </h3>
+<h3> Lab 01 Course Description </h3>
+What's inside the breadboard
+
+PCB manufacturation
+
+First 74 series chip 
+
+Resistor value distribution
+
+Why Resistor burned?
+
+How to use ic pin straightener?
+
+Difference between TTL & CMOS, 74LS/74HC.
+
+Switch mode power supply
+
+Blowing Up LEDs for Science
+<h3> Lab 02 Logic Gates  </h3>
+<h3> Lab 03 Encoding/Decoding </h3>
+<h3> Lab 04 Combinational Circuit  </h3>
+<h3> Lab 05, 06, 07 Binary arithmetic, MSI circuit, Multiplier  </h3>
+<h3> Lab 08 Mux and serial communication </h3>
+<h3> Lab 09 Memory, Cache </h3>
+<h3> Lab 10 Sequential design </h3> 
 
 
 <h2 id="project_prompts">Lab final project possible topics</h2>
