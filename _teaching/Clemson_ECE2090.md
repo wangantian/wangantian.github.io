@@ -46,41 +46,41 @@ What's inside the breadboard?
 
 [![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
 
-What's inside Analog Discovery 2.
+What's inside Analog Discovery 2 from the signal path?
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![What's inside Analog Discovery 2](https://img.youtube.com/vi/ryxxYGmRCpQ/0.jpg)](https://youtu.be/ryxxYGmRCpQ "What's inside Analog Discovery 2")
 
 PCB manufacturation.
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![PCB manufacturation](https://img.youtube.com/vi/rEB0pl8a5C0/0.jpg)](https://youtu.be/rEB0pl8a5C0 "PCB manufacturation")
 
 First 74 series chip.
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![First 74 series chip.](https://img.youtube.com/vi/3cIkk05VHsM/0.jpg)](https://youtu.be/3cIkk05VHsM "First 74 series chip.")
 
 Resistor value distribution.
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Resistor value distribution](https://img.youtube.com/vi/1WAhTdWErrU/0.jpg)](https://youtu.be/1WAhTdWErrU "Resistor value distribution")
 
-Why resistor is burned?
+Why was the resistor burned?
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Why was the resistor burned?](https://img.youtube.com/vi/YxXfU5H8rdo/0.jpg)](https://youtu.be/YxXfU5H8rdo "Why was the resistor burned?")
 
-How to use ic pin straightener?
+How to use IC pin straightener?
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![How to use IC pin straightener?](https://img.youtube.com/vi/dXC9UUH4jcc/0.jpg)](https://youtu.be/dXC9UUH4jcc "How to use IC pin straightener?")
 
 Difference between TTL & CMOS, 74LS/74HC.
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Difference between TTL & CMOS, 74LS/74HC.](https://img.youtube.com/vi/x9gzjqkxvX0k/0.jpg)](https://youtu.be/x9gzjqkxvX0 "Difference between TTL & CMOS, 74LS/74HC.")
 
-Switch mode power supply
+Switch mode power supply, Boost Converters and Buck Converters: Power Electronics
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![Switch mode power supply](https://img.youtube.com/vi/vwJYIorz_Aw/0.jpg)](https://youtu.be/vwJYIorz_Aw "Switch mode power supply")
 
 Blowing Up LEDs for Science
 
-[![What's inside the breadboard](https://img.youtube.com/vi/6WReFkfrUIk/0.jpg)](https://youtu.be/6WReFkfrUIk?t=116 "What's inside the breadboard")
+[![What's inside the breadboard](https://img.youtube.com/vi/8QaDqRBWZC4/0.jpg)](https://youtu.be/8QaDqRBWZC4 "What's inside the breadboard")
 
 <h3> Lab 02 Logic Gates  </h3>
 Decapping ICs 
