@@ -39,8 +39,8 @@ The draft of the basic usage is avalible here <embed src="https://wangantian.git
 <h2 id="Extra_material">Extra materials for students' interests</h2>
 There are 10 lab sessions of this lab courses, below is the collected extra materials that related to the corresponding lab content. The original webpage was designed for Canvas page. 
 <h3> Lab 01 Course Description </h3>
-What's inside the breadboard
-[![Everything Is](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
+
+[[What's inside the breadboard](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
 What's inside Analog Discovery 2
 
 PCB manufacturation
