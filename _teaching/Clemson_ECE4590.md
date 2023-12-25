@@ -129,7 +129,7 @@ element info what=inst where=logfile
 </pre>
 
 
-<h2 id="Lab 1">Lab 1 SPECTRE & DC analysis of NMOS and PMOS</h2>
+<h2 id="Lab 1">Lab 1 SPECTRE & DC graphic analysis of NMOS and PMOS</h2>
 
 This lab is expected to learn how to do detial DC analysis using NMOS and PMOS. 
 The students are provided script of the circuit available [here](/file/teaching/459/lab1.scs) and MDL file available [here](/file/teaching/459/lab1.mdl) here as example.
@@ -143,16 +143,16 @@ A select subset of new commands are used in this lab:
 
 <h3>Lab assignements</h3>
 Below are the ones we do in this semester.
-  * Graph on I<sub>ds</sub>  versus V<sub>gs</sub> (for different V<sub>ds</sub>) for both NMOS and PMOS.
-  * Graph on I<sub>ds</sub>  versus V<sub>ds</sub> (for different V<sub>gs</sub>) for both NMOS and PMOS.
+  * Graph on $$ I_{ds} $$  versus $$ V_{gs} $$  (for different  $$ V_{ds} $$ ) for both NMOS and PMOS.
+  * Graph on $$ I_{ds} $$  versus $$ V_{ds} $$  (for different  $$ V_{gs} $$ ) for both NMOS and PMOS.
   * Sub-threshold swing for both NMOS and PMOS.
   * Body Effect for both NMOS and PMOS.
-  * DIBL (Drain-induced barrier lowering) (V<sub>ds</sub> versus V<sub>th</sub>) for both NMOS and PM.
-  * DIBL (Drain-included barrier lowering) (Length versus V<sub>th</sub>) for both NMOS and PMOS
-  * Graph on Temperature versus V<sub>th</sub> for both NMOS and PMOS
+  * DIBL (Drain-induced barrier lowering) ($$ V_{ds} $$ versus $$ V_{th} $$) for both NMOS and PM.
+  * DIBL (Drain-included barrier lowering) (Length versus $$ V_{th} $$) for both NMOS and PMOS
+  * Graph on Temperature versus $$ V_{th} $$ for both NMOS and PMOS
  
 
-<h2 id="Lab 2">Lab 2 SPECTRE transient analysis and measurement</h2>
+<h2 id="Lab 2">Lab 2 SPECTRE & DC numerical analysis of NMOS and PMOS</h2>
 
 This lab is built upon the prior lab experience with extra focus on extracting and computing various parameters and values using the graphic waveform and MDL tools to complete the measurement. 
 The students are provided script of the circuit available [here](/file/teaching/459/lab2.scs) and MDL file available [here](/file/teaching/459/lab2.mdl) here as example.
@@ -161,13 +161,13 @@ A select subset of new commands are used in this lab:
 
 <h3>Sweep analysis </h3>
 <h3>Change temperature</h3>
-<h3>Extract MOSFET parameters</h3>
+<h3>.measure file</h3>
 
 <h3>Lab assignements</h3>
 
 Based on the provided example, students are expected to find and compute explore the various parameters of 45nm gpdk library. Below are the ones we do in this semester.
 
-  * List item one 
+  *Use the I<sub>ds</sub> Versus V<sub>ds</sub> graph (for fixed V<sub>gs</sub>) to calculate the channel length modulation coefficient (\lambda) (NMOS):
       * List item one 
           * List item one
           * List item two
@@ -176,7 +176,7 @@ Based on the provided example, students are expected to find and compute explore
       * List item two
       * List item three
       * List item four
-  * List item two
+  * Calculate velocity saturation (c<sub>ox*ν_sat) (NMOS):
   * List item three
   * List item four
 
