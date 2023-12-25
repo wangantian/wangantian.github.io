@@ -135,12 +135,13 @@ This lab is expected to learn how to do detial DC analysis using NMOS and PMOS.
 The students are provided script of the circuit available [here](/file/teaching/459/lab1.scs) and MDL file available [here](/file/teaching/459/lab1.mdl) here as example.
 Based on the provided example, students are expected to explore the various parameters of 45nm gpdk library. 
 
-A select subset of commands are used in this lab:
+A select subset of new commands are used in this lab:
 
 <h3>Sweep analysis </h3>
 <h3>Change temperature</h3>
 <h3>Extract MOSFET parameters</h3>
 
+<h3>Lab assignements</h3>
 Below are the ones we do in this semester.
   * Graph on I<sub>ds</sub>  versus V<sub>gs</sub> (for different V<sub>ds</sub>) for both NMOS and PMOS.
   * Graph on I<sub>ds</sub>  versus V<sub>ds</sub> (for different V<sub>gs</sub>) for both NMOS and PMOS.
@@ -155,6 +156,15 @@ Below are the ones we do in this semester.
 
 This lab is built upon the prior lab experience with extra focus on extracting and computing various parameters and values using the graphic waveform and MDL tools to complete the measurement. 
 The students are provided script of the circuit available [here](/file/teaching/459/lab2.scs) and MDL file available [here](/file/teaching/459/lab2.mdl) here as example.
+
+A select subset of new commands are used in this lab:
+
+<h3>Sweep analysis </h3>
+<h3>Change temperature</h3>
+<h3>Extract MOSFET parameters</h3>
+
+<h3>Lab assignements</h3>
+
 Based on the provided example, students are expected to find and compute explore the various parameters of 45nm gpdk library. Below are the ones we do in this semester.
 
   * List item one 
@@ -174,6 +184,15 @@ Based on the provided example, students are expected to find and compute explore
 
 This lab focus on the basic CMOS combinational logic inverter, students are expected to verify the concepts learnt in the lecture, and find the actual characteristics of the 45nm gpdk library.
 The students are provided script of the circuit available [here](/file/teaching/459/lab3.scs) and MDL file available [here](/file/teaching/459/lab3.mdl) here as example.
+
+A select subset of new commands are used in this lab:
+
+<h3>Sweep analysis </h3>
+<h3>Change temperature</h3>
+<h3>Extract MOSFET parameters</h3>
+
+<h3>Lab assignements</h3>
+
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
   * List item one 
@@ -194,6 +213,15 @@ Based on the provided example, students are expected to find and compute explore
 
 This lab extend the study of inverter in previous lab, and explore the concepts learnt for basic combinational logics. 
 The students are provided script of the circuit available [here](/file/teaching/459/lab4.scs) and MDL file available [here](/file/teaching/459/lab4.mdl) here as example.
+
+A select subset of new commands are used in this lab:
+
+<h3>Sweep analysis </h3>
+<h3>Change temperature</h3>
+<h3>Extract MOSFET parameters</h3>
+
+<h3>Lab assignements</h3>
+
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
   * List item one 
@@ -213,6 +241,15 @@ Based on the provided example, students are expected to find and compute explore
 
 This lab serves as the last regular lab for this course. Here, the students are expected to examine the remaining concepts that haven't verified in the previous labs. 
 The students are provided script of the circuit available [here](/file/teaching/459/lab5.scs) and MDL file available [here](/file/teaching/459/lab5.mdl) here as example.
+
+A select subset of new commands are used in this lab:
+
+<h3>Sweep analysis </h3>
+<h3>Change temperature</h3>
+<h3>Extract MOSFET parameters</h3>
+
+<h3>Lab assignements</h3>
+
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
   * List item one 
@@ -246,3 +283,6 @@ In prior offerings, students also given the expierence of sythesizing the digtia
 In this semester, part of the workflow was introduced, and complete workflow for cadence 45nm library is updated below.
 
 <h3>Cadence example workflow download</h3>
+<h3>Verilog compliation and simulation</h3>
+<h3>Verilog sythesis</h3>
+<h3>Verilog implementation</h3>
