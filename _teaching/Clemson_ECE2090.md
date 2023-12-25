@@ -452,15 +452,15 @@ This open-ended project involving design, simulation, and analysis of a digital 
 
 
 
-Daily transaction
-Topics
+## Daily transaction
+###Topics
 
 
 * Parking meter.
 * Vending machine.
 * Pill separator.
 
-Details:
+###Details:
 
 * For parking meter/vending machine:
 * Accept quarter/half-dollar/$1, $2, $5 bills. You can consider penny/dime/nickel.
@@ -534,11 +534,10 @@ Details:
 * Read the data from the RAM and properly store and display it.
 * Users determine whether the current state is a read process or a write process. You can design your own read/write process patterns. Use LED indicator for interaction.
 * A pratical example is:
-
-** You store data "Hello World" in your memory by external output NOT by intialize the stored value by hand as did in Lab 9.
-** Once the write process finish, you read the memory, and possibly show the "Hellow world" in the way you want to display.
-** Introduce error during multiple read/write iterations, and the stored data may become "Hello Morld", and your display can show such a difference.
-** Once you find there is an error, you can again, write back the "Hello World" back to the RAM.
+ * You store data "Hello World" in your memory by external output NOT by intialize the stored value by hand as did in Lab 9.
+ * Once the write process finish, you read the memory, and possibly show the "Hellow world" in the way you want to display.
+ * Introduce error during multiple read/write iterations, and the stored data may become "Hello Morld", and your display can show such a difference.
+ * Once you find there is an error, you can again, write back the "Hello World" back to the RAM.
 
 
 
@@ -552,9 +551,6 @@ Details:
 * Simple ALU/processor design
 
 * A typical instruction-based processor involves 5 stages: IF = Instruction Fetch, ID = Instruction Decode, EX = Execute, MEM = Memory access, WB = Register write back, refer to [https://en.wikipedia.org/wiki/Instruction_pipelining](https://en.wikipedia.org/wiki/Instruction_pipelining)
-
-
- 
 
 * Here, having ID, EX, and WB stages using the gate-level design is doable. Having the EX stage is a plus. This design is required to have a clock signal.
 
@@ -617,8 +613,7 @@ Details:
 * Users can push the up/down button to access the elevator.
 * Consider possible override by firefighter/elevator operator.
 * Please refer to this document for a more detailed description here in this file. 
-
-
+ 
 
 # Other related online resources
 
