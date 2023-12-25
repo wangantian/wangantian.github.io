@@ -385,7 +385,7 @@ This open-ended project involving design, simulation, and analysis of a digital 
 * CATbus's screen may display the pattern with rotation of RED-CLEMSON/RED-CENTRAL/GO TIGERS/BEAT XXX(change based on a specific football game)/Merry Christmas/Have a Nice Day.  
 * Long string display within the limited LED space: Suppose the screen can only display 5 characters to allow the user to see the entire word of CLEMSON. You need to display 【CLEMS】【LEMSO】,【EMSON】 cyclically. The shift register may realize this function.
 
-# Binary computation for different purposes (extension of Lab 5 to Lab 7)
+# Binary computation for different purposes (extension of Lab 05 to Lab 07)
 
 ## General-purpose binary computing
 ### Topics:
@@ -397,19 +397,18 @@ This open-ended project involving design, simulation, and analysis of a digital 
 
 ### Details:
 
-#### Calculator
+* Calculator 
+	* 8-bit Addition/Subtraction/Multiplication. Please do this part by extending your design from labs 5, 6, 7 or using available 74-series chips in Logisim Evolution.
+	* Try out 8-bit Division.
+	* Fixed-point decimal operation.
+	* Show current computation type using LED matrix.
+	* Store prior computation results.
+	* Allow CE/C to function as the real calculator does.
 
-* 8-bit Addition/Subtraction/Multiplication. Please do this part by extending your design from labs 5, 6, 7 or using available 74-series chips in Logisim Evolution.
-* Try out 8-bit Division.
-* Fixed-point decimal operation.
-* Show current computation type using LED matrix.
-* Store prior computation results.
-* Allow CE/C to function as the real calculator does.
 
-
-#### Fast adder and multiplication tree realization:
-* Multiple fast adders and multiplier trees are introduced in the lab slide, which are listed as extra materials for students' interest here. Please try to search for related references and design them.
-* Try to examine the difference between different fast adders and multiplier trees.
+* Fast adder and multiplication tree realization:
+	* Multiple fast adders and multiplier trees are introduced in the lab slide, which are listed as extra materials for students' interest here. Please try to search for related references and design them.
+	* Try to examine the difference between different fast adders and multiplier trees.
 
 
 #### Modular computation
@@ -472,7 +471,7 @@ This open-ended project involving design, simulation, and analysis of a digital 
 * Allow the user to load a custom amount of goods/pills if they are out of stock and change the stock after loading.
 * This design is supposed to be a sequential design. Every time (let's say every second) you insert one bill/coin, the machine must record it, and use the recorded money value to return changes and goods.
 
-# Integrated counter application (extension of Lab 8, 10)
+# Integrated counter application (extension of Lab 08, 10)
 ## Topics:
 
 
@@ -507,7 +506,7 @@ This open-ended project involving design, simulation, and analysis of a digital 
 
 
 
-#  Memory applications (extension of Lab 9) 
+#  Memory applications (extension of Lab 09) 
 ## Topics:
 * Digital circuit functionality checker.
 * Memory tester.
@@ -541,10 +540,11 @@ This open-ended project involving design, simulation, and analysis of a digital 
 
 
 
-#  Processor design (extension of Lab 8) 
+#  Processor design (extension of Lab 08) 
 
 ## Topics:
 * Simple ALU/processor design.
+* Watchdog simulation.
 
 ## Details:
 
