@@ -346,6 +346,7 @@ Static timing analysis 
 <h2 id="project_prompts">Lab final project possible topics</h2>
 This list was last updated by the end of Fall 2023, and will no longer updated here in this site. Feel free to use it if you need them. 
 
+<h3>Final project objective</h3>
 This open-ended project involving design, simulation, and analysis of a digital circuit related to a concept of students' choice. Students are tasked with thoroughly exploring all available components within the simulation software. Additionally, students are encouraged to consider integrating this project into their future endeavors across various courses.
 
 <h3>Elements allowed and forbidden for simulation-only designs</h3>
@@ -363,6 +364,7 @@ This open-ended project involving design, simulation, and analysis of a digital 
 * Connect 4 games, geographic version, inspired by this video: https://www.youtube.com/watch?v=oZSUxdzgA08
 * Gomoku game. 
 * Monopoly game.
+
 ### Details: 
 * You need to design the basic game design for two players using combinational logic. Some games may involve underlying physical rules you need to follow. Please consider how to handle it.
 * You can enumerate/compute all possible winning/losing/tie games for the players. You are recommended to design this part by using the combinational analysis.
@@ -383,7 +385,8 @@ This open-ended project involving design, simulation, and analysis of a digital 
 * CATbus's screen may display the pattern with rotation of RED-CLEMSON/RED-CENTRAL/GO TIGERS/BEAT XXX(change based on a specific football game)/Merry Christmas/Have a Nice Day.  
 * Long string display within the limited LED space: Suppose the screen can only display 5 characters to allow the user to see the entire word of CLEMSON. You need to display 【CLEMS】【LEMSO】,【EMSON】 cyclically. The shift register may realize this function.
 
-<h4> Binary computation for different purposes (extension of Lab 5 to Lab 7)</h4>
+# Binary computation for different purposes (extension of Lab 5 to Lab 7)
+
 ## General-purpose binary computing
 ### Topics:
 * Calculator
@@ -540,6 +543,7 @@ Details:
 
 
 #  Processor design (extension of Lab 8) 
+
 ## Topics:
 * Simple ALU/processor design.
 
@@ -594,7 +598,7 @@ Details:
 
 
 
-<h4> Details:Real-life system design (extension of all labs)</h4>
+# Details:Real-life system design (extension of all labs)
 ## Topics:
 
 * Digital lock.
@@ -616,7 +620,7 @@ Details:
 
 
 
-<h4> Other related online resources</h4>
+# Other related online resources
 
 * You can also refer to the playlist here for more details: [https://www.youtube.com/playlist?list=PLvjlcTfwDj4spSN4g3S8IHbqY4Qkb5LxP](https://www.youtube.com/playlist?list=PLvjlcTfwDj4spSN4g3S8IHbqY4Qkb5LxP)
 * The video is based on the lab manual available in this GitHub link [https://github.com/grself/CIS221_Lab_Manual/tree/master](https://github.com/grself/CIS221_Lab_Manual/tree/master) I 
