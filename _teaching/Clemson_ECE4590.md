@@ -142,12 +142,12 @@ A select subset of new commands are used in this lab:
 <h3>Extract MOSFET parameters</h3>
 
 <h3>Lab assignements</h3>
-Below are the ones we do in this semester.
+Below are the ones we do for this semester.
   * Graph on $$ I_{ds} $$  versus $$ V_{gs} $$  (for different  $$ V_{ds} $$ ) for both NMOS and PMOS.
   * Graph on $$ I_{ds} $$  versus $$ V_{ds} $$  (for different  $$ V_{gs} $$ ) for both NMOS and PMOS.
   * Sub-threshold swing for both NMOS and PMOS.
   * Body Effect for both NMOS and PMOS.
-  * DIBL (Drain-induced barrier lowering) ($$ V_{ds} $$ versus $$ V_{th} $$) for both NMOS and PM.
+  * DIBL (Drain-induced barrier lowering) ($$ V_{ds} $$ versus $$ V_{th} $$) for both NMOS and PMOS.
   * DIBL (Drain-included barrier lowering) (Length versus $$ V_{th} $$) for both NMOS and PMOS
   * Graph on Temperature versus $$ V_{th} $$ for both NMOS and PMOS
  
@@ -165,20 +165,29 @@ A select subset of new commands are used in this lab:
 
 <h3>Lab assignements</h3>
 
-Based on the provided example, students are expected to find and compute explore the various parameters of 45nm gpdk library. Below are the ones we do in this semester.
+Based on the provided example, students are expected to find and compute explore the various parameters of 45nm gpdk library. Below are the ones we do for this semester.
 
-  *Use the I<sub>ds</sub> Versus V<sub>ds</sub> graph (for fixed V<sub>gs</sub>) to calculate the channel length modulation coefficient (\lambda) (NMOS):
-      * List item one 
-          * List item one
-          * List item two
-          * List item three
-          * List item four
-      * List item two
-      * List item three
-      * List item four
-  * Calculate velocity saturation (c<sub>ox*ν_sat) (NMOS):
-  * List item three
-  * List item four
+  *Use the $$ I_{ds} $$  Versus $$ V_{ds} $$ graph (for fixed $$ V_{gs} $$) to calculate the channel length modulation coefficient ($$\lambda$$) (NMOS):
+      * $$ V_{gs}=V_{dd}, V_{ds}=[0,V_{dd}] $$
+  * Calculate velocity saturation ($$ c_{ox}\cdot v_{sat} $$ ) (NMOS):
+      * $$ V_{gs}=V_{dd} $$ $$ V_{ds}\in [0,V_{dd}] $$
+  * Print a set of Saturation Voltage ($$V_DSat$$)  (NMOS):
+      * $$ V_{gs}=[0,0.02,V_{dd}]V_{dd}, V_{ds}=V_{dd}], V_{bs}=0$$
+      * Show the results in ‘.measure’ file. 
+      * Manually plot the set of $$V_DSat$$ dots on the Ids versus $$V_{ds}$$ plot for different $$ V_{gs}$$
+  * Sub-threshold slope factor (NMOS):
+      * $$V_{gs}=[0,V_{dd}]; Vds=V_{dd}, vbs=0$$
+  * 	Body effect ($$k_\gamma$$) (NMOS):
+      * $$Vgs=V_{dd}; Vds=V_{dd}, vbs=[-V_{dd},V_{dd}]$$
+  * NMOS and PMOS mobility ratio ($$\mu_n/\mu_p$$)) 
+  * Calculate Critical Voltage: $$V_c=E_c\cdot L$$(NMOS):
+      * $$V_{gs}=V_{dd}; Vds=V_{dd}, vbs=0$$
+      * Use the Equation: $$V_DSat=((V_{gs}-V_{th})*E_c*L)/((V_{gs}-V_{th})+E_c*L)$$
+  * Calculate $$I_DSat$$ (NMOS):
+      * $$V_{gs}=V_{dd}; V_{ds}=V_{dd}, v_{bs}=0, t_{ox}=3nm$$
+      *	Use Equation: I_DSat=W/L*(µ_{eff}\cdot C_{ox}\cdot E_{c}\cdot L)/2  (V_{gs}-V_{th})^2/((V_{gs}-V_{th})+E_c\cdot L)
+      *	Use ueff to measure the $$µ_eff$$
+
 
 <h2 id="Lab 3">Lab 3 Study of Inverter</h2>
 
@@ -195,7 +204,7 @@ A select subset of new commands are used in this lab:
 
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
-  * List item one 
+  * Construct a CMOS inverter with input port labeled as $$V_{in}$$, and both NMOS and PMOS set as W=300n, L=100n.
       * List item one 
           * List item one
           * List item two
@@ -204,10 +213,29 @@ Based on the provided example, students are expected to find and compute explore
       * List item two
       * List item three
       * List item four
-  * List item two
-  * List item three
-  * List item four
- 
+  * Find the $$t_{pHL}$$ and $$t_{pLH}
+      * $$t_pHL$$： delay from input 50% to outupt 50% when output is falling. 
+      * $$t_pLH$$： delay from input 50% to outupt 50% when output is rising
+ Both information is measured via the rising/falling edge of input voltage. Take a screenshot of the measurement result in the .measure file and attach it in the report.
+
+  * Analyze the DC characteristic of the CMOS inverter (one graph):
+      * Set the Length of the NMOS and PMOS as a constant: 100n; Width of the NMOS as a constant: 300n. 
+      * DC analysis the VIN (x axis) from 0 to 1.1v with a step of 0.01v 
+      * Change the Beta ratio of the NMOS and PMOS by sweeping the Width of PMOS from 200n to 1000n with a step of 100n. 
+      * View the VOUT (y axis) plot. 
+
+
+  * Use the measurement tool (shown below) and the graph in problem 3 to find the closest Width value of the PMOS that has the Switching Threshold closest to half of the Vdd (Vdd/2). We will use this balanced inverter for the following tasks. 
+Marker->create marker->horizontal ->vdd/2
+  * Set the Width of the PMOS to be the value you found in part 4.In this part, you are required to discover one of the characteristics of the CMOS inverter: delay(Tp) as a function of Vdd. Now set the Width of the PMOS to be the value you found in part 4. Use the MDL command shown in the slides to change the value of the parameter ‘vdd’ so that the supply voltage will change: 0.5:0.1:1.1. The results will shown in ‘.mt’ file.
+You need to measure the inverter delay (Tp) corresponding to different supply voltage. Remember, you need to measure both tpHL and tpLH in order to get the delay Tp. 
+After you have found the inverter delay for each Vdd, you need to plot these data (Vdd being X axis, and Tp being Y axis) using any proper tool (e.g., excel, Matlab).  
+  * In this part, you are required to plot the device sizing versus delay Tp, similar to the graph that is on the p.30 in the ICD-CMOS inverter.pdf. Similar to part 5, where you need to measure Tp with different Vdd, here you need to measure Tp with different size of CMOS inverter: 
+
+1:1:6 multiples of the width (both NMOS and PMOS) in the balanced inverter you obtained in part 3.
+
+Also, keep the length fixed and connect the output of the balanced inverter to a load (two balanced inverters which are exactly the same as you obtained in part 4) (see the schematic below). Also, similar to the part 5, you need to mdl commands. Then, use appropriate tool to plot the data (Width being X axis, and Tp being Y axis). 
+
 
 <h2 id="Lab 4">Lab 4 Delay of combinational logic</h2>
 
@@ -216,7 +244,7 @@ The students are provided script of the circuit available [here](/file/teaching/
 
 A select subset of new commands are used in this lab:
 
-<h3>Sweep analysis </h3>
+<h3>Capacitance connection</h3>
 <h3>Change temperature</h3>
 <h3>Extract MOSFET parameters</h3>
 
@@ -224,8 +252,8 @@ A select subset of new commands are used in this lab:
 
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
-  * List item one 
-      * List item one 
+  * Build an inverter as the first stage of your inverter chain (NMOS: 300n/100n; PMOS: 600n/100n.	Connect a load capacitance at the end of the output of the inverter chain. Make the capacitance value 64 times larger than the value you just measured in step a. 
+  * c.	Use the schematic in p.41 as a reference and construct four inverter chains for N (number of stages) from 1 to 4. For the rest stages, you need to set the CMOS parameters for inverters (except the first one) based on the total number of stages and the design rule learned in class. 
           * List item one
           * List item two
           * List item three
@@ -233,9 +261,30 @@ Based on the provided example, students are expected to find and compute explore
       * List item two
       * List item three
       * List item four
-  * List item two
-  * List item three
-  * List item four
+  * Measure the Delay (Tp) for each inverter chain (final output), and here you still need to measure both tHL and tLH in order to get the delay Tp. Draw a table similar to the one in p.41 in the ICD-CMOS Inverter.pdf
+  * 	Construct a CMOS inverter. Make the width (300n) and length (100n) fixed for NMOS, and length (100n) fixed for PMOS. Using the MDL Optimization tool, find the width of the PMOS for each of the following requirements: 
+      * Make tLH-tHL as close to zero as possible
+      * Have the smallest average propagation delay (hint: make (tLH+tHL)/2 as close to zero as possible)
+
+  * Use the same CMOS inverter setting in Problem 2. Use the MDL Optimization tool to find the width of the PMOS for the following requirement:  Switching threshold (Vm) equals to half of Vdd. Note that this is a DC analysis
+  * CMOS combinational gate design:
+Please follow slide 04_combinational_logic to build the 2-input NAND gate, and 2-input NOR gate. Keep the NMOS/PMOS of this gate length at 100nm, and NMOS width with 300nm and PMOS width with 600nm. Since here, we only care about functionality.
+Verify the functionality by feeding in the Pulse wave for all possible input combinations. Take a screenshot of it. 
+  * The Logical effort is the ratio of a gate's input capacitance to an inverter's input capacitance, delivering the same output current. As mentioned in the slide, it can be measured from delay vs fanout plots. Let’s verify that here!
+      * Build an inverter with an NMOS/PMOS length with 100nm, and NMOS width with 300nm and a PMOS width that satisfies the non-skewed inverter derived in problem 2. 
+      * Use the 2-input NAND gates and 2-input NOR gates built previously, and size it properly according to the inverter built in a, according to the slide. [Note that it is possible to use an optimization tool to find the more realistic width using an optimization tool, which is not required here]. 
+      * Find the worst case propagation delay for inverter, 2-input NAND gate, and 2-input NOR gate when their load is 1,2,3,4 copy of itself. Find the slope of the delay trend, then report the founded logical effort and verify the concept.  
+      *  Verify the worst-case propagation delay input pattern as shown in the lecture using MDL for the 2-input NAND gate and 2-input NOR gate. 
+      *  Build the 3-input NAND gate and 3-input NOR gate, and size it properly according to the inverter built in a, according to the slide.  
+      *  Find the worst-case propagation delay for gates when load is 1,2,3,4 copies of itself. Find the slope of the delay trend, then report the founded logical effort and verify the concept.  
+      *  Verify the worst-case propagation delay input pattern as shown in the lecture using MDL for the 3-input NAND gate and 3-input NOR gate. 
+
+  * 	Using the 2-input, 3-input NAND gates derived in the previous step. Perform progressive sizing of NMOS making as shown in 04_ICD_CMOS combinational gates to examine the difference between different propagation delays.  Suppose the topmost NMOS gate size derived in the previous step is W_nmos:
+      * For 2-input, the NMOS size from top down become W_nmos, W_nmos/2. 
+      * For 3-input, the NMOS size from top down become W_nmos, 3*W_nmos/4, W_nmos/2.
+      * Examine the change of worst-case delay in this case and discuss why it happened?
+      * Using mdl optimization tool to find the smallest worst-case delay for 2-input and 3-input NAND gate by only changing the bottom 1/2 NMOS gate, does that fit your expectations?
+
 
 <h2 id="Lab 5">Lab 5 Combinational Logic Family, Wire, Sequential Logic</h2>
 
@@ -246,13 +295,21 @@ A select subset of new commands are used in this lab:
 
 <h3>Sweep analysis </h3>
 <h3>Change temperature</h3>
-<h3>Extract MOSFET parameters</h3>
+<h3>Point-wise signal definition</h3>
 
 <h3>Lab assignements</h3>
 
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
-  * List item one 
+  * 	Verify the Elmore delay in SPECTRE. Connect the resistors and capacitors as shown in the circuit diagram below, where R=100Ohm and C=100pF. 
+      * Measure the Propagation delay of the circuit diagram from the input and output1 & output2.  Measure the time from the start of the input rise to the 50% of output rise. 
+      * Compute the Elmore delay equation learned in the lecture. 
+      * Convert the Elmore delay to the propagation delay (multiply Elmore delay by 0.69) . 
+      * Compare the difference by measuring the percentage by (Propagation delay in a measured by SPECTRE- Propagation delay in c)/(Propagation delay in a measured by SPECTRE). 
+      * Change the length of wire to 0.5, and 2.0 unit of original wire length, redo a,b,c. Note that the Resistor and Capacitor in red are NOT WIRES. Please notice the changing pattern of resistance and capacitance of the length. 
+R=R_∎  L/w
+C=ϵ S/4πkd
+      * Using the above Resistor-Capacitor connection, how can we minimize the delay by changing the length of the wire for two paths individually using MDL optimization tool (POSSIBLE software ISSUE) or computed analytically(NOT REQUIRED)? 
       * List item one 
           * List item one
           * List item two
@@ -261,9 +318,42 @@ Based on the provided example, students are expected to find and compute explore
       * List item two
       * List item three
       * List item four
-  * List item two
-  * List item three
-  * List item four
+  * Design the 2 to 1 MUX using the transmission gate and CMOS. 
+      * Verify the functionality for both design.
+      * 	Compare the output of the transmission gate and CMOS gate implementation, are there any differences between them?
+      * 	Measure the delay for all input-output patterns for both design, and find the worst case of them.
+
+  * 	Design a CMOS logic, unfooted Dynamic logic, footed Dynamic logic for the following: 
+Y=A'B+AC
+	  * Verify the functionality of built logic. You are free to introduce the variable’s complement if needed. 
+          * For CMOS logic, check the functionality.
+          * For unfooted & footed dynamic logic, please make the \phi with the smallest switching period to better observe the pre-charge->evaluate cycle.  Start the \phi with 0.
+	  *Compare the delay for all logic designs for all possible input combinations. 
+      * Identify the monotonicity of the dynamic logic. 
+          *Change the \phi to a larger period and observe the charge leakage process. Screenshot the waveform. 
+          *Change the \phi to an even larger period, making the output logic cannot recover until it reaches another pre-charge cycle. Screenshot the waveform
+
+  * Let’s do something sequential: fix ALL widths and lengths of PMOS and NMOS, with PMOS width=600nm, NMOS width=300nm, and length=100nm. The SPECTRE code for D-flip flop has been provided in Canvas, modified from the MDL workshop. 
+Keep the clock period at 80ns, and find a SINGLE D-flip flop's setup time and hold time. To find the setup time and hold time, you need to draft your MDL file by measuring the delay from clock rising edge to the Q’s rising edge, both at 0.5*vdd. Then, you need to change the point-wise signal’s rising time and falling time to find the setup time and hold time per definition. 
+The point-wise signal can be defined as follows:
+vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
+
+<h3>Unused lab assignements</h3>
+  * 	On page 36 of 04_ICD_CMOS combinational gates, an interesting concept, ring oscillator, is introduced. 
+      * 	Please build the ring oscillator with stage 5 with an inverter with an NMOS/PMOS length of 100nm, an NMOS width of 300nm and a PMOS width of 600nm. You may use a subcircuit to facilitate the building process.
+      * 	Please measure the oscillation frequency of such a circuit. 
+      * 	Replace the first stage using the circuit shown below, and use the Monte Carlo method discussed during the previous lab session. Try to have multiple sets of PMOS/NMOS sizing with different parameters under identical distribution, what’s your finding? What could be the possible use case for such a design?
+  * 	Multi-output combination circuit: In the homework, we have a combinational circuit with multiple outputs. Here, let’s examine it using the simulation tool.
+      *	Verify the worst case delay combination. 
+      *	Verify the delay of branching. Load two branch outputs with identical capacitance load.
+      *	Try to change the capacitance load of the branch with a larger worst case delay , and try to make two branches worst cast delay, Is such a change identical to the theoretical analysis?
+  * 	Effect of change of delay due to the change of vdd, in the previous homework, we analytically verified if the change of the vdd changed the delay. Let’s replicate such a process in a simulation tool.
+      *	Build the circuit and change the vdd.
+      *	Verify the problem 5 in homework 3. Let’s make the R_wire and C_wire equal to R=100Ohm and C=100pF and see the quantitative analysis fit the physical simulation. 
+  *	Verify the NMOS and PMOS transmission gate. 
+      *	Build the circuit diagram shown in homework 1, and verify if the simulation result fits the analytical one. 
+      *	Exchange the source and drain of the connection used in a, is that fit your expectation?
+
 
 <h2 id="Lab 6">Lab 6 Final project 2-bit full adder</h2>
 
