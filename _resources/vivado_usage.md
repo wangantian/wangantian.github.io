@@ -36,5 +36,6 @@ Though all FPGA boards available in Xilinx Vivado are called FPGA, there possibl
 Clicking the menus in GUI/Project mode could be devastating. Use of the TCL script can avoid the long waiting time after the design implementation is completed. 
 
 [Here](https://wangantian.github.io/files/finalstep.tcl) is the example TCL file we typically used. Xilinx also provide [TCL reference]() for exploration
-#Non-project mode Vivado workflow in Linux 
+
+# Non-project mode Vivado workflow in Linux 
 To update 

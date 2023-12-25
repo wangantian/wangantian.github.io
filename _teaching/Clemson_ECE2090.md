@@ -183,6 +183,7 @@ unum (posit) [https://en.wikipedia.org/wiki/Unum_(number_format)](https://en.wik
  
 
 Various adders(Brent–Kung adder, Kogge–Stone adder)
+
 Brent–Kung adder [https://en.wikipedia.org/wiki/Brent%E2%80%93Kung_adder](https://en.wikipedia.org/wiki/Brent%E2%80%93Kung_adder) 
 
 Kogge–Stone adder [https://en.wikipedia.org/wiki/Kogge%E2%80%93Stone_adder](https://en.wikipedia.org/wiki/Kogge%E2%80%93Stone_adder)
@@ -618,4 +619,4 @@ This open-ended project involving design, simulation, and analysis of a digital 
 # Other related online resources
 
 * You can also refer to the playlist here for more details: [https://www.youtube.com/playlist?list=PLvjlcTfwDj4spSN4g3S8IHbqY4Qkb5LxP](https://www.youtube.com/playlist?list=PLvjlcTfwDj4spSN4g3S8IHbqY4Qkb5LxP)
-* The video is based on the lab manual available in this GitHub link [https://github.com/grself/CIS221_Lab_Manual/tree/master](https://github.com/grself/CIS221_Lab_Manual/tree/master) I 
+* The video is based on the lab manual available in this GitHub link [https://github.com/grself/CIS221_Lab_Manual/tree/master](https://github.com/grself/CIS221_Lab_Manual/tree/master)
