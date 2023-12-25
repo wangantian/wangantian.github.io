@@ -195,7 +195,7 @@ Ladner-Fischer
 
 Knowles [2,1,1,1]
 
-Adder circuit generator (https://github.com/IamFlea/AdderCircuitGenerator/blob/master/README.md)[https://github.com/IamFlea/AdderCircuitGenerator/blob/master/README.md]
+Adder circuit generator [https://github.com/IamFlea/AdderCircuitGenerator/blob/master/README.md](https://github.com/IamFlea/AdderCircuitGenerator/blob/master/README.md)
 
 
 
@@ -350,3 +350,26 @@ This open-ended project involving design, simulation, and analysis of a digital 
 <h3>Elements allowed and forbidden for simulation-only designs</h3>
 
 <h3> Final project possible topics</h3>
+
+<h4> Logic function exploration  (extension of Lab 02 to Lab 04)</h4>
+
+## Various board game:
+### Topics
+* 2D version X and O. 
+* 3D version X and O. 
+* Chess. 
+* Rock, Paper, Scissors, Lizard, Spock. 
+* Soduku game. 
+* Connect 4 games.
+* Connect 4 games, geographic version, inspired by this video: https://www.youtube.com/watch?v=oZSUxdzgA08
+* Gomoku game. 
+* Monopoly game.
+### Details: 
+* You need to design the basic game design for two players using combinational logic. Some games may involve underlying physical rules you need to follow. Please consider how to handle it.</span>
+* You can enumerate/compute all possible winning/losing/tie games for the players. You are recommended to design this part by using the combinational analysis.
+* Design a simple strategy allowing a human-machine game interaction. It might be as simple as placing the O on the left of X or you may refer to algorithms to simplify it to a more complicated decision logic.</span>
+* The player needs to be prohibited from moving/changing other player's moves. You also need to consider if the win/lose/tie happens, the player is no longer allowed to play unless the game is reset.
+* User-friendly display to identify win/lose/tie situations.
+* Store and update the player's gaming record, win/tie/loss after every game. You can probably consider using an integrated counter to tick the clock once such a case happens.
+* The size of the "board" is highly recommended to be limited to 10 x 10 rather than a full/large scale, and the player number is limited to 2.
+
