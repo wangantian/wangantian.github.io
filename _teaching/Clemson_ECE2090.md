@@ -452,14 +452,14 @@ This open-ended project involving design, simulation, and analysis of a digital 
 
 
 ## Daily transaction
-###Topics
+### Topics
 
 
 * Parking meter.
 * Vending machine.
 * Pill separator.
 
-###Details:
+### Details:
 
 * For parking meter/vending machine:
 * Accept quarter/half-dollar/$1, $2, $5 bills. You can consider penny/dime/nickel.

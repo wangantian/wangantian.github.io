@@ -15,11 +15,14 @@ standard library cells; systems design considerations, testing, and packaging.
 
 Lab materials
 ======
-The lab originates from a previous offering of this course written in Hspice. This semester, we use SPECTRE, available in Cadence, to replicate similar lab settings in prior semesters with the introduction of Lab 4 and Lab 5, with more empirical experience with CMOS design. The following material is edited after the course offering 2023 Fall. 
+The lab originates from the previous offerings of this course written in Hspice. This semester, we use SPECTRE, available in Cadence, to replicate similar lab settings in prior semesters with the introduction of Lab 4 and Lab 5, with more empirical experience with CMOS design. 
+
+The following material is edited after the course offering 2023 Fall. 
 
 To make the lab run smoothly, you must load your SPECTRE, VIRTUOSO, and library properly. You are expected to use a 45nm standard voltage temperature CMOS model in most of the lab.   
 
-The lab content below originate from Cadence tutorials available within cadence site 
+The lab content below originate from Cadence tutorials available within cadence site. You may extend 
+
 
 Lab 0 Familar with the tool.
 ======
@@ -102,27 +105,61 @@ element info what=inst where=logfile
 </pre>
 
 
+
+
 Lab 1 SPECTRE & DC analysis of NMOS and PMOS
 ======
-This lab is expected to learn how to do more detial DC analysis using NMOS and PMOS. 
+This lab is expected to learn how to do detial DC analysis using NMOS and PMOS. 
 The students are provided script of the circuit available [here](/file/teaching/459/lab1.scs) and MDL file available [here](/file/teaching/459/lab1.mdl) here as example.
+Based on the provided example, students are expected to explore the various parameters of 45nm gpdk library. Below are the ones we do in this semester.
+*
+*
+*
+*
 
 
 Lab 2 SPECTRE transient analysis and measurement
 ======
-This lab 
+This lab is built upon the prior lab experience with extra focus on extracting and computing various parameters and values using the graphic waveform and MDL tools to complete the measurement. 
+The students are provided script of the circuit available [here](/file/teaching/459/lab2.scs) and MDL file available [here](/file/teaching/459/lab2.mdl) here as example.
+Based on the provided example, students are expected to find and compute explore the various parameters of 45nm gpdk library. Below are the ones we do in this semester.
+*
+*
+*
+*
 
 Lab 3 Study of Inverter
 ======
-This lab 
+This lab focus on the basic CMOS combinational logic inverter, students are expected to verify the concepts learnt in the lecture, and find the actual characteristics of the 45nm gpdk library.
+The students are provided script of the circuit available [here](/file/teaching/459/lab3.scs) and MDL file available [here](/file/teaching/459/lab3.mdl) here as example.
+Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
+*
+*
+*
+*
+ 
 
 Lab 4 Delay of combinational logic
 ======
-This lab 
+This lab extend the study of inverter in previous lab, and explore the concepts learnt for basic combinational logics. 
+The students are provided script of the circuit available [here](/file/teaching/459/lab4.scs) and MDL file available [here](/file/teaching/459/lab4.mdl) here as example.
+Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
+*
+*
+*
+*
+ 
 
 Lab 5 Combinational Logic Family, Wire, Sequential Logic
 ======
-This lab 
+This lab serves as the last regular lab for this course. Here, the students are expected to examine the remaining concepts that haven't verified in the previous labs. 
+The students are provided script of the circuit available [here](/file/teaching/459/lab5.scs) and MDL file available [here](/file/teaching/459/lab5.mdl) here as example.
+Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
+*
+*
+*
+*
+
 
 Lab 6 Final project 2-bit full adder
 ======
@@ -133,8 +170,11 @@ The requirements are listed below:
 * Design is required to using available 45nm gpdk in Cadence.
 * Trying to implement the entire logic using 2-input NAND gate or NOR gate built by CMOS. Inverters are expected only allowed at the input buffer stage.
 * Trying to minimize the delay for worst case possbile input combinations. The one who received minimal delay gate size prodcut receive extra credits. 
+ 
 
+Lab Extra RTL 2 GDSII workflow
+======
 
+In prior offerings, students also given the expierence of sythesizing the digtial circuit written in Verilog, extract the sythesized  netlist, and examine the timing performance and 
 
-
-
+In this semester, part of the workflow was introduced, and complete workflow for cadence 45nm library is updated below 
