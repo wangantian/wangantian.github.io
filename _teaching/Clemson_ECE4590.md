@@ -24,21 +24,21 @@ To make the lab run smoothly, you must load your SPECTRE, VIRTUOSO, and library 
 The lab content below originate from Cadence tutorials available within cadence site. 
 You may click the link here to jump to the corresponding labs:
 
-*[Lab 0 Familar with the tool](#Lab 0)
+* [Lab 0 Familar with the tool](#Lab 0)
 
-*[Lab 1 SPECTRE & DC analysis of NMOS and PMOS](#Lab 1)
+* [Lab 1 SPECTRE & DC analysis of NMOS and PMOS](#Lab 1)
 
-*[Lab 2 SPECTRE transient analysis and measurement](#Lab 2)
+* [Lab 2 SPECTRE transient analysis and measurement](#Lab 2)
 
-*[Lab 3 Study of Inverter](#Lab 3)
+* [Lab 3 Study of Inverter](#Lab 3)
 
-*[Lab 4 Delay of combinational logic](#Lab 4)
+* [Lab 4 Delay of combinational logic](#Lab 4)
 
-*[Lab 5 Combinational Logic Family, Wire, Sequential Logic](#Lab 5)
+* [Lab 5 Combinational Logic Family, Wire, Sequential Logic](#Lab 5)
 
-*[Lab 6 Final project 2-bit full adder](#Lab 6])
+* [Lab 6 Final project 2-bit full adder](#Lab 6])
 
-*[Lab Extra RTL 2 GDSII workflow](#Lab Extra)
+* [Lab Extra RTL 2 GDSII workflow](#Lab Extra)
 
 <h2 id="Lab 0">Lab 0 Familar with the tool</h2>
 
