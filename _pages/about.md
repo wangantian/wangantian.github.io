@@ -15,3 +15,4 @@ My CV is available [here](https://wangantian.github.io/files/CV_Antian_Wang.pdf)
 
 News and Updates
 ======
+  * [01/2024] I will join [Department of Electrical and Computer Engineering, Tufts University](https://engineering.tufts.edu/ece) as Visiting Graduate student.
