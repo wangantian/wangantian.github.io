@@ -24,21 +24,21 @@ To make the lab run smoothly, you must load your SPECTRE, VIRTUOSO, and library 
 The lab content below originate from Cadence tutorials available within cadence site. 
 You may click the link here to jump to the corresponding labs:
 
-* [Lab 0 Familar with the tool](#Lab 0)
+[Lab 0 Familar with the tool](#Lab 0)
 
-* [Lab 1 SPECTRE & DC analysis of NMOS and PMOS](#Lab 1)
+[Lab 1 SPECTRE & DC analysis of NMOS and PMOS](#Lab 1)
 
-* [Lab 2 SPECTRE transient analysis and measurement](#Lab 2)
+[Lab 2 SPECTRE transient analysis and measurement](#Lab 2)
 
-* [Lab 3 Study of Inverter](#Lab 3)
+[Lab 3 Study of Inverter](#Lab 3)
 
-* [Lab 4 Delay of combinational logic](#Lab 4)
+[Lab 4 Delay of combinational logic](#Lab 4)
 
-* [Lab 5 Combinational Logic Family, Wire, Sequential Logic](#Lab 5)
+[Lab 5 Combinational Logic Family, Wire, Sequential Logic](#Lab 5)
 
-* [Lab 6 Final project 2-bit full adder](#Lab 6])
+[Lab 6 Final project 2-bit full adder](#Lab 6])
 
-* [Lab Extra RTL 2 GDSII workflow](#Lab Extra)
+[Lab Extra RTL 2 GDSII workflow](#Lab Extra)
 
 <h2 id="Lab 0">Lab 0 Familar with the tool</h2>
 
@@ -128,17 +128,25 @@ element info what=inst where=logfile
 This lab is expected to learn how to do detial DC analysis using NMOS and PMOS. 
 The students are provided script of the circuit available [here](/file/teaching/459/lab1.scs) and MDL file available [here](/file/teaching/459/lab1.mdl) here as example.
 Based on the provided example, students are expected to explore the various parameters of 45nm gpdk library. Below are the ones we do in this semester.
-*
-*
-*
-*
-
+  * List item one 
+      * List item one 
+          * List item one
+          * List item two
+          * List item three
+          * List item four
+      * List item two
+      * List item three
+      * List item four
+  * List item two
+  * List item three
+  * List item four
 
 <h2 id="Lab 2">Lab 2 SPECTRE transient analysis and measurement</h2>
 
 This lab is built upon the prior lab experience with extra focus on extracting and computing various parameters and values using the graphic waveform and MDL tools to complete the measurement. 
 The students are provided script of the circuit available [here](/file/teaching/459/lab2.scs) and MDL file available [here](/file/teaching/459/lab2.mdl) here as example.
 Based on the provided example, students are expected to find and compute explore the various parameters of 45nm gpdk library. Below are the ones we do in this semester.
+
 *
 *
 *
@@ -160,6 +168,7 @@ Based on the provided example, students are expected to find and compute explore
 This lab extend the study of inverter in previous lab, and explore the concepts learnt for basic combinational logics. 
 The students are provided script of the circuit available [here](/file/teaching/459/lab4.scs) and MDL file available [here](/file/teaching/459/lab4.mdl) here as example.
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
+
 *
 *
 *
