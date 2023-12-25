@@ -167,11 +167,11 @@ A select subset of new commands are used in this lab:
 
 Based on the provided example, students are expected to find and compute explore the various parameters of 45nm gpdk library. Below are the ones we do for this semester.
 
-  *Use the $$ I_{ds} $$  Versus $$ V_{ds} $$ graph (for fixed $$ V_{gs} $$) to calculate the channel length modulation coefficient ($$\lambda$$) (NMOS):
+  * Use the $$ I_{ds} $$  Versus $$ V_{ds} $$ graph (for fixed $$ V_{gs} $$) to calculate the channel length modulation coefficient ($$\lambda$$) (NMOS):
       * $$ V_{gs}=V_{dd}, V_{ds}=[0,V_{dd}] $$
   * Calculate velocity saturation ($$ c_{ox}\cdot v_{sat} $$ ) (NMOS):
       * $$ V_{gs}=V_{dd} $$ $$ V_{ds}\in [0,V_{dd}] $$
-  * Print a set of Saturation Voltage ($$V_DSat$$)  (NMOS):
+  * Print a set of Saturation Voltage ($$V_{DSat}$$)  (NMOS):
       * $$ V_{gs}=[0,0.02,V_{dd}]V_{dd}, V_{ds}=V_{dd}], V_{bs}=0$$
       * Show the results in ‘.measure’ file. 
       * Manually plot the set of $$V_DSat$$ dots on the Ids versus $$V_{ds}$$ plot for different $$ V_{gs}$$
@@ -205,14 +205,6 @@ A select subset of new commands are used in this lab:
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
   * Construct a CMOS inverter with input port labeled as $$V_{in}$$, and both NMOS and PMOS set as W=300n, L=100n.
-      * List item one 
-          * List item one
-          * List item two
-          * List item three
-          * List item four
-      * List item two
-      * List item three
-      * List item four
   * Find the $$t_{pHL}$$ and $$t_{pLH}
       * $$t_pHL$$： delay from input 50% to outupt 50% when output is falling. 
       * $$t_pLH$$： delay from input 50% to outupt 50% when output is rising
@@ -254,13 +246,6 @@ Based on the provided example, students are expected to find and compute explore
 
   * Build an inverter as the first stage of your inverter chain (NMOS: 300n/100n; PMOS: 600n/100n.	Connect a load capacitance at the end of the output of the inverter chain. Make the capacitance value 64 times larger than the value you just measured in step a. 
   * c.	Use the schematic in p.41 as a reference and construct four inverter chains for N (number of stages) from 1 to 4. For the rest stages, you need to set the CMOS parameters for inverters (except the first one) based on the total number of stages and the design rule learned in class. 
-          * List item one
-          * List item two
-          * List item three
-          * List item four
-      * List item two
-      * List item three
-      * List item four
   * Measure the Delay (Tp) for each inverter chain (final output), and here you still need to measure both tHL and tLH in order to get the delay Tp. Draw a table similar to the one in p.41 in the ICD-CMOS Inverter.pdf
   * 	Construct a CMOS inverter. Make the width (300n) and length (100n) fixed for NMOS, and length (100n) fixed for PMOS. Using the MDL Optimization tool, find the width of the PMOS for each of the following requirements: 
       * Make tLH-tHL as close to zero as possible
@@ -310,14 +295,6 @@ Based on the provided example, students are expected to find and compute explore
 R=R_∎  L/w
 C=ϵ S/4πkd
       * Using the above Resistor-Capacitor connection, how can we minimize the delay by changing the length of the wire for two paths individually using MDL optimization tool (POSSIBLE software ISSUE) or computed analytically(NOT REQUIRED)? 
-      * List item one 
-          * List item one
-          * List item two
-          * List item three
-          * List item four
-      * List item two
-      * List item three
-      * List item four
   * Design the 2 to 1 MUX using the transmission gate and CMOS. 
       * Verify the functionality for both design.
       * 	Compare the output of the transmission gate and CMOS gate implementation, are there any differences between them?
@@ -341,8 +318,8 @@ vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
 <h3>Unused lab assignements</h3>
   * 	On page 36 of 04_ICD_CMOS combinational gates, an interesting concept, ring oscillator, is introduced. 
       * 	Please build the ring oscillator with stage 5 with an inverter with an NMOS/PMOS length of 100nm, an NMOS width of 300nm and a PMOS width of 600nm. You may use a subcircuit to facilitate the building process.
-      * 	Please measure the oscillation frequency of such a circuit. 
-      * 	Replace the first stage using the circuit shown below, and use the Monte Carlo method discussed during the previous lab session. Try to have multiple sets of PMOS/NMOS sizing with different parameters under identical distribution, what’s your finding? What could be the possible use case for such a design?
+      * Please measure the oscillation frequency of such a circuit. 
+      * Replace the first stage using the circuit shown below, and use the Monte Carlo method discussed during the previous lab session. Try to have multiple sets of PMOS/NMOS sizing with different parameters under identical distribution, what’s your finding? What could be the possible use case for such a design?
   * 	Multi-output combination circuit: In the homework, we have a combinational circuit with multiple outputs. Here, let’s examine it using the simulation tool.
       *	Verify the worst case delay combination. 
       *	Verify the delay of branching. Load two branch outputs with identical capacitance load.
@@ -358,7 +335,7 @@ vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
 <h2 id="Lab 6">Lab 6 Final project 2-bit full adder</h2>
 
 
-In this semester's final project, the topic is 2-bit full adder. The project requires the students first to design the CMOS 2-bit full adder by themselves and then minimize the using the technique learnt in the lecture to reduce the number of transistor, and using the optimization tool available in MDL to minimize the worst case delay in the designed circuit.
+In this semester's final project, the topic is 2-bit full adder. The project requires the students first to design the CMOS 2-bit full adder by themselves. Then the design is expected to minimize the total number of transistors using the technique learnt in the lecture. After that, optimization tool is used to minimize the worst case delay in the designed circuit iteratively.
 
 The requirements are listed below:
 * Design is required to using available 45nm gpdk in Cadence.
