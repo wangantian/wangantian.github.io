@@ -347,11 +347,11 @@ Static timing analysis 
 This list was last updated by the end of Fall 2023, and will no longer updated here in this site. Feel free to use it if you need them. 
 
 This open-ended project involving design, simulation, and analysis of a digital circuit related to a concept of students' choice. Students are tasked with thoroughly exploring all available components within the simulation software. Additionally, students are encouraged to consider integrating this project into their future endeavors across various courses.
+
 <h3>Elements allowed and forbidden for simulation-only designs</h3>
  
 
 # Logic function exploration  (extension of Lab 02 to Lab 04) 
-
 ## Various board game:
 ### Topics:
 * 2D version X and O. 
@@ -469,7 +469,7 @@ Details:
 * Allow the user to load a custom amount of goods/pills if they are out of stock and change the stock after loading.
 * This design is supposed to be a sequential design. Every time (let's say every second) you insert one bill/coin, the machine must record it, and use the recorded money value to return changes and goods.
 
-<h4>Integrated counter application (extension of Lab 8, 10)</h4>
+# Integrated counter application (extension of Lab 8, 10)
 ## Topics:
 
 
@@ -504,7 +504,7 @@ Details:
 
 
 
-<h4> Memory applications (extension of Lab 9)</h4>
+#  Memory applications (extension of Lab 9) 
 ## Topics:
 * Digital circuit functionality checker.
 * Memory tester.
@@ -539,7 +539,7 @@ Details:
 
 
 
-<h4> Processor design (extension of Lab 8)</h3>
+#  Processor design (extension of Lab 8) 
 ## Topics:
 * Simple ALU/processor design.
 
