@@ -40,7 +40,7 @@ The lab content below was adapted from Cadence training tutorials available with
 
 This lab is expected to familarize with the tool.
 After load request a node with X11 forwarding capability using your prefered ssh tool. 
-You need to load the required cadence tool Virtuoso (IC/618) and SPECTRE (SPECTRE/211).
+You need to load the required cadence tool Virtuoso (IC/618) and SPECTRE (SPECTRE/211). Most of the cadence's tool documents are located within its installation path. 
 
 After load the file, you need to run the command under the identical directory of provided example file [here](/file/Teaching_Clemson/459_lab0.scs):
 
@@ -79,9 +79,10 @@ subckt invs_subckt inv_out inv_in
 ends invs_subckt
 </pre>
 
-<pre>g45n1svt/g45p1svt </pre> represent the type of NMOS/PMOS transistor used in this circuit, and <pre>w, l</pre> represent the width and length of the circuit. Within the SPECTRE, the transistors ports are ordered as (drain gate source body). <pre>mp1, mn1</pre> are the name of the transistor.  Within this subcircuit, the node <pre>vdd!, and 0 </pre> define the power supply and ground, and <pre>vdd</pre> itself is the power supply voltage. 
+` g45n1svt/g45p1svt ` represent the type of NMOS/PMOS transistor used in this circuit, and <pre>w, l</pre> represent the width and length of the circuit. Within the SPECTRE, the transistors ports are ordered as (drain gate source body). <pre>mp1, mn1</pre> are the name of the transistor.  Within this subcircuit, the node `vdd!`, and `0` define the power supply and ground, and <pre>vdd</pre> itself is the power supply voltage. 
 
-<pre>dc_analy0 dc param=vs0 start=0 stop=vdd step=0.01</pre> shows the instantiation of the direct-current source named as <pre>dc_analy0</pre>, with voltage start from 0 to vdd with step size of 0.01V. <pre>simOptions options temp=25</pre> define the temperature used for the simulation.
+<pre>dc_analy0 dc param=vs0 start=0 stop=vdd step=0.01</pre> shows the instantiation of the direct-current source named as <pre>dc_analy0</pre>, with voltage start from 0 to vdd with step size of 0.01V, while <pre> v1 (inv_in2 0) vsource dc=vs2 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u </pre> defines another pulse wave fed to inv_in2 port. <pre>trans1 tran stop=10u method =trap </pre> should go along with this pulse wave input to allow the correct transicent anlayis, with trap stands for the [trapezoidal method](https://en.wikipedia.org/wiki/Trapezoidal_rule) for internal numerical anlaysis.
+ <pre>simOptions options temp=25</pre> define the temperature used for the simulation.
 
 The provided script is highlyer parameterized to allow simple modification based on the lab requirements. 
 
