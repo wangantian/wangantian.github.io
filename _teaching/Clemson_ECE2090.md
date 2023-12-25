@@ -344,7 +344,7 @@ Static timing analysis 
 [![STA](https://img.youtube.com/vi/jcKVrkEvoA8/0.jpg)](https://youtu.be/jcKVrkEvoA8 "Static timing analysis ")
 
 <h2 id="project_prompts">Lab final project possible topics</h2>
-This list was last updated by the end of Fall 2023. The list will no longer updated here in this site. Feel free to use it if you needed. 
+This list was last updated by the end of Fall 2023, and will no longer updated here in this site. Feel free to use it if you need them. 
 <h3> Final project objectives</h3>
 This open-ended project involving design, simulation, and analysis of a digital circuit related to a concept of students' choice. Students are tasked with thoroughly exploring all available components within the simulation software. Additionally, students are encouraged to consider integrating this project into their future endeavors across various courses.
 <h3>Elements allowed and forbidden for simulation-only designs</h3>
@@ -354,7 +354,7 @@ This open-ended project involving design, simulation, and analysis of a digital 
 <h4> Logic function exploration  (extension of Lab 02 to Lab 04)</h4>
 
 ## Various board game:
-### Topics
+### Topics:
 * 2D version X and O. 
 * 3D version X and O. 
 * Chess. 
@@ -365,11 +365,259 @@ This open-ended project involving design, simulation, and analysis of a digital 
 * Gomoku game. 
 * Monopoly game.
 ### Details: 
-* You need to design the basic game design for two players using combinational logic. Some games may involve underlying physical rules you need to follow. Please consider how to handle it.</span>
+* You need to design the basic game design for two players using combinational logic. Some games may involve underlying physical rules you need to follow. Please consider how to handle it.
 * You can enumerate/compute all possible winning/losing/tie games for the players. You are recommended to design this part by using the combinational analysis.
-* Design a simple strategy allowing a human-machine game interaction. It might be as simple as placing the O on the left of X or you may refer to algorithms to simplify it to a more complicated decision logic.</span>
+* Design a simple strategy allowing a human-machine game interaction. It might be as simple as placing the O on the left of X or you may refer to algorithms to simplify it to a more complicated decision logic.
 * The player needs to be prohibited from moving/changing other player's moves. You also need to consider if the win/lose/tie happens, the player is no longer allowed to play unless the game is reset.
 * User-friendly display to identify win/lose/tie situations.
 * Store and update the player's gaming record, win/tie/loss after every game. You can probably consider using an integrated counter to tick the clock once such a case happens.
 * The size of the "board" is highly recommended to be limited to 10 x 10 rather than a full/large scale, and the player number is limited to 2.
 
+## Meaningful LED display
+### Topics:
+* Led display for public transportation.
+
+### Details:
+
+* Store the letter for the LED display in memory or using combination logic (not recommended). Only including A~Z &amp; 0~9 is fine, while you may consider other graphic displays (airplane signs) that may incur more overhead.
+* Allow multiple patterns/colors for display:
+* CATbus's screen may display the pattern with rotation of RED-CLEMSON/RED-CENTRAL/GO TIGERS/BEAT XXX(change based on a specific football game)/Merry Christmas/Have a Nice Day.  
+* Long string display within the limited LED space: Suppose the screen can only display 5 characters to allow the user to see the entire word of CLEMSON. You need to display 【CLEMS】【LEMSO】,【EMSON】 cyclically. The shift register may realize this function.
+
+<h4> Binary computation for different purposes (extension of Lab 5 to Lab 7)</h4>
+## General-purpose binary computing
+### Topics:
+* Calculator
+* Fast adder realization.
+* Multiplier tree realization.
+* Modular computation.
+* Sequence generator
+
+### Details:
+
+#### Calculator
+
+* 8-bit Addition/Subtraction/Multiplication. Please do this part by extending your design from labs 5, 6, 7 or using available 74-series chips in Logisim Evolution.
+* Try out 8-bit Division.
+* Fixed-point decimal operation.
+* Show current computation type using LED matrix.
+* Store prior computation results.
+* Allow CE/C to function as the real calculator does.
+
+
+#### Fast adder and multiplication tree realization:
+* Multiple fast adders and multiplier trees are introduced in the lab slide, which are listed as extra materials for students' interest here. Please try to search for related references and design them.
+* Try to examine the difference between different fast adders and multiplier trees.
+
+
+#### Modular computation
+
+* Modular computation is widely used for cryptographic operations, where the computations are typically done over a prime, like 17, 19.
+* You need to design modular addition, modular subtraction, and modular multiplication. You may refer to the following wiki pages for more algorithmic details.
+[https://en.wikipedia.org/wiki/Modular_arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic)
+[https://en.wikipedia.org/wiki/Barrett_reduction](https://en.wikipedia.org/wiki/Barrett_reduction)
+[https://en.wikipedia.org/wiki/Montgomery_modular_multiplication](https://en.wikipedia.org/wiki/Montgomery_modular_multiplication) 
+
+#### Sequence generator
+
+* Generate the sequence by computation following the rule of generation. A typical example of a Fibonacci array.
+* Show the sequence and sequence types using the display.
+
+## Sport scoreboard
+### Topics:
+* Americal football scoreboard
+* Basketball scoreboard.
+* Tennis scoreboard.
+
+### Details:
+* High-performance player/Team player statistics.
+* Consider timeout countdown, resetting the clock. One example could be the clock countdown in a basketball game. When the remaining second is less than ten, it will display one-tenth of a second.
+* Resetting the scoreboard.
+* English letter display for personal fouls.
+* Simple time-multiplexed display for concurrent games.
+* Other necessary display features.
+
+## Quiz buzzer
+### Topics:
+* Quiz buzzer.
+
+### Details: 
+
+* Suppose there are multiple players/teams. You are expected to find the player who first presses the button and tries to answer the quiz. 
+* It is an add-on to the timer and clock. You need to design additional registers to sample the simulated push signal by using pins.
+* It would be great to record whoever comes to the second and third, etc.
+* It can also include a scoreboard as a subset to record team scores if they answer the question correctly or not.
+
+
+
+Daily transaction
+Topics
+
+
+* Parking meter.
+* Vending machine.
+* Pill separator.
+
+Details:
+
+* For parking meter/vending machine:
+* Accept quarter/half-dollar/$1, $2, $5 bills. You can consider penny/dime/nickel.
+* For pill separator:
+** Count-down timer to decide which types of pills should be consumed. The time intervals can be reconfigured.
+** Allow purchasing/consuming multiple types of parking time/merchandise/types of pills.
+* Give change if needed using comparison logic. A good 74-seris chip is 7485 in Logisim Evolution. Return bills if needed.
+* Warning sign if low in stock/parking time is about to expire.
+* Allow the user to load a custom amount of goods/pills if they are out of stock and change the stock after loading.
+* This design is supposed to be a sequential design. Every time (let's say every second) you insert one bill/coin, the machine must record it, and use the recorded money value to return changes and goods.
+
+<h4>Integrated counter application (extension of Lab 8, 10)</h4>
+## Topics:
+
+
+* Traffic light (counter-based/memory-based).
+* Using counters to replicate iPhone clock.
+* Fitness watch design.
+* Washing machine simulation.
+* Oven simulation.
+* Microwave simulation.
+* Refrigerator simulation.
+
+## Details:
+### Traffic light:
+* Use integrated counter or memory to design the traffic light.
+* Left turn/pedestrian signal/sensor-based signal.
+* Configurability of the different traffic phase-switching patterns (peak hour/night hour).
+* Countdown clock for red &amp; green light.
+* Low traffic blinking light (blinking red/blinking yellow)
+* Consider a train going through Level crossing [https://en.wikipedia.org/wiki/Level_crossing](https://en.wikipedia.org/wiki/Level_crossing)
+* 4-arrow left turn signal. 
+* Consider green wave design for multiple intersections [https://en.wikipedia.org/wiki/Green_wave](https://en.wikipedia.org/wiki/Green_wave).
+* All sensor/external triggers can be abstracted as input pins.
+
+### Clock based design for IPhone clock/Fitness clock/Home Appliances
+* Basic clock feature with hour/min/sec with the decimal display.
+* Basic timer for counting down with set/reset/display.
+* Basic meter for counting up with set/reset/display.
+* Record lap-wise time.
+* The alarm clock design allows snoozing.
+* Include possible simple control signals to the motor.
+* You may consider displaying the time from 00:00 to 23:59 rather than 12:00 am to 11:59 pm.
+
+
+
+<h4> Memory applications (extension of Lab 9)</h4>
+## Topics:
+* Digital circuit functionality checker.
+* Memory tester.
+
+## Details:
+
+### Digital circuit functionality checker for multiple 74-series
+
+* You need to record the possible input/output pairs for the 74-series chips like the physical one in the lab.
+* The physical tester in the lab room includes sequential 74-series chips, which could be challenging. You may consider how to extend it.
+* The tester may need to automatically detect if the chip is 14 pins or 16 pins or more.
+* Connect the IC tester with the 74-series chip, and the tester enumerates all possible input vectors(multiple input pins) stored in the memory.
+* You need to design a custom malfunctioning 74-series chip to verify its capability to indicate malfunctioning chips.
+* Warning sign if the DUT has different functions and displays the malfunctioning input/output.
+* Give hints for possible fixing methods with the proper display.
+
+### Memory tester
+
+* This is similar to memory/cache lab. However, here, you need to write the RAM using input/output pins rather than ROM.
+* Create a RAM with read and write capability.
+* Write in the custom meaningful data with bit-width 8 in two ways:
+* Initialize the value stored in the RAM (all 0 is the special case), you need to find your own possible meaning full initial values.
+* User custom data input (possibly with input/output pins or other good interface).
+* Read the data from the RAM and properly store and display it.
+* Users determine whether the current state is a read process or a write process. You can design your own read/write process patterns. Use LED indicator for interaction.
+* A pratical example is:
+
+** You store data "Hello World" in your memory by external output NOT by intialize the stored value by hand as did in Lab 9.
+** Once the write process finish, you read the memory, and possibly show the "Hellow world" in the way you want to display.
+** Introduce error during multiple read/write iterations, and the stored data may become "Hello Morld", and your display can show such a difference.
+** Once you find there is an error, you can again, write back the "Hello World" back to the RAM.
+
+
+
+<h4> Processor design (extension of Lab 8)</h3>
+## Topics:
+* Simple ALU/processor design.
+
+## Details:
+
+* Simple ALU/processor design
+
+* A typical instruction-based processor involves 5 stages: IF = Instruction Fetch, ID = Instruction Decode, EX = Execute, MEM = Memory access, WB = Register write back, refer to [https://en.wikipedia.org/wiki/Instruction_pipelining](https://en.wikipedia.org/wiki/Instruction_pipelining)
+
+
+ 
+
+* Here, having ID, EX, and WB stages using the gate-level design is doable. Having the EX stage is a plus. This design is required to have a clock signal.
+
+* In the ID stage, you retrieve the instruction code from the register (D flip-flop)
+* In the EX stage, you perform the instruction (arithmetic/logic operations). You have already done something similar in the MSI circuit lab; here, you need to extend it to a larger context.
+* In the WB stage, you extract the computation result from the ALU, and display/store it in the way you want.
+ 
+
+
+<table style="border-collapse: collapse; width: 95.8525%; height: 59px;" border="1"><caption>ALU instruction execution clock cycle-wise explanation</caption>
+<tbody>
+<tr style="height: 30px;">
+<td style="width: 24.9764%; height: 30px; text-align: center;">clk 0 (ID stage)</td>
+<td style="width: 24.9764%; height: 30px; text-align: center;">clk 1~ -1 (EX stage)</td>
+<td style="width: 24.9764%; height: 30px; text-align: center;">clk -1 (WB stage)</td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 24.9764%; height: 29px; text-align: center;">
+<p>Extract the data from the data register.</p>
+<p>Extract the instruction code from the instruction register.</p>
+<p>Both instruction &amp; data registers are connected with input pins.</p>
+</td>
+<td style="width: 24.9764%; height: 29px; text-align: center;">
+<p>Perform the computation within the ALU.</p>
+<p>It is possible the instruction may take multiple clock cycles. Here, at most, 3 clock cycles for computations are enough.</p>
+</td>
+<td style="width: 24.9764%; height: 29px; text-align: center;">
+<p>Extract the computation result from the ALU.</p>
+<p>Use the proper way to display (LED/7-seg)</p>
+</td>
+</tr>
+</tbody>
+</table>
+ 
+
+* Using MUX to instruct the processor for different operations for given operands.
+* Possible operation include basic logic operation(AND/OR/XOR/XNOR etc) &amp; basic arithmetic operation(ADD/SUB/Multiplication/Mod operation/Exponential operation)
+* You can also make the design interactive by highlighting the current operation stage the ALU is working at.
+* Try to minimize the total number of gates/ICs (make some of the gates/ICs multi-functional)
+* Please refer to this document for an alternative description. <a class="instructure_file_link instructure_scribd_file inline_disabled" title="dl_lab.pdf" 
+
+
+
+<h4> Details:Real-life system design (extension of all labs)</h4>
+## Topics:
+
+* Digital lock.
+* Elevator simulation.
+
+## Details:
+
+### Digital lock
+* Set and store the correct password with 4~10 digits using input buttons
+* Enter the correct password to unlock using the same input buttons.
+* Cool down the period if the user has entered multiple incorrect passwords.
+
+### Elevator simulation
+
+* Design the elevator for at least five floors.
+* Users can push the up/down button to access the elevator.
+* Consider possible override by firefighter/elevator operator.
+* Please refer to this document for a more detailed description here in this file. 
+
+
+
+<h4> Other related online resources</h4>
+
+* You can also refer to the playlist here for more details: [https://www.youtube.com/playlist?list=PLvjlcTfwDj4spSN4g3S8IHbqY4Qkb5LxP](https://www.youtube.com/playlist?list=PLvjlcTfwDj4spSN4g3S8IHbqY4Qkb5LxP)
+* The video is based on the lab manual available in this GitHub link [https://github.com/grself/CIS221_Lab_Manual/tree/master](https://github.com/grself/CIS221_Lab_Manual/tree/master) I 
