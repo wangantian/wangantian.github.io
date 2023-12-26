@@ -12,7 +12,7 @@ Design concepts and factors influencing the choice of technology; fundamental MO
 
 Lab materials
 ======
-The lab originates from the previous offerings of this course written in HSpice using Synopsys toolchain. This semester, we switch to Cadence toolchain, and use SPECTRE instead. The overall lab setting replicates similar lab settings in prior semesters with minor difference. Apart from that, I introduced [Lab 4](#Lab 4), [Lab 5](#Lab 5) and changed the [final project topic](#Lab 6), with more empirical and comprehensive experience with CMOS intergrated circuit design.  Apart from that, part of the [RTL2GDSII workflow](#Lab Extra) was introduced in the lab session.
+The lab originates from the previous offerings of this course written in HSpice using Synopsys toolchain. This semester, we switch to Cadence toolchain, and use SPECTRE instead. The overall lab setting replicates similar lab settings in prior semesters with minor difference in [Lab 0](#Lab 0), [Lab 1](#Lab 1), [Lab 2](#Lab 2), [Lab 3](#Lab 3). Apart from that, I introduced [Lab 4](#Lab 4), [Lab 5](#Lab 5) and changed the [final project topic](#Lab 6), with more empirical and comprehensive experience with CMOS intergrated circuit design.  Apart from that, part of the [RTL2GDSII workflow](#Lab Extra) was introduced in the lab session.
 
 The following material is edited after the course offering for 2023 Fall, making the in-class slide information intergrated with the lab assignment instructions. 
 
@@ -82,7 +82,7 @@ subckt invs_subckt inv_out inv_in
 ends invs_subckt
 </pre>
 
-` g45n1svt, g45p1svt ` represent the type of NMOS/PMOS transistor used in this circuit, and `w, l` represent the width and length of the circuit. Within the SPECTRE, the transistors ports are ordered as (drain gate source body). `mp1, mn1` are the name of the transistor.  Within this subcircuit, the node `vdd!`, and `0` define the power supply and ground, and `vdd` itself is the power supply voltage. 
+`g45n1svt, g45p1svt` represent the type of NMOS/PMOS transistor used in this circuit, and `w, l` represent the width and length of the circuit. Within the SPECTRE, the transistors ports are ordered as (drain gate source body). `mp1, mn1` are the name of the transistor.  Within this subcircuit, the node `vdd!`, and `0` define the power supply and ground, and `vdd` itself is the power supply voltage. 
 
 `dc_analy0 dc param=vs0 start=0 stop=vdd step=0.01` shows the instantiation of the direct-current source named as `dc_analy0`, with voltage start from `0` to `vdd` with step size of `0.01`V, while `v1 (inv_in2 0) vsource dc=vs2 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u` defines another pulse wave fed to `inv_in2` port. `trans1 tran stop=10u method =trap` should go along with this pulse wave input to allow the correct transicent anlayis, with trap stands for the [trapezoidal method](https://en.wikipedia.org/wiki/Trapezoidal_rule) for internal numerical anlaysis.
  <pre>simOptions options temp=25</pre> define the temperature used for the simulation.
@@ -216,39 +216,55 @@ Based on the provided example, students are expected to find and compute explore
 This lab focus on the basic CMOS combinational logic inverter, students are expected to verify the concepts learnt in the lecture, and find the actual characteristics of the 45nm gpdk library.
 The students are provided script of the circuit available [here](/file/Teaching_Clemson/459_lab3.scs) and MDL file available [here](/file/Teaching_Clemson/459_lab3.mdl) here as example.
 
-<h3>Measure $t_{pHL}$ and $t_{pLH}$ TODO</h3>
+<h3>Measure $t_{pHL}$ and $t_{pLH}$</h3>
+The $t_{pHL}$ and $t_{pLH}$ is defined as follows:
 
+* $t_{pHL}$： delay from input 50% to outupt 50% when output is falling. 
+* $t_{pLH}$： delay from input 50% to outupt 50% when output is rising.
 
+From the practice of this lab, we introduced two ways of delay measurements:
+* One simple way is to directly use the rising time and falling time at certain node as a surrogate measurement of the delay. Such a measrument will results in a difference compared to the actual measrument following the definition. It can be measured by using MDL below, included in the [MDL script](/file/Teaching_Clemson/459_lab3.mdl).
+<pre>
+// computation of risetime for signal V(out0) from 10% to 90%
+export real rise=risetime(sig=V(out0), initval=vdd*.1, finalval=vdd*.9)
+
+//computation of falltime for signal V(out0) from 90% to 10%
+export real fall=falltime(sig=V(out0), initval=vdd*.9, finalval=vdd*.1)
+</pre>
+* The accurate method follow the definition of $t_{pHL}$ and $t_{pLH}$. It start the measurement when the input signal reach the threshold in certain direction, and stop it when the target output signal reaches predefined direction with certain threshold. Such a measurement resulting more accurate measurement while incurs extra difficulty when involves optimization. It can be measured by using MDL below, included in the [MDL script](/file/Teaching_Clemson/459_lab3.mdl).
+<pre>
+//computation of of actual tplh based on the definition 
+export real tplh1 = deltax(sig1=V(in1), sig2=V(out10),dir1='fall, thresh1=vdd*.5,dir2='rise, thresh2=vdd*.5, start1=0, start2=0)
+
+//computation of of actual tphl based on the definition 
+export real tphl1 = deltax(sig1=V(in1), sig2=V(out10),dir1='rise, thresh1=vdd*.5,dir2='fall, thresh2=vdd*.5, start1=0, start2=0)
+</pre>
+
+</h3>Change the parameter</h3>
+The reason to encourage highly parameterized design is to allow the simple measurements when we only want to change select parameter for some values. Below is the example need to encluded in the [MDL script](/file/Teaching_Clemson/459_lab3.mdl) to change the NMOS width and run the transicent analysis.
+<pre>
+foreach w_n from {300n,600n,900n,1200n,1500n,1800n} 
+{
+	w_p=w_n*2
+	run trans_q2
+}
+</pre>
+
+ 
 <h3>Lab assignements</h3>
 
-Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
+Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester:
 
   * Construct a CMOS inverter with input port labeled as $V_{in}$, and both NMOS and PMOS set as W=300n, L=100n.
-  * Find the $t_{pHL}$ and $t_{pLH}$
-      * $t_{pHL}$： delay from input 50% to outupt 50% when output is falling. 
-      * $t_{pLH}$： delay from input 50% to outupt 50% when output is rising.
-	
-	Both information is measured via the rising/falling edge of input voltage. Take a screenshot of the measurement result in the .measure file and attach it in the report.
-
-  * Analyze the DC characteristic of the CMOS inverter (one graph):
+  * Find the $t_{pHL}$ and $t_{pLH}$ in .measure file. 
+  * Analyze the DC characteristic of the CMOS inverter:
       * Set the Length of the NMOS and PMOS as a constant: 100n; Width of the NMOS as a constant: 300n. 
       * DC analysis the VIN (x axis) from 0 to 1.1v with a step of 0.01v 
       * Change the Beta ratio of the NMOS and PMOS by sweeping the Width of PMOS from 200n to 1000n with a step of 100n. 
-      * View the VOUT (y axis) plot. 
-
-
+      * View the VOUT (y axis) plot.  
   * Use the measurement tool and the graph to find the closest Width value of the PMOS that has the Switching Threshold closest to half of the $V_{dd}$ ($V_{dd}/2$). We will use this balanced inverter for the following tasks. Marker->create marker->horizontal ->$V_{dd}/2$
-  * Set the Width of the PMOS to be the value you found in previous bullentin. In this part, you are required to discover one of the characteristics of the CMOS inverter: delay($T_p$) as a function of $V_{dd}$. Now set the Width of the PMOS to be the value you found in previous bullentin. Use the MDL command shown below 
-  <pre>
-	foreach w_n from {300n,600n,900n,1200n,1500n,1800n} 
-	{
-	w_p=w_n*2
-	run trans_q2
-	}
-  </pre>
-  in the slides to change the value of the parameter ‘vdd’ so that the supply voltage will change: 0.5:0.1:1.1. The results will shown in ‘.mt’ file. You need to measure the inverter delay ($T_p$) corresponding to different supply voltage. Remember, you need to measure both $t_{pHL}$ and $t_{pLH}$ in order to get the delay $T_p$.  After you have found the inverter delay for each $V_{dd}$, you need to plot these data ($V_{dd}$ being X axis, and $T_p$ being Y axis) using any proper tool (e.g., excel, Matlab).  
-  * In this part, you need to fin the device sizing versus delay $T_p$. Similar to previous bullentin, where you need to measure $T_p$ with different $V_{dd}$, here you need to measure $T_p$ with different size of CMOS inverter:  1:1:6 multiples of the width (both NMOS and PMOS) in the balanced inverter obtained.
-  * Also, keep the length fixed and connect the output of the balanced inverter to a load (two balanced inverters which are exactly the same as you obtained in previous bullentin). Also, you need to MDL commands. Then, use appropriate tool to plot the data (Width being X axis, and $T_p$ being Y axis). 
+  * Set the Width of the PMOS to be the value you found in previous bullentin, you need to find the delay($T_p$) as a function of $V_{dd}$. Now set the Width of the PMOS to be the value you found in previous bullentin, and change the supply voltage parameter from 0.5v to 1.1V with step of 0.1V. The results will shown in ‘.mt’ file. You need to measure the inverter delay ($T_p$) corresponding to different supply voltage. Remember, you need to measure both $t_{pHL}$ and $t_{pLH}$ in order to get the delay $T_p$.  After you have found the inverter delay for each $V_{dd}$, you need to plot these data ($V_{dd}$ being X axis, and $T_p$ being Y axis) using any proper tool (e.g., excel, MATLAB).  
+  * In this part, you need to find the device sizing versus delay $T_p$, here you need to measure $T_p$ with different size of CMOS inverter:  1:1:6 multiples of the width (both NMOS and PMOS) in the balanced inverter obtained. In this process, you need to connect the Inverter with different NMOS/PMOS width with TWO balanced inverters, find in the Third bullentin. After that, you need to MDL commands. Then, use appropriate tool (e.g., excel, MATLAB) to plot the data (Width being X axis, and $T_p$ being Y axis). 
 
 
 <h2 id="Lab 4">Lab 4 Delay of combinational logic</h2>
