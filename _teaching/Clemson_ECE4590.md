@@ -63,13 +63,16 @@ After run the command, you are expected to see three waveform stored in .raw fil
 
 These three types of waveforms are the ones used throughout the lab assignements.
 
+
+<h3>Generated file types </h3>
 Along the following lab, multiple files will be generated, below are the ones will happen this lab:
 
   * .log file for the running process output.
   * .raw file for the waveform and all data.
-  * .measure file for measurements. 
+  * .measure file for all detialed measurements. 
   * .mt file for table-like measurement results.
   
+<h3>Explaination of the circuit script</h3>
 The script describe a simple inverter written using or not using subcircuit. The one shown below is the one using subcircuit.
 
 <pre>
@@ -79,9 +82,9 @@ subckt invs_subckt inv_out inv_in
 ends invs_subckt
 </pre>
 
-` g45n1svt/g45p1svt ` represent the type of NMOS/PMOS transistor used in this circuit, and <pre>w, l</pre> represent the width and length of the circuit. Within the SPECTRE, the transistors ports are ordered as (drain gate source body). <pre>mp1, mn1</pre> are the name of the transistor.  Within this subcircuit, the node `vdd!`, and `0` define the power supply and ground, and <pre>vdd</pre> itself is the power supply voltage. 
+` g45n1svt, g45p1svt ` represent the type of NMOS/PMOS transistor used in this circuit, and `w, l` represent the width and length of the circuit. Within the SPECTRE, the transistors ports are ordered as (drain gate source body). `mp1, mn1` are the name of the transistor.  Within this subcircuit, the node `vdd!`, and `0` define the power supply and ground, and <pre>vdd</pre> itself is the power supply voltage. 
 
-<pre>dc_analy0 dc param=vs0 start=0 stop=vdd step=0.01</pre> shows the instantiation of the direct-current source named as <pre>dc_analy0</pre>, with voltage start from 0 to vdd with step size of 0.01V, while <pre> v1 (inv_in2 0) vsource dc=vs2 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u </pre> defines another pulse wave fed to inv_in2 port. <pre>trans1 tran stop=10u method =trap </pre> should go along with this pulse wave input to allow the correct transicent anlayis, with trap stands for the [trapezoidal method](https://en.wikipedia.org/wiki/Trapezoidal_rule) for internal numerical anlaysis.
+`dc_analy0 dc param=vs0 start=0 stop=vdd step=0.01` shows the instantiation of the direct-current source named as `dc_analy0`, with voltage start from 0 to vdd with step size of 0.01V, while ` v1 (inv_in2 0) vsource dc=vs2 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u` defines another pulse wave fed to inv_in2 port. `trans1 tran stop=10u method =trap` should go along with this pulse wave input to allow the correct transicent anlayis, with trap stands for the [trapezoidal method](https://en.wikipedia.org/wiki/Trapezoidal_rule) for internal numerical anlaysis.
  <pre>simOptions options temp=25</pre> define the temperature used for the simulation.
 
 The provided script is highlyer parameterized to allow simple modification based on the lab requirements. 
@@ -92,14 +95,36 @@ This lab is expected to learn how to do detial DC analysis using NMOS and PMOS.
 The students are provided script of the circuit available [here](/file/Teaching_Clemson/459_lab1.scs) as example.
 Based on the provided example, students are expected to explore the various parameters of 45nm gpdk library. 
 
-A select subset of new commands are used in this lab:
 
+<h3>Save transistor parameters</h3>
+`save xx.yy:zz` allows you to save the `zz` parameter of the `xx.yy` device. For the library used here, the naming follows [bsim4](https://cmosedu.com/cmos1/BSIM4_manual.pdf) simulation model. `xx.` can be omitted if the target transistor does not located within the subcircuit. 
+  * Ids:	Resistive drain-to-source current
+  * ueff:	Effective mobility at the specified analysis temperature
+  * all:	Everything
+  * vdsat:	Drain-source saturation voltage
+  * vgs:	Gate-source voltage
+  * vth:	Threshold voltage
+
+<h3>Library width, length, temperature limitation</h3>
+The transistor models within the library are restricted by width, length for the best simulation accuracy. The detials are avaliable wtihin the installation path of the library. 
 <h3>Sweep analysis </h3>
-<h3>Change temperature</h3>
-<h3>Extract MOSFET parameters</h3>
+Sweep analysis allows you to change one parameter/variable with limited values, like $$V_{gs}$$, and have the other parameter/variable(s) with higher precision, like  $$V_{ds}$$.
+It is a “for loop”, and can be represented as"
+
+<pre>
+For (vgs) from vgs1 to vgs5:
+	Record xx for dc analysis.
+</pre>
+
+And the syntax used in SPECTRE is shown as following, which is also avaliable in the provided example circuit script. 
+<pre>
+swp_a sweep param=vgs start=0 stop=? step=? {
+dc_a dc param=vds start=0 stop=? step=? 
+}
+</pre>
 
 <h3>Lab assignements</h3>
-Below are the ones we do for this semester.
+Below are the ones we do for this semester, students are highly encouraged to solidate all measurement within one script file, and leverage the parameterized design to ease the difficulties to complete this assignment.
   * Graph on $$ I_{ds} $$  versus $$ V_{gs} $$  (for different  $$ V_{ds} $$ ) for both NMOS and PMOS.
   * Graph on $$ I_{ds} $$  versus $$ V_{ds} $$  (for different  $$ V_{gs} $$ ) for both NMOS and PMOS.
   * Sub-threshold swing for both NMOS and PMOS.
@@ -112,13 +137,64 @@ Below are the ones we do for this semester.
 <h2 id="Lab 2">Lab 2 SPECTRE & DC numerical analysis of NMOS and PMOS</h2>
 
 This lab is built upon the prior lab experience with extra focus on extracting and computing various parameters and values using the graphic waveform and MDL tools to complete the measurement. 
-The students are provided script of the circuit available [here](/file/Teaching_Clemson/459_lab2.scs) and MDL file available [here](/file/Teaching_Clemson/459_lab2.mdl) here as example.
+The students are provided script of the circuit available [here](/file/Teaching_Clemson/459_lab2.scs) and MDL file available [here](/file/Teaching_Clemson/459_lab2.mdl) here as example. Apart from that, the concept of Monte Carlo simulation is also introduced in the lab, which is not required for this lab assignment. This part of script is available within the MDL_workshop tutorial under the SPECTRE installtion path. No change was made from the provided example file.  
 
-A select subset of new commands are used in this lab:
 
-<h3>Sweep analysis </h3>
-<h3>Change temperature</h3>
-<h3>.measure file</h3>
+<h3>Performing measurement for channel length modulation coefficient</h3>
+
+<h3>Measurement Description Language (MDL)</h3>
+MDL is a scripting and measurement language that enhances productivity during simulation and analysis.
+
+Advantages: 
+  * It create alias measurements that can be reused in different circuits. Efficiently run simulations in batch mode. 
+  * Parameterize alias measurements, making them reusable over various applications. 
+  * Use the wildcard (\*) in the MDL control file for all signal mapping.
+  * No need to have GUI if you  only care about the value. 
+
+<h3>MDL example</h3>
+Within the provided MDL [example script](/file/Teaching_Clemson/459_lab2.mdl), a simple measurement is done.
+
+<pre>
+alias measurement dc {
+	run dc_sweep_nmos
+    export real mn0_vdsat_0p0=mn0:vdsat@0
+}
+run dc
+
+</pre>
+Define the measurement name: alias measurement dc 
+Run the dc analysis by name: run dc_sweep_nmos
+It’s the name you give to the dc sweep analysis, NOT the .scs file. 
+Export the value of mn0:vdsat when sweep value is 0.
+The result will be printed in .measure file generated afterward.
+
+There exist two types of commands to run the MDL script, as shown below: 
+<pre>
+spectremdl -batch lab02.mdl -design  lab02.scs +log lab02.log
+spectre +mdl lab02.mdl -design  lab02.scs +log lab02.log
+</pre>
+
+<h3>Monte Carlo Analysis</h3>
+
+Why Monte Carlo:
+NOT all gates within the chips are identical, even set in identical width/length/technology.
+Process Variance exists within the chips.
+As long as it is functioning, it might be good?
+Monte Carlo:
+Investigate how device mismatches in a circuit can affect the circuit as a whole. 
+Done based on statistical distributions and calculate each parameter randomly according to a statistical distribution model. 
+The result is a range of possible outcome values. 
+Calculate the probabilities of different outcomes and perform additional analyses.
+
+From the guest lecture for Cornell ECE 5545, Cerebras by Sean Lie available at [https://www.youtube.com/watch?v=5_qVob2Vwf8](https://www.youtube.com/watch?v=5_qVob2Vwf8), it discussed how the real-world large chip design needs to consider such a variance.
+
+Within the MDL, it allows different statistic block to specify the Define the statistic variation patterns:
+The statistics blocks allow you to specify:
+batch-to-batch (process) and 
+per-instance (mismatch) variations for netlist parameters.
+These statistically-varying netlist parameters can be referenced by models or instances in the main netlist and may represent IC manufacturing process variation or component variations for board-level designs.
+
+
 
 <h3>Lab assignements</h3>
 
@@ -274,7 +350,7 @@ vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
 
 <h3>Unused lab assignements</h3>
   * 	On page 36 of 04_ICD_CMOS combinational gates, an interesting concept, ring oscillator, is introduced. 
-      * 	Please build the ring oscillator with stage 5 with an inverter with an NMOS/PMOS length of 100nm, an NMOS width of 300nm and a PMOS width of 600nm. You may use a subcircuit to facilitate the building process.
+      *  Please build the ring oscillator with stage 5 with an inverter with an NMOS/PMOS length of 100nm, an NMOS width of 300nm and a PMOS width of 600nm. You may use a subcircuit to facilitate the building process.
       * Please measure the oscillation frequency of such a circuit. 
       * Replace the first stage using the circuit shown below, and use the Monte Carlo method discussed during the previous lab session. Try to have multiple sets of PMOS/NMOS sizing with different parameters under identical distribution, what’s your finding? What could be the possible use case for such a design?
   * 	Multi-output combination circuit: In the homework, we have a combinational circuit with multiple outputs. Here, let’s examine it using the simulation tool.
