@@ -12,7 +12,7 @@ Design concepts and factors influencing the choice of technology; fundamental MO
 
 Lab materials
 ======
-The lab originates from the previous offerings of this course written in HSpice using Synopsys toolchain. This semester, we switch to Cadence toolchain, and use SPECTRE instead. The overall lab setting replicates similar lab settings in prior semesters with minor difference in [Lab 0](#Lab 0), [Lab 1](#Lab 1), [Lab 2](#Lab 2), [Lab 3](#Lab 3). Apart from that, I introduced [Lab 4](#Lab 4), [Lab 5](#Lab 5) and changed the [final project topic](#Lab 6), with more empirical and comprehensive experience with CMOS intergrated circuit design.  Apart from that, part of the [RTL2GDSII workflow](#Lab Extra) was introduced in the lab session.
+The lab originates from the previous offerings of this course written in HSpice using Synopsys toolchain. This semester, we switch to Cadence toolchain, and use SPECTRE instead. The overall lab setting replicates similar lab settings in prior semesters with minor difference in [Lab 0](#Lab 0), [Lab 1](#Lab 1), [Lab 2](#Lab 2), [Lab 3](#Lab 3). Apart from that, I modified and introduced [Lab 4](#Lab 4), [Lab 5](#Lab 5) and changed the [final project topic](#Lab 6), with more empirical and comprehensive experience with CMOS intergrated circuit design.  Apart from that, part of the [RTL2GDSII workflow](#Lab Extra) was introduced in the lab session.
 
 The following material is edited after the course offering for 2023 Fall, making the in-class slide information intergrated with the lab assignment instructions. 
 
@@ -240,7 +240,8 @@ export real tplh1 = deltax(sig1=V(in1), sig2=V(out10),dir1='fall, thresh1=vdd*.5
 export real tphl1 = deltax(sig1=V(in1), sig2=V(out10),dir1='rise, thresh1=vdd*.5,dir2='fall, thresh2=vdd*.5, start1=0, start2=0)
 </pre>
 
-</h3>Change the parameter</h3>
+<h3>Change the parameter</h3>
+
 The reason to encourage highly parameterized design is to allow the simple measurements when we only want to change select parameter for some values. Below is the example need to encluded in the [MDL script](/file/Teaching_Clemson/459_lab3.mdl) to change the NMOS width and run the transicent analysis.
 <pre>
 foreach w_n from {300n,600n,900n,1200n,1500n,1800n} 
@@ -270,7 +271,7 @@ Based on the provided example, students are expected to find and compute explore
 <h2 id="Lab 4">Lab 4 Delay of combinational logic</h2>
 
 This lab extend the study of inverter in previous lab, and explore the concepts learnt for basic combinational logics. 
-The students are provided script of the circuit available [here](/file/Teaching_Clemson/459_lab4.scs) and MDL file available [here](/file/Teaching_Clemson/459_lab4.mdl) here as example.
+The students are provided [SPECTRE circuit script for lab 4](/file/Teaching_Clemson/459_lab4.scs) and [MDL script](/file/Teaching_Clemson/459_lab4.mdl) here as example.
 
 A select subset of new commands are used in this lab:
 
@@ -279,10 +280,9 @@ Capacitor named as `C0` can be connected node `net13` with value of `CAP` to the
 <pre>C0 (net13 0) capacitor c=CAP
 </pre>
 
-<h3>Verifying combinational logic functionality using parameter set TODO</h3>
-Pulse wave has its minimal and maximal value within one period. 
-Define it within the parameter set by enumerating all possibilities.
-If minimal value = maximal value, then there is no change. 
+<h3>Verifying combinational logic functionality using parameter set</h3>
+For a $n$ input combinational logic, there is a possible $2^n$ input combinations. Also consider when we do the worst case delay analysis, we need to find the condition when only one single input's voltage value changed. Thus, we need to explore a new syntax in SPECTRE, name paramet to enumerate all possible initial and terminal value combinations. If initial value is identical to terminal value, then there is no change. It gives us the tool to do the worst-case delay analysis. Also, by changing the period of the individual input ports' pulse wave, we can examine the functionality of the combinational logic with full coverage. Below is the example file avaliable in [SPECTRE circuit script for lab 4](/file/Teaching_Clemson/459_lab4.scs)
+
 <pre>
 v1 (in0 0) vsource dc=vs type=pulse val0=init_a val1=term_a period=10u rise=5p fall=5p width=5u
 init_val  paramset{
@@ -310,7 +310,7 @@ zero {zero_statements}
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
   * Build an inverter as the first stage of your inverter chain (NMOS: 300n/100n; PMOS: 600n/100n.	Connect 64 identical inverter at the end of inverter chain to serve as the load capacitance. 
-  * Construct four inverter chains for N (number of stages) from 1 to 4. For the rest stages, you need to set the CMOS parameters for inverters (except the first one) based on the total number of stages and the design rule learned in class. 
+  * Construct four inverter chains for N (number of stages) from 1 to 4. For the rest of the  stages, you need to set the CMOS parameters for inverters (except the first one) based on the total number of stages and the design rule learned in class. 
   * Measure the Delay ($T_p$) for each inverter chain (final output), and here you still need to measure both $t_{pHL}$ and $t_{pLH}$ in order to get the delay $T_p$. 
   * Construct a CMOS inverter, Make the width (300n) and length (100n) fixed for NMOS, and length (100n) fixed for PMOS. Using the MDL Optimization tool, find the width of the PMOS for each of the following requirements: 
       * Make $t_{pLH}-t_{pHL}$ as close to zero as possible
@@ -321,14 +321,14 @@ Based on the provided example, students are expected to find and compute explore
       * Verify the functionality by feeding in the Pulse wave for all possible input combinations. Take a screenshot of it. 
   * The Logical effort is the ratio of a gate's input capacitance to an inverter's input capacitance, delivering the same output current. As mentioned in the slide, it can be measured from delay vs fanout plots. Let’s verify that here!
       * Build an inverter with an NMOS/PMOS length with 100nm, and NMOS width with 300nm and a PMOS width that satisfies the non-skewed inverter derived in problem 2. 
-      * Use the 2-input NAND gates and 2-input NOR gates built previously, and size it properly according to the inverter built in previous bullentin, according to the slide. [Note that it is possible to use an optimization tool to find the more realistic width using an optimization tool, which is not required here]. 
-      * Find the worst case propagation delay for inverter, 2-input NAND gate, and 2-input NOR gate when their load is 1,2,3,4 copy of itself. Find the slope of the delay trend, then report the founded logical effort and verify the concept.  
-      *  Verify the worst-case propagation delay input pattern as shown in the lecture using MDL for the 2-input NAND gate and 2-input NOR gate. 
+      * Use the 2-input NAND gates and 2-input NOR gates built previously, and size it that can deliver identical output current as  the inverter built in previous bullentin. [Note that it is possible to use an optimization tool to find the more realistic width using an optimization tool, which is not required here]. 
+      * Find the worst case propagation delay for inverter, 2-input NAND gate, and 2-input NOR gate when their load is 1, 2, 3, 4 copy of itself. Find the slope of the delay trend, then report the founded logical effort and verify the concept.  
+      *  Verify the worst-case propagation delay input patterns as shown in the lecture using MDL for the 2-input NAND gate and 2-input NOR gate. 
       *  Build the 3-input NAND gate and 3-input NOR gate, and size it properly according to the inverter built in a, according to the slide.  
       *  Find the worst-case propagation delay for gates when load is 1,2,3,4 copies of itself. Find the slope of the delay trend, then report the founded logical effort and verify the concept.  
       *  Verify the worst-case propagation delay input pattern as shown in the lecture using MDL for the 3-input NAND gate and 3-input NOR gate. 
 
-  * Using the 2-input, 3-input NAND gates derived in the previous step. Perform progressive sizing of NMOS  to examine the difference between different propagation delays.  Suppose the topmost NMOS gate size derived in the previous step is W_nmos:
+  * Using the 2-input, 3-input NAND gates derived in the previous step. Perform progressive sizing of NMOS to examine the difference between different propagation delays.  Suppose the topmost NMOS gate size derived in the previous step is W_nmos:
       * For 2-input, the NMOS size from top down become W_nmos, W_nmos/2. 
       * For 3-input, the NMOS size from top down become W_nmos, 3*W_nmos/4, W_nmos/2.
       * Examine the change of worst-case delay in this case and discuss why it happened?
@@ -352,6 +352,7 @@ A select subset of new commands are used in this lab:
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
   * Verify the Elmore delay in SPECTRE. Connect the resistors and capacitors as shown in the circuit diagram below, where R=100Ohm and C=100pF. 
+  ![RC delay](/file/Teaching_Clemson/RC_delay.jpg "RC delay")
       * Measure the Propagation delay of the circuit diagram from the input and output1 and output2.  Measure the time from the start of the input rise to the 50% of output rise. 
       * Compute the Elmore delay equation learned in the lecture. 
       * Convert the Elmore delay to the propagation delay (multiply Elmore delay by 0.69) . 
@@ -374,10 +375,10 @@ Based on the provided example, students are expected to find and compute explore
           * Change the $\phi$ to a larger period and observe the charge leakage process, take a screenshot the waveform.
           * Change the $\phi$ to an even larger period, making the output logic cannot recover until it reaches another pre-charge cycle, take a screenshot the waveform.
 
-  * Let’s do something sequential: fix ALL widths and lengths of PMOS and NMOS, with PMOS width=600nm, NMOS width=300nm, and length=100nm. The SPECTRE code for D-flip flop is the exact copy avaliable under the MDL workshop directory. Keep the clock period at 80ns, and find a SINGLE D-flip flop's setup time and hold time. To find the setup time and hold time, you need to draft your MDL file by measuring the delay from clock rising edge to the Q’s rising edge, both at 0.5*vdd. Then, you need to change the point-wise signal’s rising time and falling time to find the setup time and hold time per definition.  The point-wise signal can be defined as follows:
-<pre>
-vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
-</pre>
+  * Let’s do something sequential: fix ALL widths and lengths of PMOS and NMOS, with PMOS width=600nm, NMOS width=300nm, and length=100nm. The SPECTRE code for D-flip flop is the exact copy avaliable under the MDL workshop directory. Keep the clock period at 80ns, and find a single D-flip flop's setup time and hold time. To find the setup time and hold time, you need to draft your MDL file by measuring the delay from clock rising edge to the Q’s rising edge, both at 0.5*vdd. Then, you need to change the point-wise signal’s rising time and falling time to find the setup time and hold time per definition.  The point-wise signal can be defined as follows:
+	<pre>
+	vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
+	</pre>
 
 <h3>Unused lab assignements</h3>
   * Ring oscillator
@@ -389,7 +390,7 @@ vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
       *	Verify the delay of branching. Load two branch outputs with identical capacitance load.
       *	Try to change the capacitance load of the branch with a larger worst case delay , and try to make two branches worst cast delay, Is such a change identical to the theoretical analysis?
   *	 NMOS and PMOS transmission gate. 
-      *	Build the circuit diagrams as the ones in Question 2.20 for [CMOS VLSI Design: A Circuits and Systems Perspective](https://pages.hmc.edu/harris/cmosvlsi/4e/index.html) , and verify if the simulation result fits the analytical one. 
+      *	Build the circuit diagrams as the ones in Question 2.20 for [CMOS VLSI Design: A Circuits and Systems Perspective](https://pages.hmc.edu/harris/cmosvlsi/4e/index.html), and verify if the simulation result fits the analytical one. 
       *	Exchange the source and drain of the connection, is that fit your expectation?
 
 
@@ -404,13 +405,21 @@ The requirements are listed below:
 * Trying to minimize the delay for worst case possbile input combinations. The one who received minimal delay gate size prodcut receive extra credits. 
 * Try to minimize the area (measured by width) and worst-case delay (measured in ns) product as typical IC design targets, the lower the product, the better the performance.
 
-<h2 id="Lab Extra">Lab Extra RTL 2 GDSII workflow</h2>
+<h2 id="Lab Extra">Lab Extra RTL2GDSII workflow</h2>
 
 In prior offerings, students also given the expierence of sythesizing the digtial circuit written in Verilog, extract the sythesized  netlist, and examine the timing performance and 
 
 In this semester, part of the workflow was introduced, and complete workflow for cadence 45nm library is updated below.
 
 <h3>Cadence example workflow download</h3>
+
+The example RTL2GDSII workflow is available under the Cadence training portal named as [Cadence RTL-to-GDSII Flow Training](https://www.cadence.com/en_US/home/training/all-courses/86136.html).
+
 <h3>Verilog compliation and simulation</h3>
+
 <h3>Verilog sythesis</h3>
+
 <h3>Verilog implementation</h3>
+
+<h3>EDA algorithm under the hood</h3>
+Though it is not required to understand the underlying mechanisim of teh RTL2GDSII workflow,Verilog implementation, students are encouraged to watch the following MOOC course to have a deepen understanding about the EDA algorithm, named as [VLSI CAD Part I: Logic](https://www.coursera.org/learn/vlsi-cad-logic), [VLSI CAD Part II: Layout](https://www.coursera.org/learn/vlsi-cad-layout).
