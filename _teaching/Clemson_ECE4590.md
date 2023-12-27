@@ -14,7 +14,7 @@ Lab materials
 ======
 The lab originates from the previous offerings of this course written in HSpice using Synopsys toolchain. This semester, we switch to Cadence toolchain, and use SPECTRE instead. The overall lab setting replicates similar lab settings in prior semesters with minor difference in [Lab 0](#Lab 0), [Lab 1](#Lab 1), [Lab 2](#Lab 2), [Lab 3](#Lab 3). Apart from that, I modified and introduced [Lab 4](#Lab 4), [Lab 5](#Lab 5) and changed the [final project topic](#Lab 6), with more empirical and comprehensive experience with CMOS intergrated circuit design.  Apart from that, part of the [RTL2GDSII workflow](#Lab Extra) was introduced in the lab session.
 
-The following material is edited after the course offering for 2023 Fall, making the in-class slide information intergrated with the lab assignment instructions. 
+The following material is edited after the course offering for 2023 Fall, and may not be updated in the forseeable future. 
 
 To make the lab run smoothly, you must load your SPECTRE, VIRTUOSO, and library properly. You are expected to use a 45nm standard voltage temperature CMOS model in most of the lab.   
 
@@ -42,8 +42,8 @@ This lab is expected to familarize with the tool.
 After load request a node with X11 forwarding capability using your prefered ssh tool. 
 You need to load the required cadence tool Virtuoso (IC/618) and SPECTRE (SPECTRE/211). Most of the cadence's tool documents are located within its installation path. 
 
-After load the file, you need to run the command under the identical directory of provided example file [here](/file/Teaching_Clemson/459_lab0.scs):
-
+After load the file, you need to run the command under the identical directory of provided 
+[SPECTRE circuit script for lab 0](/file/Teaching_Clemson/459_lab0.scs).
 <pre>
 spectre inv.scs +log inv.log
 </pre>
@@ -54,7 +54,7 @@ After that, you can type the command below to allow the wavefrom viewer pop out 
 viva &
 </pre>
 
-Using the provided [script](/file/Teaching_Clemson/459_lab0.scs), you **need to identify the location of your Cadence library** for gpdk45, at the begining of the script, which is `include "YOUR_GPDK_LIBRARY.scs" section=tt` as a placeholder.
+Using the provided [SPECTRE circuit script for lab 0](/file/Teaching_Clemson/459_lab0.scs), you **need to identify the location of your Cadence library** for gpdk45, at the begining of the script, which is `include "YOUR_GPDK_LIBRARY.scs" section=tt` as a placeholder.
 After run the command, you are expected to see three waveform stored in .raw file, opened by Viva:
 
 * An input-output voltage relation of an inverter with input voltage range from 0 to 1.1V, using dc analysis.
@@ -92,7 +92,7 @@ The provided script is highlyer parameterized to allow simple modification based
 <h2 id="Lab 1">Lab 1 SPECTRE & DC graphic analysis of NMOS and PMOS</h2>
 
 This lab is expected to learn how to do detial DC analysis using NMOS and PMOS. 
-The students are provided script of the circuit available [here](/file/Teaching_Clemson/459_lab1.scs) as example.
+The students are provided with [SPECTRE circuit script for lab 1](/file/Teaching_Clemson/459_lab1.scs) as example.
 Based on the provided example, students are expected to explore the various parameters of 45nm gpdk library. 
 
 
@@ -137,7 +137,7 @@ Below are the ones we do for this semester, students are highly encouraged to so
 <h2 id="Lab 2">Lab 2 SPECTRE & DC numerical analysis of NMOS and PMOS</h2>
 
 This lab is built upon the prior lab experience with extra focus on extracting and computing various parameters and values using the graphic waveform and MDL tools to complete the measurement. 
-The students are provided script of the circuit available [here](/file/Teaching_Clemson/459_lab2.scs) and MDL file available [here](/file/Teaching_Clemson/459_lab2.mdl) here as example. 
+Students are provided script of the circuit available [SPECTRE circuit script for lab 2](/file/Teaching_Clemson/459_lab2.scs) and [MDL script for lab 2](/file/Teaching_Clemson/459_lab2.mdl).
 
 Apart from that, the concept of [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) simulation is also introduced in the lab, which is not required for this lab assignment. This part of script is available within the MDL_workshop tutorial under the SPECTRE installtion path. No change was made from the provided example file.  
 
@@ -154,7 +154,7 @@ Advantages:
   * No need to have GUI if you  only care about the value. 
 
 <h3>MDL example</h3>
-Within the provided MDL [example script](/file/Teaching_Clemson/459_lab2.mdl), a simple measurement is done.
+Within the provided [MDL script for lab 2](/file/Teaching_Clemson/459_lab2.mdl),  a simple measurement is done. 
 
 <pre>
 alias measurement dc {
@@ -186,8 +186,7 @@ Purpose of Monte Carlo:
 
 From the guest lecture for Cornell ECE 5545, Cerebras by Sean Lie available at [https://www.youtube.com/watch?v=5_qVob2Vwf8](https://www.youtube.com/watch?v=5_qVob2Vwf8), it discussed how the real-world large chip design needs to consider such a variance.
 
-Within the MDL, it allows different statistic block to specify the Define the statistic variation patterns:
-The statistics blocks allow you to specify batch-to-batch (process) and per-instance (mismatch) variations for netlist parameters. These statistically-varying netlist parameters can be referenced by models or instances in the main netlist and may represent IC manufacturing process variation or component variations for board-level designs.
+Within the MDL, it allows different statistic block to specify the statistic variation patterns. The statistics blocks allow you to specify batch-to-batch (process) and per-instance (mismatch) variations for netlist parameters. These statistically-varying netlist parameters can be referenced by models or instances in the main netlist and may represent IC manufacturing process variation or component variations for board-level designs.
 
 
 
@@ -214,7 +213,7 @@ Based on the provided example, students are expected to find and compute explore
 <h2 id="Lab 3">Lab 3 Study of Inverter</h2>
 
 This lab focus on the basic CMOS combinational logic inverter, students are expected to verify the concepts learnt in the lecture, and find the actual characteristics of the 45nm gpdk library.
-The students are provided script of the circuit available [here](/file/Teaching_Clemson/459_lab3.scs) and MDL file available [here](/file/Teaching_Clemson/459_lab3.mdl) here as example.
+The students are provided with [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) as example, since the SPECTRE script of the inverter was already provided in [SPECTRE circuit script for lab 0](/file/Teaching_Clemson/459_lab0.scs).
 
 <h3>Measure $t_{pHL}$ and $t_{pLH}$</h3>
 The $t_{pHL}$ and $t_{pLH}$ is defined as follows:
@@ -231,7 +230,7 @@ export real rise=risetime(sig=V(out0), initval=vdd*.1, finalval=vdd*.9)
 //computation of falltime for signal V(out0) from 90% to 10%
 export real fall=falltime(sig=V(out0), initval=vdd*.9, finalval=vdd*.1)
 </pre>
-* The accurate method follow the definition of $t_{pHL}$ and $t_{pLH}$. It start the measurement when the input signal reach the threshold in certain direction, and stop it when the target output signal reaches predefined direction with certain threshold. Such a measurement resulting more accurate measurement while incurs extra difficulty when involves optimization. It can be measured by using MDL below, included in the [MDL script](/file/Teaching_Clemson/459_lab3.mdl).
+* The accurate method follow the definition of $t_{pHL}$ and $t_{pLH}$. It start the measurement when the input signal reach the threshold in certain direction, and stop it when the target output signal reaches predefined direction with certain threshold. Such a measurement resulting more accurate measurement while incurs extra difficulty when involves optimization. It can be measured by using MDL below, included in the [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl).  
 <pre>
 //computation of of actual tplh based on the definition 
 export real tplh1 = deltax(sig1=V(in1), sig2=V(out10),dir1='fall, thresh1=vdd*.5,dir2='rise, thresh2=vdd*.5, start1=0, start2=0)
@@ -242,7 +241,7 @@ export real tphl1 = deltax(sig1=V(in1), sig2=V(out10),dir1='rise, thresh1=vdd*.5
 
 <h3>Change the parameter</h3>
 
-The reason to encourage highly parameterized design is to allow the simple measurements when we only want to change select parameter for some values. Below is the example need to encluded in the [MDL script](/file/Teaching_Clemson/459_lab3.mdl) to change the NMOS width and run the transicent analysis.
+The reason to encourage highly parameterized design is to allow the simple measurements when we only want to change select parameter for some values. Below is the example need to encluded in the [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) to change the NMOS width and run the transicent analysis.
 <pre>
 foreach w_n from {300n,600n,900n,1200n,1500n,1800n} 
 {
@@ -271,7 +270,7 @@ Based on the provided example, students are expected to find and compute explore
 <h2 id="Lab 4">Lab 4 Delay of combinational logic</h2>
 
 This lab extend the study of inverter in previous lab, and explore the concepts learnt for basic combinational logics. 
-The students are provided [SPECTRE circuit script for lab 4](/file/Teaching_Clemson/459_lab4.scs) and [MDL script](/file/Teaching_Clemson/459_lab4.mdl) here as example.
+The students are provided [SPECTRE circuit script for lab 4](/file/Teaching_Clemson/459_lab4.scs) and [MDL script for lab 4](/file/Teaching_Clemson/459_lab4.mdl) as example.
 
 A select subset of new commands are used in this lab:
 
@@ -337,16 +336,21 @@ Based on the provided example, students are expected to find and compute explore
 
 <h2 id="Lab 5">Lab 5 Combinational Logic Family, Wire, Sequential Logic</h2>
 
-This lab serves as the last regular lab for this course. Here, the students are expected to examine the remaining concepts that haven't verified in the previous labs. 
-The students are provided script of the circuit available [here](/file/Teaching_Clemson/459_lab5.scs) and MDL file available [here](/file/Teaching_Clemson/459_lab5.mdl) here as example.
+This lab serves as the last regular lab for this course. Here, the students are expected to examine the remaining concepts that haven't verified in the previous labs. No custom example script is provided for this lab since students are expected to have fimarlized with the SPECTRE design. 
 
 A select subset of new commands are used in this lab:
 
 <h3>Resistor connection</h3>
+Similar to the capcitor connection, resistor can be connected to the circuit as shown below by identifying the name of the resistor, the two ends of resistor connections and its value. 
+<pre>
+R0    (net10 0) 		resistor r=10 
+</pre>
 
-<h3>Change temperature</h3>
 <h3>Point-wise signal definition</h3>
-
+The point-wise signal can be defined as follows, with the format of time and desired voltage at that time.
+<pre>
+vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
+</pre>
 <h3>Lab assignements</h3>
 
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
@@ -375,10 +379,7 @@ Based on the provided example, students are expected to find and compute explore
           * Change the $\phi$ to a larger period and observe the charge leakage process, take a screenshot the waveform.
           * Change the $\phi$ to an even larger period, making the output logic cannot recover until it reaches another pre-charge cycle, take a screenshot the waveform.
 
-  * Let’s do something sequential: fix ALL widths and lengths of PMOS and NMOS, with PMOS width=600nm, NMOS width=300nm, and length=100nm. The SPECTRE code for D-flip flop is the exact copy avaliable under the MDL workshop directory. Keep the clock period at 80ns, and find a single D-flip flop's setup time and hold time. To find the setup time and hold time, you need to draft your MDL file by measuring the delay from clock rising edge to the Q’s rising edge, both at 0.5*vdd. Then, you need to change the point-wise signal’s rising time and falling time to find the setup time and hold time per definition.  The point-wise signal can be defined as follows:
-	<pre>
-	vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
-	</pre>
+  * Let’s do something sequential: fix ALL widths and lengths of PMOS and NMOS, with PMOS width=600nm, NMOS width=300nm, and length=100nm. The SPECTRE code for D-flip flop is the exact copy avaliable under the MDL workshop directory. Keep the clock period at 80ns, and find a single D-flip flop's setup time and hold time. To find the setup time and hold time, you need to draft your MDL file by measuring the delay from clock rising edge to the Q’s rising edge, both at 0.5*vdd. Then, you need to change the point-wise signal’s rising time and falling time to find the setup time and hold time per definition.  
 
 <h3>Unused lab assignements</h3>
   * Ring oscillator

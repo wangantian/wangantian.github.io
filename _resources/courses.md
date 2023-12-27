@@ -20,5 +20,8 @@ redirect_from:
 
 ## EDA algorithm
 
+## Hardware security
 
- 
+## Artificial Intelligence, Machine Learning, and Deep Learning
+
+## Computer security 
