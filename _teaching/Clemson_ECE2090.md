@@ -269,6 +269,11 @@ Persistence of vision
 How does a Universal Serial Bus(USB) work
 
 [![USB](https://img.youtube.com/vi/wdgULBpRoXk/0.jpg)](https://youtu.be/wdgULBpRoXk "USB")
+
+USB 101
+
+[https://www.infineon.com/dgdl/Infineon-AN57294_USB_101_An_Introduction_to_Universal_Serial_Bus_2.0-ApplicationNotes-v09_00-EN.pdf?fileId=8ac78c8c7cdc391c017d072d8e8e5256](https://www.infineon.com/dgdl/Infineon-AN57294_USB_101_An_Introduction_to_Universal_Serial_Bus_2.0-ApplicationNotes-v09_00-EN.pdf?fileId=8ac78c8c7cdc391c017d072d8e8e5256)
+
 <h3> Lab 09 Memory, Cache</h3>
 3.5 inch floppy disk(the A disk)
 
