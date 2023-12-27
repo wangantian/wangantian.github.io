@@ -10,15 +10,15 @@ location: "Clemson, SC, USA"
 
 Introduction to designing, building, simulating and testing digital logic circuits. Topics include SSI and MSI ICs; general combinational circuits; adders, decoders and multiplexors; general sequential circuits; shift registers, counters and memory.
 
-This page shows a selected set of elements used for this lab when I teach it. 
+This webpage displays a curated collection of elements utilized during the instruction of this lab.
 
 <h2>Lab course background</h2>
 
 This lab is accompanied with ECE 2010 Logic and Computing Devices at Clemson University. Students are expected to perform circuit board building using 74-series chips and gate level logic simulation using Logisim Evolution, with lab related simulation detials listed in [Logisim Evolution tutorial](#Logisim_Evolution_Tutorial). 
 
-Though the lab content is simple, while all these labs introduce concepts that with broad significance for students' future learning. It is summarized in [Extra materials for students' interests](#Extra_material).
+This lab serves as a gateway, offering more than just a surface-level understanding. Beyond the apparent simplicity lies a foundation for intricate knowledge, laying the groundwork for the intricate tapestry of electrical and computing principles. The concepts introduced here not only provide immediate practical application but also form the stepping stones for advanced explorations in the realm of digital design. The [Extra materials for students' interests](#Extra_material) aims not only to captivate curiosity but to ignite a passion for delving deeper into the intricate world of logic and computing. 
 
-This lab course uses Final/Capstone project rather than exam as final evaluation. Students are expected to design a larger scale digital design to fulfill the course requirements. Students were provided with possible final project topics listed in [Lab final project prompts](#project_prompts), but they are free to choose their topics based on their interest. 
+In this lab course, the final evaluation takes the form of a Final/Capstone project instead of an exam. Students are tasked with designing a larger-scale digital project to meet the course requirements. While [Lab final project prompts](#project_prompts) provide possible topics, students have the freedom to choose their own based on their interests. 
 
 <h2 id="Logisim_Evolution_Tutorial">Logisim Evolution tutorial</h2>
 <h3>Download address</h3>
@@ -39,7 +39,7 @@ Note that there may be an issue with logisim evolution, making some download fil
 The draft of the basic usage is avalible below:<embed src="https://wangantian.github.io/files/Teaching_Clemson/LogisimEvollution_Tutorial.pdf" width="100%" height="50px"/> 
 
 <h2 id="Extra_material">Extra materials for students' interests</h2>
-There are 10 lab sessions of this lab courses, below are the collected extra materials that related to the corresponding lab content from theory, simulation, and circuit board building. The original webpage was designed for Canvas page.  You can click the image, and it will redirect you to the corresponding Youtube video url.
+There are 10 lab sessions of this lab courses, below are the collected extra materials that related to the corresponding lab content from theory, simulation, and circuit board building. The original webpage was designed for Canvas page.  You can click the image, and it will redirect you to the corresponding Youtube url.
 
 <h3> Lab 01 Course Description</h3>
 

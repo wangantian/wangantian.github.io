@@ -134,20 +134,22 @@ Below are the ones we do for this semester, students are highly encouraged to so
 <h2 id="Lab 2">Lab 2 SPECTRE & DC numerical analysis of NMOS and PMOS</h2>
 <h3>Lab objectives</h3>
 This lab focuses on extracting and computing various parameters and values using the graphic waveform and MDL tools to complete the measurement. 
-Students are provided script of the circuit available [SPECTRE circuit script for lab 2](/file/Teaching_Clemson/459_lab2.scs) and [MDL script for lab 2](/file/Teaching_Clemson/459_lab2.mdl).
+Students are provided with [SPECTRE circuit script for lab 2](/file/Teaching_Clemson/459_lab2.scs) and [MDL script for lab 2](/file/Teaching_Clemson/459_lab2.mdl).
 
-Apart from that, the concept of [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) simulation is introduced, while not required as lab assignment submission. This part directly used the MDL_workshop tutorial under the SPECTRE installtion path. No change was made from the provided example file.  
+Apart from that, the concept of [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) simulation was also introduced. , while not included as lab assignment. This part directly used the MDL_workshop tutorial under the SPECTRE installtion path. 
 
 <h3>Performing measurement for channel length modulation coefficient</h3>
 [Channel length modulation](https://en.wikipedia.org/wiki/Channel_length_modulation) is one of the effects of short-channel Field Effect Transistors (FET). It can be included in $I_{ds}$ computation as follows if the FET is in velocity saturation:
-$$I_{ds}=\beta(V_{gs}-V_t-V_{dsat}/2)V_{dsat}(1+\lambda V_{ds})$$, and $\lambda$ is the channel length modulation coefficient.
- If we consolidate $\beta(V_{gs}-V_t-V_{dsat}/2)V_{dsat}=k$, then we can easily find $I_{ds}=k(1+\lambda V_{ds})$, and then calculated by finding the slop and one data point. The slope can be computed by Viva. Similar computation can be done in the rest of the lab assignment.
+
+$$I_{ds}=\beta(V_{gs}-V_t-V_{dsat}/2)V_{dsat}(1+\lambda V_{ds})$$.
+
+$\lambda$ is the channel length modulation coefficient. If we consolidate $\beta(V_{gs}-V_t-V_{dsat}/2)V_{dsat}=k$, then we can easily find $I_{ds}=k(1+\lambda V_{ds})$, and then calculated by finding the slop and one data point. The slope can be derived by Viva. Similar computation can be done in the rest of the lab assignment.
 
 <h3>Measurement Description Language (MDL)</h3>
 MDL is a scripting and measurement language that enhances productivity during simulation and analysis.
 
 Advantages: 
-  * It create alias measurements that can be reused in different circuits. Efficiently run simulations in batch mode. 
+  * It create alias measurements that can be reused in different circuits, allowing efficiently run simulations in batch mode. 
   * Parameterize alias measurements, making them reusable over various applications. 
   * Use the wildcard (\*) in the MDL control file for all signal mapping.
   * No need to have GUI if you  only care about the value. 
@@ -172,10 +174,7 @@ spectre +mdl lab02.mdl -design  lab02.scs +log lab02.log
 
 <h3>Monte Carlo Analysis</h3>
 
-* Why we need Monte Carlo:
-	* Not all gates within the chips are identical, even set in identical width/length/technology.
-	* Process Variance exists within the chips.
-	* As long as it is functioning, it might be good?
+The reason we introduce Monte Carlo here is to give students the impression that even we define the gates with identical width, and length, they still can be different in actual manufaction. Process variance contributes the difference, and possibly hurts circuit performance. 
 
 * Purpose of Monte Carlo:
 	* Investigate how device mismatches in a circuit can affect the circuit as a whole. 
@@ -189,25 +188,25 @@ Within the MDL, it allows different statistic block to specify the statistic var
 
 <h3>Lab assignements</h3>
 
-Based on the provided example, students are expected to find and compute explore the various parameters of 45nm gpdk library. Below are the ones we do for this semester.
+Based on the provided [SPECTRE circuit script for lab 2](/file/Teaching_Clemson/459_lab2.scs) and [MDL script for lab 2](/file/Teaching_Clemson/459_lab2.mdl), students are expected to find and compute explore the various parameters of 45nm gpdk library. Below are the ones we do for this semester.
   * Use the $ I_{ds} $  Versus $ V_{ds} $ graph (for fixed $ V_{gs} $) to calculate the channel length modulation coefficient ($\lambda$) (NMOS), when  $ V_{gs}=V_{dd}, V_{ds}=[0,V_{dd}] $
   * Calculate velocity saturation ($ c_{ox}\cdot v_{sat} $ ) (NMOS), when $ V_{gs}=V_{dd}, V_{ds}\in [0,V_{dd}] $
-  * Print a set of Saturation Voltage ($V_{DSat}$)  (NMOS) when $ V_{gs}=[0,0.02,V_{dd}]V_{dd}, V_{ds}=V_{dd}], V_{bs}=0$
+  * Print a set of Saturation Voltage ($V_{DSat}$)  (NMOS) when $ V_{gs}=[0,0.02,V_{dd}], V_{ds}=V_{dd}, V_{bs}=0$
       * Show the results in ‘.measure’ file. 
       * Manually plot the set of $V_{DSat}$ dots on the Ids versus $V_{ds}$ plot for different $ V_{gs}$
   * Find the Sub-threshold slope factor (NMOS) when $V_{gs}=[0,V_{dd}], V_{ds}=V_{dd}, v_{bs}=0$
-  * Examine the Body effect ($k_\gamma$) (NMOS) when $V_{gs}=V_{dd}, V_{ds}=V_{dd}, v_{bs}=[-V_{dd},V_{dd}]$
+  * Examine the [body effect](https://en.wikipedia.org/wiki/MOSFET#Body_effect) ($k_\gamma$) (NMOS) when $V_{gs}=V_{dd}, V_{ds}=V_{dd}, v_{bs}=[-V_{dd},V_{dd}]$
   * Find NMOS and PMOS mobility ratio ($\mu_n/\mu_p$)) 
   * Calculate Critical Voltage: $V_c=E_c\cdot L$(NMOS) when $V_{gs}=V_{dd}; V_{ds}=V_{dd}, v_{bs}=0$.
-      * The computation needs to use the Equation: $V_{DSat}=((V_{gs}-V_{th})*E_c*L)/((V_{gs}-V_{th})+E_c*L)$
-  * Calculate $I_DSat$ (NMOS):
+      * The computation needs to use the Equation: $V_{DSat}=\frac{((V_{gs}-V_{th})\cdot E_c\cdot L)}{((V_{gs}-V_{th})+E_c\cdot L)}$
+  * Calculate $I_{DSat}$ (NMOS):
       * $V_{gs}=V_{dd}, V_{ds}=V_{dd}, v_{bs}=0, t_{ox}=3nm$
-      *	Use Equation: $I_{DSat}=W/L*(µ_{eff}\cdot C_{ox}\cdot E_{c}\cdot L)/2  (V_{gs}-V_{th})^2/((V_{gs}-V_{th})+E_c\cdot L)$
+      *	Use Equation: $I_{DSat}=\frac{W}{L}\cdot \frac{µ_{eff}\cdot C_{ox}\cdot E_{c}\cdot L}{2}  \frac{(V_{gs}-V_{th})^2}{((V_{gs}-V_{th})+E_c\cdot L)}$
       *	Use ueff to measure the $µ_{eff}$ 
 	  
 <h2 id="Lab 3">Lab 3 Study of Inverter</h2>
 
-This lab focus on the basic CMOS combinational logic inverter, students are expected to verify the concepts learnt in the lecture, and find the actual characteristics of the 45nm gpdk library. [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) was provided as example, since the SPECTRE script of the inverter had already provided in [SPECTRE circuit script for lab 0](/file/Teaching_Clemson/459_lab0.scs).
+This lab focus on the CMOS inverter, students are expected to and find the actual characteristics of the 45nm gpdk library for the concepts discussed in the lectrue. [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) was provided as example. Since the SPECTRE script of the inverter had already provided in [SPECTRE circuit script for lab 0](/file/Teaching_Clemson/459_lab0.scs), no new SPECTRE script is provided here.
 
 <h3>Measure $t_{pHL}$ and $t_{pLH}$</h3>
 The $t_{pHL}$ and $t_{pLH}$ is defined as follows:
@@ -235,7 +234,7 @@ export real tphl1 = deltax(sig1=V(in1), sig2=V(out10),dir1='rise, thresh1=vdd*.5
 </pre>
 
 <h3>Change the parameter</h3>
-The reason to encourage highly parameterized design is to allow the simple measurements when we only want to change select parameter for some values. Below is the example need to encluded in the [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) to change the NMOS width and run the transicent analysis.
+The reason to encourage highly parameterized design is to allow the simple measurements when we only want to change select parameter for some values. Below is the example need to included in the [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) to change the NMOS width and run the transicent analysis.
 <pre>
 foreach w_n from {300n,600n,900n,1200n,1500n,1800n} 
 {
@@ -254,9 +253,9 @@ Based on the provided example, students are expected to find and compute explore
       * DC analysis the VIN (x axis) from 0 to 1.1v with a step of 0.01v 
       * Change the Beta ratio of the NMOS and PMOS by sweeping the Width of PMOS from 200n to 1000n with a step of 100n. 
       * View the VOUT (y axis) plot.  
-  * Use the measurement tool and the graph to find the closest Width value of the PMOS that has the Switching Threshold closest to half of the $V_{dd}$ ($V_{dd}/2$). We will use this balanced inverter for the following tasks. Marker->create marker->horizontal ->$V_{dd}/2$
-  * Set the Width of the PMOS to be the value you found in previous bullentin, you need to find the delay($T_p$) as a function of $V_{dd}$. Now set the Width of the PMOS to be the value you found in previous bullentin, and change the supply voltage parameter from 0.5v to 1.1V with step of 0.1V. The results will shown in ‘.mt’ file. You need to measure the inverter delay ($T_p$) corresponding to different supply voltage. Remember, you need to measure both $t_{pHL}$ and $t_{pLH}$ in order to get the delay $T_p$.  After you have found the inverter delay for each $V_{dd}$, you need to plot these data ($V_{dd}$ being X axis, and $T_p$ being Y axis) using any proper tool (e.g., excel, MATLAB).  
-  * In this part, you need to find the device sizing versus delay $T_p$, here you need to measure $T_p$ with different size of CMOS inverter:  1:1:6 multiples of the width (both NMOS and PMOS) in the balanced inverter obtained. In this process, you need to connect the Inverter with different NMOS/PMOS width with TWO balanced inverters, find in the Third bullentin. After that, you need to MDL commands. Then, use appropriate tool (e.g., excel, MATLAB) to plot the data (Width being X axis, and $T_p$ being Y axis). 
+  * Use the measurement tool and graph to find the closest PMOS width that has the Switching Threshold equal to $V_{dd}/2$. We use this balanced inverter for the following tasks. It can be identified within viva by click Marker->create marker->horizontal ->$V_{dd}/2$
+  * Set PMOS's width be the value you found in previous bullentin, you need to find the delay($T_p$) as a function of $V_{dd}$ by change the supply power supply from 0.5v to 1.1V with step of 0.1V. The results will shown in ‘.mt’ file. Remember, you need to measure both $t_{pHL}$ and $t_{pLH}$ in order to get the delay $T_p$.  After you have found the inverter delay for each $V_{dd}$, you need to plot these data ($V_{dd}$ being X axis, and $T_p$ being Y axis) using any proper tool (e.g., excel, MATLAB).  
+  * In this part, you need to find the device sizing versus delay $T_p$, here you need to measure $T_p$ with different size of CMOS inverter:  1:1:6 multiples of the width for both NMOS and PMOS in the balanced inverter. In this process, you need to connect the Inverter with different NMOS/PMOS width with TWO balanced inverters, find in the third bullentin. After that, you need to MDL commands. Then, use appropriate tool (e.g., excel, MATLAB) to plot the data (Width being X axis, and $T_p$ being Y axis). 
 
 
 <h2 id="Lab 4">Lab 4 Delay of combinational logic</h2>
