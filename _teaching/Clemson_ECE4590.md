@@ -364,15 +364,15 @@ vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
           * Change the $\phi$ to a larger period and observe the charge leakage process, take a screenshot the waveform.
           * Change the $\phi$ to an even larger period, making the output logic cannot recover until it reaches another pre-charge cycle, take a screenshot the waveform.
 
-  * Let’s do something sequential: fix ALL widths and lengths of PMOS and NMOS, with PMOS width=600nm, NMOS width=300nm, and length=100nm. The SPECTRE code for D-flip flop is the exact copy avaliable under the MDL workshop directory. Keep the clock period at 80ns, and find a single D-flip flop's setup time and hold time. To find the setup time and hold time, you need to draft your MDL file by measuring the delay from clock rising edge to the Q’s rising edge, both at 0.5*vdd. Then, you need to change the point-wise signal’s rising time and falling time to find the setup time and hold time per definition.  
+  * Fix all widths and lengths of PMOS and NMOS, with PMOS width=600nm, NMOS width=300nm, and length=100nm. The SPECTRE code for D-flip flop is the exact copy avaliable under the MDL workshop directory. Keep the clock period at 80ns, and find a single D-flip flop's setup time and hold time. To find the setup time and hold time, you need to draft your MDL file by measuring the delay from clock rising edge to the Q’s rising edge, both at 0.5*vdd. Then, you need to change the point-wise signal’s rising time and falling time to find the setup time and hold time per definition.  
 
 <h3>Unused lab assignements</h3>
   * Ring oscillator
-      * Please build the ring oscillator with stage 5 with an inverter with an NMOS/PMOS length of 100nm, an NMOS width of 300nm and a PMOS width of 600nm. You may use a subcircuit to facilitate the building process.
+      * Please build the 5-stage ring oscillator using inverter with NMOS/PMOS length of 100nm, NMOS width of 300nm, PMOS width of 600nm. You may use a subcircuit to facilitate the building process.
       * Please measure the oscillation frequency of such a circuit. 
-      * Replace the first stage using the circuit shown below, and use the Monte Carlo method discussed during the previous lab session. Try to have multiple sets of PMOS/NMOS sizing with different parameters under identical distribution, what’s your finding? What could be the possible use case for such a design?
+      * Use the Monte Carlo method discussed during the previous lab session. Try to have multiple sets of PMOS/NMOS sizing with different parameters under identical distribution, what’s your finding? What could be the possible use case for such a design?
   *  Multi-output combination circuit simulation verification.
-      *	Verify the worst case delay combination  
+      *	Verify the worst case delay combination.
       *	Verify the delay of branching. Load two branch outputs with identical capacitance load.
       *	Try to change the capacitance load of the branch with a larger worst case delay , and try to make two branches worst cast delay, Is such a change identical to the theoretical analysis?
   *	 NMOS and PMOS transmission gate. 
