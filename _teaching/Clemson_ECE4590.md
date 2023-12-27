@@ -260,7 +260,7 @@ Based on the provided example, students are expected to find and compute explore
 
 <h2 id="Lab 4">Lab 4 Delay of combinational logic</h2>
 This lab extend the study of inverter in previous lab, and explore CMOS combinational logics in 45nm library.
-The students are provided [SPECTRE circuit script for lab 4](/file/Teaching_Clemson/459_lab4.scs) and [MDL script for lab 4](/file/Teaching_Clemson/459_lab4.mdl) as example for reference.
+The students are provided [SPECTRE circuit script for lab 4](/file/Teaching_Clemson/459_lab4.scs) and [MDL script for lab 4](/file/Teaching_Clemson/459_lab4.mdl) using inverter as example for reference.
 
 <h3>Capacitance connection</h3>
 Capacitor named as `C0` can be connected node `net13` with value of `CAP` to the circuit using the below syntax 
