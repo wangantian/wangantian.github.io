@@ -158,7 +158,6 @@ Error correction code
 
 [https://en.wikipedia.org/wiki/Error_correction_code](https://en.wikipedia.org/wiki/Error_correction_code)
  
-
 Hamming code
 
 [![Hamming code](https://img.youtube.com/vi/X8jsijhllIA/0.jpg)](https://youtu.be/X8jsijhllIA "Hamming code")
@@ -176,37 +175,23 @@ LDPC code's inventor Prof Robert Gallager talks about his advisor Shannon, fathe
 [![Prof Robert Gallager's talk](https://img.youtube.com/vi/neA0NJNUEfM/0.jpg)](https://youtu.be/neA0NJNUEfM "Prof Robert Gallager's talk")
 <h3> Lab 05, 06, 07 Binary arithmetic, MSI circuit, Multiplier  </h3>
 Binary arithmetic extension
-
-Floating point [https://en.wikipedia.org/wiki/Floating-point_arithmetic](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
-
-unum (posit) [https://en.wikipedia.org/wiki/Unum_(number_format)](https://en.wikipedia.org/wiki/Unum_(number_format))
+* Floating point [https://en.wikipedia.org/wiki/Floating-point_arithmetic](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
+* unum (posit) [https://en.wikipedia.org/wiki/Unum_(number_format)](https://en.wikipedia.org/wiki/Unum_(number_format))
  
-
 Various adders(Brent–Kung adder, Kogge–Stone adder)
 
-Brent–Kung adder [https://en.wikipedia.org/wiki/Brent%E2%80%93Kung_adder](https://en.wikipedia.org/wiki/Brent%E2%80%93Kung_adder) 
-
-Kogge–Stone adder [https://en.wikipedia.org/wiki/Kogge%E2%80%93Stone_adder](https://en.wikipedia.org/wiki/Kogge%E2%80%93Stone_adder)
- 
-Sklansky adder 
-
-Han-Carlson
-
-Ladner-Fischer
-
-Knowles [2,1,1,1]
-
-Adder circuit generator [https://github.com/IamFlea/AdderCircuitGenerator/blob/master/README.md](https://github.com/IamFlea/AdderCircuitGenerator/blob/master/README.md)
-
-
+* Brent–Kung adder [https://en.wikipedia.org/wiki/Brent%E2%80%93Kung_adder](https://en.wikipedia.org/wiki/Brent%E2%80%93Kung_adder) 
+* Kogge–Stone adder [https://en.wikipedia.org/wiki/Kogge%E2%80%93Stone_adder](https://en.wikipedia.org/wiki/Kogge%E2%80%93Stone_adder)
+* Sklansky adder 
+* Han-Carlson
+* Ladner-Fischer
+* Knowles [2,1,1,1]
+* Adder circuit generator [https://github.com/IamFlea/AdderCircuitGenerator/blob/master/README.md](https://github.com/IamFlea/AdderCircuitGenerator/blob/master/README.md)
 
 Various multiplier trees(Wallace tree, Dadda tree)
-
-Wallace tree [https://en.wikipedia.org/wiki/Wallace_tree](https://en.wikipedia.org/wiki/Wallace_tree)
-
-Dadda tree [https://en.wikipedia.org/wiki/Dadda_multiplier](https://en.wikipedia.org/wiki/Dadda_multiplier)
-
-Overturned tree [https://ieeexplore.ieee.org/document/156536](https://ieeexplore.ieee.org/document/156536)
+* Wallace tree [https://en.wikipedia.org/wiki/Wallace_tree](https://en.wikipedia.org/wiki/Wallace_tree)
+* Dadda tree [https://en.wikipedia.org/wiki/Dadda_multiplier](https://en.wikipedia.org/wiki/Dadda_multiplier)
+* Overturned tree [https://ieeexplore.ieee.org/document/156536](https://ieeexplore.ieee.org/document/156536)
 
 CORDIC algorithm for computing sin/cos/sqaure function
 
@@ -314,7 +299,6 @@ Memresistor
 [![Memresistor 1](https://img.youtube.com/vi/B9Z2Ktacd4s/0.jpg)](https://youtu.be/B9Z2Ktacd4s "Memresistor")
 [![Memresistor 2](https://img.youtube.com/vi/rvA5r4LtVnc/0.jpg)](https://youtu.be/rvA5r4LtVnc "Memresistor")
 
-
 Advantages of Near Flash Computing with Arvind
 
 [https://cap.csail.mit.edu/podcasts/advantages-near-flash-computing-arvind](https://cap.csail.mit.edu/podcasts/advantages-near-flash-computing-arvind)
@@ -352,7 +336,6 @@ This open-ended project involving design, simulation, and analysis of a digital 
 
 <h3>Elements allowed and forbidden for simulation-only designs</h3>
  
-
 # Logic function exploration  (extension of Lab 02 to Lab 04) 
 ## Various board game:
 ### Topics:
@@ -406,11 +389,9 @@ This open-ended project involving design, simulation, and analysis of a digital 
 	* Store prior computation results.
 	* Allow CE/C to function as the real calculator does.
 
-
 * Fast adder and multiplication tree realization:
 	* Multiple fast adders and multiplier trees are introduced in the lab slide, which are listed as extra materials for students' interest here. Please try to search for related references and design them.
 	* Try to examine the difference between different fast adders and multiplier trees.
-
 
 #### Modular computation
 
@@ -440,6 +421,7 @@ This open-ended project involving design, simulation, and analysis of a digital 
 * Other necessary display features.
 
 ## Quiz buzzer
+
 ### Topics:
 * Quiz buzzer.
 
@@ -450,11 +432,8 @@ This open-ended project involving design, simulation, and analysis of a digital 
 * It would be great to record whoever comes to the second and third, etc.
 * It can also include a scoreboard as a subset to record team scores if they answer the question correctly or not.
 
-
-
 ## Daily transaction
 ### Topics
-
 
 * Parking meter.
 * Vending machine.
@@ -474,7 +453,6 @@ This open-ended project involving design, simulation, and analysis of a digital 
 
 # Integrated counter application (extension of Lab 08, 10)
 ## Topics:
-
 
 * Traffic light (counter-based/memory-based).
 * Using counters to replicate iPhone clock.
@@ -504,8 +482,6 @@ This open-ended project involving design, simulation, and analysis of a digital 
 * The alarm clock design allows snoozing.
 * Include possible simple control signals to the motor.
 * You may consider displaying the time from 00:00 to 23:59 rather than 12:00 am to 11:59 pm.
-
-
 
 #  Memory applications (extension of Lab 09) 
 ## Topics:
@@ -539,8 +515,6 @@ This open-ended project involving design, simulation, and analysis of a digital 
  * Introduce error during multiple read/write iterations, and the stored data may become "Hello Morld", and your display can show such a difference.
  * Once you find there is an error, you can again, write back the "Hello World" back to the RAM.
 
-
-
 #  Processor design (extension of Lab 08) 
 
 ## Topics:
@@ -559,8 +533,6 @@ This open-ended project involving design, simulation, and analysis of a digital 
 * In the EX stage, you perform the instruction (arithmetic/logic operations). You have already done something similar in the MSI circuit lab; here, you need to extend it to a larger context.
 * In the WB stage, you extract the computation result from the ALU, and display/store it in the way you want.
  
-
-
 <table style="border-collapse: collapse; width: 95.8525%; height: 59px;" border="1"><caption>ALU instruction execution clock cycle-wise explanation</caption>
 <tbody>
 <tr style="height: 30px;">
@@ -584,16 +556,13 @@ This open-ended project involving design, simulation, and analysis of a digital 
 </td>
 </tr>
 </tbody>
-</table>
- 
+</table> 
 
 * Using MUX to instruct the processor for different operations for given operands.
 * Possible operation include basic logic operation(AND/OR/XOR/XNOR etc) &amp; basic arithmetic operation(ADD/SUB/Multiplication/Mod operation/Exponential operation)
 * You can also make the design interactive by highlighting the current operation stage the ALU is working at.
 * Try to minimize the total number of gates/ICs (make some of the gates/ICs multi-functional)
-* Please refer to this document for an alternative description. <a class="instructure_file_link instructure_scribd_file inline_disabled" title="dl_lab.pdf" 
-
-
+* Please refer to this link [https://github.com/grself/CIS221_Lab_Manual/tree/master](https://github.com/grself/CIS221_Lab_Manual/tree/master) for alternative discussion.
 
 # Details:Real-life system design (extension of all labs)
 ## Topics:
@@ -615,7 +584,6 @@ This open-ended project involving design, simulation, and analysis of a digital 
 * Consider possible override by firefighter/elevator operator.
 * Please refer to this document for a more detailed description here in this file. 
  
-
 # Other related online resources
 
 * You can also refer to the playlist here for more details: [https://www.youtube.com/playlist?list=PLvjlcTfwDj4spSN4g3S8IHbqY4Qkb5LxP](https://www.youtube.com/playlist?list=PLvjlcTfwDj4spSN4g3S8IHbqY4Qkb5LxP)
