@@ -74,7 +74,7 @@ Along the following lab, multiple files will be generated, below are the ones wi
   
 <h3>Explaination of the circuit script</h3>
 The script describe a simple inverter written using or not using subcircuit, the connections can be refered as following:
-![inverter](/file/Teaching_Clemson/inverter.jpg "inverter")
+![inverter](/files/Teaching_Clemson/inverter.jpg "inverter")
 
 The one shown below is the one using subcircuit.
 <pre>
@@ -347,7 +347,7 @@ vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
 Students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
   * Verify the Elmore delay in SPECTRE. Connect the resistors and capacitors as shown in the circuit diagram below, where R=100Ohm and C=100pF. 
-  ![RC delay](/file/Teaching_Clemson/RC_delay.jpg "RC delay")
+  ![RC delay](/files/Teaching_Clemson/RC_delay.jpg "RC delay")
       * Measure the Propagation delay of the circuit diagram from the input and output1 and output2.  Measure the time from the start of the input rise to the 50% of output rise. 
       * Compute the Elmore delay equation learned in the lecture. 
       * Convert the Elmore delay to the propagation delay (multiply Elmore delay by 0.69) . 
