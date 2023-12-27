@@ -14,11 +14,11 @@ This webpage displays a curated collection of elements utilized during the instr
 
 <h2>Lab course background</h2>
 
-This lab is accompanied with ECE 2010 Logic and Computing Devices at Clemson University. Students are expected to perform circuit board building using 74-series chips and gate level logic simulation using Logisim Evolution, with lab related simulation detials listed in [Logisim Evolution tutorial](#Logisim_Evolution_Tutorial). 
+This lab is accompanied with [ECE 2010 Logic and Computing Devices](https://catalog.clemson.edu/preview_course_nopop.php?catoid=39&coid=177146) at Clemson University. Students are expected to perform circuit board building using 74-series chips and gate level logic simulation using Logisim Evolution, with lab related simulation detials listed in [Logisim Evolution tutorial](#Logisim_Evolution_Tutorial). 
 
-This lab serves as a gateway, offering more than just a surface-level understanding. Beyond the apparent simplicity lies a foundation for intricate knowledge, laying the groundwork for the intricate tapestry of electrical and computing principles. The concepts introduced here not only provide immediate practical application but also form the stepping stones for advanced explorations in the realm of digital design. The [Extra materials for students' interests](#Extra_material) aims not only to captivate curiosity but to ignite a passion for delving deeper into the intricate world of logic and computing. 
+This lab serves as a gateway, offering more than just a surface-level understanding. Beyond the apparent simplicity lies a foundation for intricate knowledge, laying the groundwork for the intricate tapestry of electrical and computing principles. The concepts introduced here not only provide immediate practical application but also form the stepping stones for advanced explorations in the realm of digital design. The [extra materials for students' interests](#Extra_material) aims not only to captivate curiosity but to ignite a passion for delving deeper into the intricate world of logic and computing. 
 
-In this lab course, the final evaluation takes the form of a Final/Capstone project instead of an exam. Students are tasked with designing a larger-scale digital project to meet the course requirements. While [Lab final project prompts](#project_prompts) provide possible topics, students have the freedom to choose their own based on their interests. 
+In this lab course, the final evaluation takes the form of a final/capstone project instead of an exam. Students are tasked with designing a larger-scale digital project to meet the course requirements. While [lab final project prompts](#project_prompts) provide possible topics, students have the freedom to choose their own based on their interests. 
 
 <h2 id="Logisim_Evolution_Tutorial">Logisim Evolution tutorial</h2>
 <h3>Download address</h3>
