@@ -254,22 +254,21 @@ Based on the provided example, students are expected to find and compute explore
       * Change the Beta ratio of the NMOS and PMOS by sweeping the Width of PMOS from 200n to 1000n with a step of 100n. 
       * View the VOUT (y axis) plot.  
   * Use the measurement tool and graph to find the closest PMOS width that has the Switching Threshold equal to $V_{dd}/2$. We use this balanced inverter for the following tasks. It can be identified within viva by click Marker->create marker->horizontal ->$V_{dd}/2$
-  * Set PMOS's width be the value you found in previous bullentin, you need to find the delay($T_p$) as a function of $V_{dd}$ by change the supply power supply from 0.5v to 1.1V with step of 0.1V. The results will shown in ‘.mt’ file. Remember, you need to measure both $t_{pHL}$ and $t_{pLH}$ in order to get the delay $T_p$.  After you have found the inverter delay for each $V_{dd}$, you need to plot these data ($V_{dd}$ being X axis, and $T_p$ being Y axis) using any proper tool (e.g., excel, MATLAB).  
+  * Set PMOS's width be the value you found in previous bullentin, you need to find the delay ($T_p$) as a function of $V_{dd}$ by change the supply power supply from 0.5v to 1.1V with step of 0.1V. The results will shown in ‘.mt’ file. Remember, you need to measure both $t_{pHL}$ and $t_{pLH}$ in order to get the delay $T_p$.  After you have found the inverter delay for each $V_{dd}$, you need to plot these data ($V_{dd}$ being X axis, and $T_p$ being Y axis) using any proper tool (e.g., excel, MATLAB).  
   * In this part, you need to find the device sizing versus delay $T_p$, here you need to measure $T_p$ with different size of CMOS inverter:  1:1:6 multiples of the width for both NMOS and PMOS in the balanced inverter. In this process, you need to connect the Inverter with different NMOS/PMOS width with TWO balanced inverters, find in the third bullentin. After that, you need to MDL commands. Then, use appropriate tool (e.g., excel, MATLAB) to plot the data (Width being X axis, and $T_p$ being Y axis). 
 
 
 <h2 id="Lab 4">Lab 4 Delay of combinational logic</h2>
-This lab extend the study of inverter in previous lab, and explore the concepts learnt for basic combinational logics. 
-The students are provided [SPECTRE circuit script for lab 4](/file/Teaching_Clemson/459_lab4.scs) and [MDL script for lab 4](/file/Teaching_Clemson/459_lab4.mdl) as example.
+This lab extend the study of inverter in previous lab, and explore CMOS combinational logics in 45nm library.
+The students are provided [SPECTRE circuit script for lab 4](/file/Teaching_Clemson/459_lab4.scs) and [MDL script for lab 4](/file/Teaching_Clemson/459_lab4.mdl) as example for reference.
 
-A select subset of new commands are used in this lab:
 <h3>Capacitance connection</h3>
 Capacitor named as `C0` can be connected node `net13` with value of `CAP` to the circuit using the below syntax 
 <pre>C0 (net13 0) capacitor c=CAP
 </pre>
 
 <h3>Verifying combinational logic functionality using parameter set</h3>
-For a $n$ input combinational logic, there is a possible $2^n$ input combinations. Also consider when we do the worst case delay analysis, we need to find the condition when only one single input's voltage value changed. Thus, we need to explore a new syntax in SPECTRE, name paramet to enumerate all possible initial and terminal value combinations. If initial value is identical to terminal value, then there is no change. It gives us the tool to do the worst-case delay analysis. Also, by changing the period of the individual input ports' pulse wave, we can examine the functionality of the combinational logic with full coverage. Below is the example file avaliable in [SPECTRE circuit script for lab 4](/file/Teaching_Clemson/459_lab4.scs)
+For a $n$ input combinational logic, there is a possible $2^n$ input combinations. Also consider when we do the worst case delay analysis, we need to find the condition when only one single input's voltage value was changed. Thus, we need to explore a new syntax in SPECTRE, name paramet to enumerate all possible initial and terminal value combinations. If initial value is identical to terminal value, then there is no change. It facilitates the worst-case delay analysis. Also, by changing the period of the individual input ports' pulse wave, we can examine the functionality of the combinational logic with full coverage. Below is the example file avaliable in [SPECTRE circuit script for lab 4](/file/Teaching_Clemson/459_lab4.scs)
 
 <pre>
 v1 (in0 0) vsource dc=vs type=pulse val0=init_a val1=term_a period=10u rise=5p fall=5p width=5u
@@ -305,11 +304,11 @@ Based on the provided example, students are expected to find and compute explore
   * Use the MDL Optimization tool to find the width of the PMOS that makes the switching threshold ($V_m$) equals to half of $V_{dd}$. Note that this is a DC analysis.
   * CMOS combinational gate design:
       * Build the 2-input NAND gate, and 2-input NOR gate. Keep the NMOS/PMOS of this gate length at 100nm, and NMOS width with 300nm and PMOS width with 600nm. Since here, we only care about functionality.
-      * Verify the functionality by feeding in the Pulse wave for all possible input combinations. Take a screenshot of it. 
+      * Verify the functionality by feeding in the pulse wave for all possible input combinations. Take a screenshot of it. 
   * The [Logical effort](https://en.wikipedia.org/wiki/Logical_effort) is the ratio of a gate's input capacitance to an inverter's input capacitance, delivering the same output current. As mentioned in the slide, it can be measured from delay vs fanout plots. 
       * Build an inverter with an NMOS/PMOS length with 100nm, and NMOS width with 300nm and a PMOS width that satisfies the non-skewed inverter derived in problem 2. 
-      * Use the 2-input NAND gates and 2-input NOR gates built previously, and size it that can deliver identical output current as  the inverter built in previous bullentin. [Note that it is possible to use an optimization tool to find the more realistic width using an optimization tool, which is not required here]. 
-      * Find the worst case propagation delay for inverter, 2-input NAND gate, and 2-input NOR gate when their load is 1, 2, 3, 4 copy of itself. Find the slope of the delay trend, then report the founded logical effort and verify the concept.  
+      * Use the 2-input NAND gates and 2-input NOR gates built previously, and size it that can deliver identical output current as  the inverter built in previous bullentin. Note that it is possible to use an optimization tool to find the more realistic width using an optimization tool, which is not required here. 
+      * Find the worst case propagation delay for inverter, 2-input NAND gate, and 2-input NOR gate when their load is 1, 2, 3, 4 copy of itself. Find the slope of the delay, then report the founded logical effort and verify the concept.  
       *  Verify the worst-case propagation delay input patterns by MDL for the 2-input NAND gate and 2-input NOR gate. 
       *  Build the 3-input NAND gate and 3-input NOR gate, and size it properly according to the inverter built in a, according to the slide.  
       *  Find the worst-case propagation delay for gates when load is 1,2,3,4 copies of itself. Find the slope of the delay trend, then report the founded logical effort and verify the concept.  
@@ -340,7 +339,6 @@ The point-wise signal can be defined as follows, with the format of time and des
 vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
 </pre>
 <h3>Lab assignements</h3>
-Students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
   * Verify the Elmore delay in SPECTRE. Connect the resistors and capacitors as shown in the circuit diagram below, where R=100Ohm and C=100pF. 
   ![RC delay](/files/Teaching_Clemson/RC_delay.jpg "RC delay")
@@ -352,8 +350,8 @@ Students are expected to find and compute explore the CMOS inverter's characteri
 	  $R=R_\square  \frac{L}{w}, C=\frac{\epsilon S}{4\pi kd}$
       * [NOT REQUIRED] Using the above Resistor-Capacitor connection, how can we minimize the delay by changing the length of the wire for two paths individually using MDL optimization tool or computed analytically? 
   * Design the 2 to 1 MUX using the transmission gate and CMOS. 
-      * Verify the functionality for both design.
-      * Compare the output of the transmission gate and CMOS gate implementation, are there any differences between them?
+      * Verify the functionality for both designs.
+      * Compare the output waveform's voltage of the transmission gate and CMOS gate implementation, find any differences between them.
       * Measure the delay for all input-output patterns for both design, and find the worst case of them.
 
   * Design a CMOS logic, unfooted Dynamic logic, footed Dynamic logic for the following: 
