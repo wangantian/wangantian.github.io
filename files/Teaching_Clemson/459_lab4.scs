@@ -1,9 +1,9 @@
 simulator lang=spectre
-*module load  cadence/IC/618 cadence/SPECTRE/211
-*spectre inv.scs +log inv.log
+
+*spectre 459_lab4.scs +log 459_lab4.log
 *simple inverter
 
-include "/software/commercial/cadence/pdk/gpdk045_v_6_0/models/spectre/gpdk045_mos.scs" section=tt
+include "YOUR_GPDK_LIBRARY.scs" section=tt
 parameters w_p=600n w_n=300n l_p=100n l_n=100n
 
 parameters vdd=1.1 vs=0

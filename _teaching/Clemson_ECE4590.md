@@ -206,7 +206,7 @@ Based on the provided [SPECTRE circuit script for lab 2](/file/Teaching_Clemson/
 	  
 <h2 id="Lab 3">Lab 3 Study of Inverter</h2>
 
-This lab focus on the CMOS inverter, students are expected to and find the actual characteristics of the 45nm gpdk library for the concepts discussed in the lectrue. [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) was provided as example. Since the SPECTRE script of the inverter had already provided in [SPECTRE circuit script for lab 0](/file/Teaching_Clemson/459_lab0.scs), no new SPECTRE script is provided here.
+This lab focus on the CMOS inverter, students are expected to and find the actual characteristics of the 45nm gpdk library for the concepts discussed in the lectrue. [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) was provided as example. Since the SPECTRE script of the inverter had already provided in [SPECTRE circuit script for lab 0](/file/Teaching_Clemson/459_lab0.scs), [SPECTRE circuit script for lab 3](/file/Teaching_Clemson/459_lab3.scs) is a slightly modified version of lab0.
 
 <h3>Measure $t_{pHL}$ and $t_{pLH}$</h3>
 The $t_{pHL}$ and $t_{pLH}$ is defined as follows:
