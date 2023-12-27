@@ -234,13 +234,13 @@ export real tphl1 = deltax(sig1=V(in1), sig2=V(out10),dir1='rise, thresh1=vdd*.5
 </pre>
 
 <h3>Change the parameter</h3>
-The reason to encourage highly parameterized design is to allow the simple measurements when we only want to change select parameter for some values. Below is the example need to included in the [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) to change the NMOS width and run the transicent analysis.
+The reason to encourage highly parameterized design is to allow the simple measurements when we only want to change select parameter for some values. Below is the example need to included in the [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) to power supply and run the transicent analysis.
 <pre>
-foreach w_n from {300n,600n,900n,1200n,1500n,1800n} 
-{
-	w_p=w_n*2
-	run trans_q2
+foreach vdd from {0.5,0.6} 
+{ 
+   run rise_fall_trans
 }
+
 </pre>
  
 <h3>Lab assignements</h3>

@@ -1,4 +1,4 @@
-//spectremdl -batch 459_lab3.mdl -design  459_lab3.scs +log 459_lab3.log
+//spectremdl -batch 459_lab4.mdl -design  459_lab4.scs +log 459_lab4.log
 // alias measurement definition
 alias measurement rise_fall_trans{
 	// definition of transient analysis with autostop turned on

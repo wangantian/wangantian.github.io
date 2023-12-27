@@ -45,7 +45,7 @@ save mp0:all
 *Instantiate another inverter using sub circuit
 inv_2 (inv_out2 inv_in2) invs_subckt
 *Define a pulse wave with corrsponding initial value and period, rising time and fall time, pulse wave width.
-v1 (inv_in2 0) vsource dc=vs2 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u 
+v2 (inv_in2 0) vsource dc=vs2 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u 
 *Define the starting time and end time of transient analysis.
 trans1 tran stop=50u method =trap 
 

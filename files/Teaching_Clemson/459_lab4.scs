@@ -1,6 +1,7 @@
 simulator lang=spectre
 
 *spectre 459_lab4.scs +log 459_lab4.log
+*spectremdl -batch 459_lab4.mdl -design  459_lab4.scs +log 459_lab4.log   
 *simple inverter
 
 include "YOUR_GPDK_LIBRARY.scs" section=tt
