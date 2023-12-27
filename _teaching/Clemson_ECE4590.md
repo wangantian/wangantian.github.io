@@ -73,8 +73,10 @@ Along the following lab, multiple files will be generated, below are the ones wi
   * .mt file for table-like measurement results.
   
 <h3>Explaination of the circuit script</h3>
-The script describe a simple inverter written using or not using subcircuit. The one shown below is the one using subcircuit.
+The script describe a simple inverter written using or not using subcircuit, the connections can be refered as following:
+![inverter](/file/Teaching_Clemson/inverter.jpg "inverter")
 
+The one shown below is the one using subcircuit.
 <pre>
 subckt invs_subckt inv_out inv_in
    mp1 (inv_out inv_in vdd! vdd!) g45p1svt w=w_p l=l_p 
@@ -85,9 +87,9 @@ ends invs_subckt
 `g45n1svt, g45p1svt` represent the type of NMOS/PMOS transistor used in this circuit, and `w, l` represent the width and length of the circuit. Within the SPECTRE, the transistors ports are ordered as (drain gate source body). `mp1, mn1` are the name of the transistor.  Within this subcircuit, the node `vdd!`, and `0` define the power supply and ground, and `vdd` itself is the power supply voltage. 
 
 `dc_analy0 dc param=vs0 start=0 stop=vdd step=0.01` shows the instantiation of the direct-current source named as `dc_analy0`, with voltage start from `0` to `vdd` with step size of `0.01`V, while `v1 (inv_in2 0) vsource dc=vs2 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u` defines another pulse wave fed to `inv_in2` port. `trans1 tran stop=10u method =trap` should go along with this pulse wave input to allow the correct transicent anlayis, with trap stands for the [trapezoidal method](https://en.wikipedia.org/wiki/Trapezoidal_rule) for internal numerical anlaysis.
- <pre>simOptions options temp=25</pre> define the temperature used for the simulation.
+ 'simOptions options temp=25' define the temperature used for the simulation.
 
-The provided script is highlyer parameterized to allow simple modification based on the lab requirements. 
+The provided [SPECTRE circuit script for lab 0](/file/Teaching_Clemson/459_lab0.scs) is highlyer parameterized to allow simple modification based on the lab requirements. 
 
 <h2 id="Lab 1">Lab 1 SPECTRE & DC graphic analysis of NMOS and PMOS</h2>
 
@@ -97,7 +99,7 @@ Based on the provided example, students are expected to explore the various para
 
 
 <h3>Save transistor parameters</h3>
-`save xx.yy:zz` allows you to save the `zz` parameter of the `xx.yy` device. For the library used here, the naming follows [bsim4](https://cmosedu.com/cmos1/BSIM4_manual.pdf) simulation model. `xx.` can be omitted if the target transistor does not located within the subcircuit. 
+`save xx.yy:zz` allows you to save the `zz` parameter of the `xx.yy` device. For the library used here, the naming follows [bsim4](https://cmosedu.com/cmos1/BSIM4_manual.pdf) simulation model. `xx.` can be omitted if the target transistor does not belong to a subcircuit. 
   * Ids:	Resistive drain-to-source current
   * ueff:	Effective mobility at the specified analysis temperature
   * all:	Everything
@@ -106,10 +108,9 @@ Based on the provided example, students are expected to explore the various para
   * vth:	Threshold voltage
 
 <h3>Library width, length, temperature limitation</h3>
-The transistor models within the library are restricted by width, length for the best simulation accuracy. The detials are avaliable wtihin the installation path of the library. 
+The transistor models within the library are restricted by width, length for the best simulation accuracy. The detials are avaliable wtihin documentation under installation path of the library. 
 <h3>Sweep analysis </h3>
-Sweep analysis allows you to change one parameter/variable with limited values, like $V_{gs}$, and have the other parameter/variable(s) with higher precision, like  $V_{ds}$.
-It is a “for loop”, and can be represented as"
+Sweep analysis allows you to change one parameter/variable with limited values, like $V_{gs}$, and have the other parameter/variable(s) with higher precision, like  $V_{ds}$. It is a “for loop”, and can be represented as:
 
 <pre>
 For (vgs) from vgs1 to vgs5:
@@ -132,17 +133,18 @@ Below are the ones we do for this semester, students are highly encouraged to so
   * DIBL (Drain-induced barrier lowering) ($ V_{ds} $ versus $ V_{th} $) for both NMOS and PMOS.
   * DIBL (Drain-included barrier lowering) (Length versus $ V_{th} $) for both NMOS and PMOS
   * Graph on Temperature versus $ V_{th} $ for both NMOS and PMOS
- 
 
 <h2 id="Lab 2">Lab 2 SPECTRE & DC numerical analysis of NMOS and PMOS</h2>
 
-This lab is built upon the prior lab experience with extra focus on extracting and computing various parameters and values using the graphic waveform and MDL tools to complete the measurement. 
+This lab focuses on extracting and computing various parameters and values using the graphic waveform and MDL tools to complete the measurement. 
 Students are provided script of the circuit available [SPECTRE circuit script for lab 2](/file/Teaching_Clemson/459_lab2.scs) and [MDL script for lab 2](/file/Teaching_Clemson/459_lab2.mdl).
 
-Apart from that, the concept of [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) simulation is also introduced in the lab, which is not required for this lab assignment. This part of script is available within the MDL_workshop tutorial under the SPECTRE installtion path. No change was made from the provided example file.  
+Apart from that, the concept of [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) simulation is introduced, while not required as lab assignment submission. This part directly used the MDL_workshop tutorial under the SPECTRE installtion path. No change was made from the provided example file.  
 
-
-<h3>Performing measurement for channel length modulation coefficient[To do]</h3>
+<h3>Performing measurement for channel length modulation coefficient</h3>
+[Channel length modulation](https://en.wikipedia.org/wiki/Channel_length_modulation) is one of the effects of short-channel Field Effect Transistors (FET). It can be included in $I_{ds}$ computation as follows if the FET is in velocity saturation:
+$$I_{ds}=\beta(V_{gs}-V_t-V_{dsat}/2)V_{dsat}(1+\lambda V_{ds})$$, and $\lambda$ is the channel length modulation coefficient.
+ If we consolidate $\beta(V_{gs}-V_t-V_{dsat}/2)V_{dsat}=k$, then we can easily find $I_{ds}=k(1+\lambda V_{ds})$, and then calculated by finding the slop and one data point. The slope can be computed by Viva. Similar computation can be done in the rest of the lab assignment.
 
 <h3>Measurement Description Language (MDL)</h3>
 MDL is a scripting and measurement language that enhances productivity during simulation and analysis.
@@ -173,27 +175,24 @@ spectre +mdl lab02.mdl -design  lab02.scs +log lab02.log
 
 <h3>Monte Carlo Analysis</h3>
 
-Why we need Monte Carlo:
-* NOT all gates within the chips are identical, even set in identical width/length/technology.
-* Process Variance exists within the chips.
-* As long as it is functioning, it might be good?
+* Why we need Monte Carlo:
+	* Not all gates within the chips are identical, even set in identical width/length/technology.
+	* Process Variance exists within the chips.
+	* As long as it is functioning, it might be good?
 
-Purpose of Monte Carlo:
-* Investigate how device mismatches in a circuit can affect the circuit as a whole. 
-* Done based on statistical distributions and calculate each parameter randomly according to a statistical distribution model. 
-* The result is a range of possible outcome values. 
-* Calculate the probabilities of different outcomes and perform additional analyses.
+* Purpose of Monte Carlo:
+	* Investigate how device mismatches in a circuit can affect the circuit as a whole. 
+	* Done based on statistical distributions and calculate each parameter randomly according to a statistical distribution model. 
+	* The result is a range of possible outcome values. 
+	* Calculate the probabilities of different outcomes and perform additional analyses.
 
 From the guest lecture for Cornell ECE 5545, Cerebras by Sean Lie available at [https://www.youtube.com/watch?v=5_qVob2Vwf8](https://www.youtube.com/watch?v=5_qVob2Vwf8), it discussed how the real-world large chip design needs to consider such a variance.
 
 Within the MDL, it allows different statistic block to specify the statistic variation patterns. The statistics blocks allow you to specify batch-to-batch (process) and per-instance (mismatch) variations for netlist parameters. These statistically-varying netlist parameters can be referenced by models or instances in the main netlist and may represent IC manufacturing process variation or component variations for board-level designs.
 
-
-
 <h3>Lab assignements</h3>
 
 Based on the provided example, students are expected to find and compute explore the various parameters of 45nm gpdk library. Below are the ones we do for this semester.
-
   * Use the $ I_{ds} $  Versus $ V_{ds} $ graph (for fixed $ V_{gs} $) to calculate the channel length modulation coefficient ($\lambda$) (NMOS), when  $ V_{gs}=V_{dd}, V_{ds}=[0,V_{dd}] $
   * Calculate velocity saturation ($ c_{ox}\cdot v_{sat} $ ) (NMOS), when $ V_{gs}=V_{dd}, V_{ds}\in [0,V_{dd}] $
   * Print a set of Saturation Voltage ($V_{DSat}$)  (NMOS) when $ V_{gs}=[0,0.02,V_{dd}]V_{dd}, V_{ds}=V_{dd}], V_{bs}=0$
@@ -207,13 +206,11 @@ Based on the provided example, students are expected to find and compute explore
   * Calculate $I_DSat$ (NMOS):
       * $V_{gs}=V_{dd}, V_{ds}=V_{dd}, v_{bs}=0, t_{ox}=3nm$
       *	Use Equation: $I_{DSat}=W/L*(µ_{eff}\cdot C_{ox}\cdot E_{c}\cdot L)/2  (V_{gs}-V_{th})^2/((V_{gs}-V_{th})+E_c\cdot L)$
-      *	Use ueff to measure the $µ_{eff}$
-
-
+      *	Use ueff to measure the $µ_{eff}$ 
+	  
 <h2 id="Lab 3">Lab 3 Study of Inverter</h2>
 
-This lab focus on the basic CMOS combinational logic inverter, students are expected to verify the concepts learnt in the lecture, and find the actual characteristics of the 45nm gpdk library.
-The students are provided with [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) as example, since the SPECTRE script of the inverter was already provided in [SPECTRE circuit script for lab 0](/file/Teaching_Clemson/459_lab0.scs).
+This lab focus on the basic CMOS combinational logic inverter, students are expected to verify the concepts learnt in the lecture, and find the actual characteristics of the 45nm gpdk library. [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) was provided as example, since the SPECTRE script of the inverter had already provided in [SPECTRE circuit script for lab 0](/file/Teaching_Clemson/459_lab0.scs).
 
 <h3>Measure $t_{pHL}$ and $t_{pLH}$</h3>
 The $t_{pHL}$ and $t_{pLH}$ is defined as follows:
@@ -222,7 +219,7 @@ The $t_{pHL}$ and $t_{pLH}$ is defined as follows:
 * $t_{pLH}$： delay from input 50% to outupt 50% when output is rising.
 
 From the practice of this lab, we introduced two ways of delay measurements:
-* One simple way is to directly use the rising time and falling time at certain node as a surrogate measurement of the delay. Such a measrument will results in a difference compared to the actual measrument following the definition. It can be measured by using MDL below, included in the [MDL script](/file/Teaching_Clemson/459_lab3.mdl).
+* One simple way is directly use the rising time and falling time at certain node as a surrogate measurement of the delay. Such a measrument will results in a difference compared to the actual measrument following the definition, while reflect the trend for such a simple circuit. It can be measured by using MDL below, included in the [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl).
 <pre>
 // computation of risetime for signal V(out0) from 10% to 90%
 export real rise=risetime(sig=V(out0), initval=vdd*.1, finalval=vdd*.9)
@@ -231,6 +228,7 @@ export real rise=risetime(sig=V(out0), initval=vdd*.1, finalval=vdd*.9)
 export real fall=falltime(sig=V(out0), initval=vdd*.9, finalval=vdd*.1)
 </pre>
 * The accurate method follow the definition of $t_{pHL}$ and $t_{pLH}$. It start the measurement when the input signal reach the threshold in certain direction, and stop it when the target output signal reaches predefined direction with certain threshold. Such a measurement resulting more accurate measurement while incurs extra difficulty when involves optimization. It can be measured by using MDL below, included in the [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl).  
+
 <pre>
 //computation of of actual tplh based on the definition 
 export real tplh1 = deltax(sig1=V(in1), sig2=V(out10),dir1='fall, thresh1=vdd*.5,dir2='rise, thresh2=vdd*.5, start1=0, start2=0)
@@ -240,7 +238,6 @@ export real tphl1 = deltax(sig1=V(in1), sig2=V(out10),dir1='rise, thresh1=vdd*.5
 </pre>
 
 <h3>Change the parameter</h3>
-
 The reason to encourage highly parameterized design is to allow the simple measurements when we only want to change select parameter for some values. Below is the example need to encluded in the [MDL script for lab 3](/file/Teaching_Clemson/459_lab3.mdl) to change the NMOS width and run the transicent analysis.
 <pre>
 foreach w_n from {300n,600n,900n,1200n,1500n,1800n} 
@@ -249,10 +246,8 @@ foreach w_n from {300n,600n,900n,1200n,1500n,1800n}
 	run trans_q2
 }
 </pre>
-
  
 <h3>Lab assignements</h3>
-
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester:
 
   * Construct a CMOS inverter with input port labeled as $V_{in}$, and both NMOS and PMOS set as W=300n, L=100n.
@@ -268,12 +263,10 @@ Based on the provided example, students are expected to find and compute explore
 
 
 <h2 id="Lab 4">Lab 4 Delay of combinational logic</h2>
-
 This lab extend the study of inverter in previous lab, and explore the concepts learnt for basic combinational logics. 
 The students are provided [SPECTRE circuit script for lab 4](/file/Teaching_Clemson/459_lab4.scs) and [MDL script for lab 4](/file/Teaching_Clemson/459_lab4.mdl) as example.
 
 A select subset of new commands are used in this lab:
-
 <h3>Capacitance connection</h3>
 Capacitor named as `C0` can be connected node `net13` with value of `CAP` to the circuit using the below syntax 
 <pre>C0 (net13 0) capacitor c=CAP
@@ -292,7 +285,7 @@ init_a term_a init_b  term_b
 </pre>
 
 <h3>MDL Optimization syntax</h3>
-The MDL optimization follows the script below in high level structure, with more detials avaliable in MDL_workshop_tut.pdf file in installation path. By changing the zero statement as optimization objective and changing the parameter needs to optimize, the SPECTRE tool will try its best to find the parameter fits the optimization goal. 
+The MDL optimization follows the script below in high level structure, with more detials avaliable in MDL_workshop_tut.pdf under the installation path. By changing the zero statement as optimization objective and changing the parameter needs to optimize, the SPECTRE tool will try its best to find the parameter fits the optimization goal. 
 <pre>
 mvarsearch_statement ::=
 mvarsearch {
@@ -307,22 +300,21 @@ zero {zero_statements}
 <h3>Lab assignements</h3>
 
 Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
-
   * Build an inverter as the first stage of your inverter chain (NMOS: 300n/100n; PMOS: 600n/100n.	Connect 64 identical inverter at the end of inverter chain to serve as the load capacitance. 
-  * Construct four inverter chains for N (number of stages) from 1 to 4. For the rest of the  stages, you need to set the CMOS parameters for inverters (except the first one) based on the total number of stages and the design rule learned in class. 
+  * Construct four inverter chains for $N$ (number of stages) from 1 to 4. For the rest of the  stages, you need to set the CMOS parameters for inverters (except the first one) based on the total number of stages and the design rule learned in class. 
   * Measure the Delay ($T_p$) for each inverter chain (final output), and here you still need to measure both $t_{pHL}$ and $t_{pLH}$ in order to get the delay $T_p$. 
-  * Construct a CMOS inverter, Make the width (300n) and length (100n) fixed for NMOS, and length (100n) fixed for PMOS. Using the MDL Optimization tool, find the width of the PMOS for each of the following requirements: 
+  * Construct a CMOS inverter, make the width (300n) and length (100n) fixed for NMOS, and length (100n) fixed for PMOS. Using the MDL Optimization tool, find the width of the PMOS for each of the following requirements: 
       * Make $t_{pLH}-t_{pHL}$ as close to zero as possible
       * Have the smallest average propagation delay (hint: make $(t_{pLH}+t_{pHL})/2$ as close to zero as possible)
   * Use the MDL Optimization tool to find the width of the PMOS that makes the switching threshold ($V_m$) equals to half of $V_{dd}$. Note that this is a DC analysis.
   * CMOS combinational gate design:
       * Build the 2-input NAND gate, and 2-input NOR gate. Keep the NMOS/PMOS of this gate length at 100nm, and NMOS width with 300nm and PMOS width with 600nm. Since here, we only care about functionality.
       * Verify the functionality by feeding in the Pulse wave for all possible input combinations. Take a screenshot of it. 
-  * The Logical effort is the ratio of a gate's input capacitance to an inverter's input capacitance, delivering the same output current. As mentioned in the slide, it can be measured from delay vs fanout plots. Let’s verify that here!
+  * The [Logical effort](https://en.wikipedia.org/wiki/Logical_effort) is the ratio of a gate's input capacitance to an inverter's input capacitance, delivering the same output current. As mentioned in the slide, it can be measured from delay vs fanout plots. 
       * Build an inverter with an NMOS/PMOS length with 100nm, and NMOS width with 300nm and a PMOS width that satisfies the non-skewed inverter derived in problem 2. 
       * Use the 2-input NAND gates and 2-input NOR gates built previously, and size it that can deliver identical output current as  the inverter built in previous bullentin. [Note that it is possible to use an optimization tool to find the more realistic width using an optimization tool, which is not required here]. 
       * Find the worst case propagation delay for inverter, 2-input NAND gate, and 2-input NOR gate when their load is 1, 2, 3, 4 copy of itself. Find the slope of the delay trend, then report the founded logical effort and verify the concept.  
-      *  Verify the worst-case propagation delay input patterns as shown in the lecture using MDL for the 2-input NAND gate and 2-input NOR gate. 
+      *  Verify the worst-case propagation delay input patterns by MDL for the 2-input NAND gate and 2-input NOR gate. 
       *  Build the 3-input NAND gate and 3-input NOR gate, and size it properly according to the inverter built in a, according to the slide.  
       *  Find the worst-case propagation delay for gates when load is 1,2,3,4 copies of itself. Find the slope of the delay trend, then report the founded logical effort and verify the concept.  
       *  Verify the worst-case propagation delay input pattern as shown in the lecture using MDL for the 3-input NAND gate and 3-input NOR gate. 
@@ -336,7 +328,7 @@ Based on the provided example, students are expected to find and compute explore
 
 <h2 id="Lab 5">Lab 5 Combinational Logic Family, Wire, Sequential Logic</h2>
 
-This lab serves as the last regular lab for this course. Here, the students are expected to examine the remaining concepts that haven't verified in the previous labs. No custom example script is provided for this lab since students are expected to have fimarlized with the SPECTRE design. 
+This lab serves as the last regular lab for this course. Here, the students are expected to examine the remaining concepts that haven't verified in the previous labs. No custom example script is provided for this lab since students are expected to have fimilarized with the SPECTRE design. 
 
 A select subset of new commands are used in this lab:
 
@@ -352,8 +344,7 @@ The point-wise signal can be defined as follows, with the format of time and des
 vdata   (d 0) 	vsource type=pwl   wave=[0 0 0  0 1n  vdd 10n vdd 11n 0]
 </pre>
 <h3>Lab assignements</h3>
-
-Based on the provided example, students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
+Students are expected to find and compute explore the CMOS inverter's characteristics using 45nm gpdk library. Below are the ones we do in this semester.
 
   * Verify the Elmore delay in SPECTRE. Connect the resistors and capacitors as shown in the circuit diagram below, where R=100Ohm and C=100pF. 
   ![RC delay](/file/Teaching_Clemson/RC_delay.jpg "RC delay")

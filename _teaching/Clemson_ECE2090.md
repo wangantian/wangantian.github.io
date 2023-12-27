@@ -41,7 +41,7 @@ The draft of the basic usage is avalible below:<embed src="https://wangantian.gi
 <h2 id="Extra_material">Extra materials for students' interests</h2>
 There are 10 lab sessions of this lab courses, below are the collected extra materials that related to the corresponding lab content from theory, simulation, and circuit board building. The original webpage was designed for Canvas page.  You can click the image, and it will redirect you to the corresponding Youtube video url.
 
-<h3> Lab 01 Course Description </h3>
+<h3> Lab 01 Course Description</h3>
 
 What's inside the breadboard?
 
@@ -83,7 +83,7 @@ Blowing Up LEDs for Science
 
 [![Blowing Up LEDs for Science](https://img.youtube.com/vi/8QaDqRBWZC4/0.jpg)](https://youtu.be/8QaDqRBWZC4 "Blowing Up LEDs for Science")
 
-<h3> Lab 02 Logic Gates  </h3>
+<h3> Lab 02 Logic Gates</h3>
 Decapping ICs.
 
 [![Decapping ICs](https://img.youtube.com/vi/mT1FStxAVz4/0.jpg)](https://youtu.be/mT1FStxAVz4 "Decapping ICs ")
@@ -123,7 +123,7 @@ Gigatron TTL computer 
 A computer built from NOR gates: inside the Apollo Guidance Computer 
 
 [https://www.righto.com/2019/09/a-computer-built-from-nor-gates-inside.html](https://www.righto.com/2019/09/a-computer-built-from-nor-gates-inside.html)
-<h3> Lab 03 Encoding/Decoding </h3>
+<h3> Lab 03 Encoding/Decoding</h3>
 Nixie Tube display
 
 [![Nixie Tube display](https://img.youtube.com/vi/7uogKucrPks/0.jpg)](https://youtu.be/7uogKucrPks "Nixie Tube display")
@@ -145,7 +145,7 @@ UTF-8/Unicode for general encoding
 [https://en.wikipedia.org/wiki/UTF-8](https://en.wikipedia.org/wiki/UTF-8)
 
 [![UTF-8/Unicode](https://img.youtube.com/vi/ut74oHojxqo/0.jpg)](https://youtu.be/ut74oHojxqo "UTF-8/Unicode")
-<h3> Lab 04 Combinational Circuit  </h3>
+<h3> Lab 04 Combinational Circuit </h3>
 Quine–McCluskey algorithm
 
 [https://en.wikipedia.org/wiki/Quine%E2%80%93McCluskey_algorithm](https://en.wikipedia.org/wiki/Quine%E2%80%93McCluskey_algorithm)
@@ -173,7 +173,7 @@ A brief introduction to LDPC code
 LDPC code's inventor Prof Robert Gallager talks about his advisor Shannon, father of information theory
 
 [![Prof Robert Gallager's talk](https://img.youtube.com/vi/neA0NJNUEfM/0.jpg)](https://youtu.be/neA0NJNUEfM "Prof Robert Gallager's talk")
-<h3> Lab 05, 06, 07 Binary arithmetic, MSI circuit, Multiplier  </h3>
+<h3> Lab 05, 06, 07 Binary arithmetic, MSI circuit, Multiplier </h3>
 Binary arithmetic extension
 * Floating point [https://en.wikipedia.org/wiki/Floating-point_arithmetic](https://en.wikipedia.org/wiki/Floating-point_arithmetic)
 * unum (posit) [https://en.wikipedia.org/wiki/Unum_(number_format)](https://en.wikipedia.org/wiki/Unum_(number_format))
@@ -234,7 +234,7 @@ FPGA introduction
 Karatsuba algorithm
 
 [![Karatsuba algorithm](https://img.youtube.com/vi/JCbZayFr9RE/0.jpg)](https://youtu.be/JCbZayFr9RE "Karatsuba algorithm")
-<h3> Lab 08 Mux and serial communication </h3>
+<h3> Lab 08 Mux and serial communication</h3>
 What is the difference between serial and parallel communication and why need serial communication
 
 [![Serial/Parallel communication](https://img.youtube.com/vi/myU2x27FIIc/0.jpg)](https://youtu.be/myU2x27FIIc "Serial/Parallel communication")
@@ -269,7 +269,7 @@ Persistence of vision
 How does a Universal Serial Bus(USB) work
 
 [![USB](https://img.youtube.com/vi/wdgULBpRoXk/0.jpg)](https://youtu.be/wdgULBpRoXk "USB")
-<h3> Lab 09 Memory, Cache </h3>
+<h3> Lab 09 Memory, Cache</h3>
 3.5 inch floppy disk(the A disk)
 
 [![A disk](https://img.youtube.com/vi/tJCMzdzh4Tw/0.jpg)](https://youtu.be/tJCMzdzh4Tw "A disk")
@@ -311,7 +311,7 @@ Universal Memory Interface 
 
 [https://github.com/zeroasiccorp/umi](https://github.com/zeroasiccorp/umi)
 
-<h3> Lab 10 Sequential design </h3> 
+<h3> Lab 10 Sequential design</h3> 
 David Patterson: Computer Architecture and Data Storage
 
 [![Computer Architecture and Data Storage](https://img.youtube.com/vi/ctwj53r07yI/0.jpg)](https://youtu.be/ctwj53r07yI "Computer Architecture and Data Storage")
