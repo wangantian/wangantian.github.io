@@ -15,7 +15,7 @@ redirect_from:
 
 ## Software libraries:
 
-## Machie learning applications:
+## Machine learning applications:
 
 ## Other resource collections:
  
