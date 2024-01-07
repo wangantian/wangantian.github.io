@@ -350,6 +350,18 @@ Static timing analysis 
 
 [![STA](https://img.youtube.com/vi/jcKVrkEvoA8/0.jpg)](https://youtu.be/jcKVrkEvoA8 "Static timing analysis ")
 
+Computer history museum
+
+https://computerhistory.org/
+
+1401 N Shoreline Blvd, Mountain View, CA 94043
+
+Intel Museum 
+
+https://www.intel.com/content/www/us/en/company-overview/intel-museum.html
+
+2200 Mission College Blvd, Santa Clara, CA 95054
+
 <h2 id="project_prompts">Lab final project possible topics</h2>
 This list was last updated by the end of Fall 2023, and will no longer updated here in this site. Feel free to use it if you need them. 
 
