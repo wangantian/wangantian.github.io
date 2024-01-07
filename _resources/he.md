@@ -27,6 +27,7 @@ You need to have two terminal to make it running.
 * Parameter generator for the leveled BGV and BFV scheme [https://github.com/Crypto-TII/fhegen](https://github.com/Crypto-TII/fhegen)
 
 * HE Linear Algebra Kernels for Secure Inference [https://github.com/shashankballa/HELiKs](https://github.com/shashankballa/HELiKs)
+
 ## Machine learning applications:
 
 
@@ -38,12 +39,7 @@ Homomorphic Encryption standardization
 * HomomorphicEncryption.org [https://homomorphicencryption.org/mailing-list](https://homomorphicencryption.org/mailing-list)
 * NIST standardization [https://csrc.nist.gov/Events/2023/mpts2023](https://csrc.nist.gov/Events/2023/mpts2023
 )
- 
-Full theory 
-Mainly used for math detail double checking
-Yuriy Polyakov/Duality 
-https://dl.acm.org/doi/pdf/10.1145/3560827.3563379
-
+  
 
 
 ## Courses
