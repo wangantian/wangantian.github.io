@@ -40,8 +40,7 @@ Another set of constraints lies in the pin assignment, which could be done by mo
 Though all FPGA boards available in Xilinx Vivado are called FPGA, there possiblly have signifcant differences between their performances based on the size of design. Typically [Artix-7 board AC701](https://www.xilinx.com/products/boards-and-kits/ek-a7-ac701-g.html) may have inferior performance to [Ultrascale family](https://www.xilinx.com/products/technology/ultrascale.html). Some boards with different layout could also contribute performance differences. 
 
 ## Attribute 
-It is not recommended to use attributes in Xilinx given its generalibility to cross-platform, ASIC design. It has limited help 
-You may refer to the document here for this feature https://docs.xilinx.com/r/en-US/ug901-vivado-synthesis/Synthesis-Attributes
+It is not recommended to use attributes in Xilinx given its generalibility to cross-platform, ASIC design. It has limited help. You may refer to the document here for this feature [https://docs.xilinx.com/r/en-US/ug901-vivado-synthesis/Synthesis-Attributes](https://docs.xilinx.com/r/en-US/ug901-vivado-synthesis/Synthesis-Attributes)
 I only use "don't touch" for board-level functionality checks. I don't recommend read through it if you already can reach the timing requirements. 
 
 ## Use of TCL script:
