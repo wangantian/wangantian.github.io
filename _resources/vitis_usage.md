@@ -30,9 +30,9 @@ If you want to configure your local Linux Desktop by yourself. Below is the one 
 * Try to avoid dual system.
 
 # Tutorial 
-Vitis provide tutorial in Xilinx github page [here](https://github.com/Xilinx/Vitis_Accel_Examples/tree/main). There probably have multiple versions for this tool online. Please try to follow the latest one. 
+Vitis provide tutorial in Xilinx github page [https://github.com/Xilinx/Vitis_Accel_Examples/tree/main](https://github.com/Xilinx/Vitis_Accel_Examples/tree/main). There probably have multiple versions for this tool online. Please try to follow the latest one. 
 
-If you prefer GUI interface, the tutorial [here](https://xilinx.github.io/xup_compute_acceleration/Vitis_intro-1.html) provides necessary setting steps.
+If you prefer GUI interface, the tutorial [https://xilinx.github.io/xup_compute_acceleration/Vitis_intro-1.html](https://xilinx.github.io/xup_compute_acceleration/Vitis_intro-1.html) provides necessary setting steps.
 
 # OpenCL and XRT (Xilinx runtime) 
 There exists multiple way to design the host side program, OpenCL and XRT Native API are the ones that close to hardware layer, and OpenCL version is built upon XRT Native API in short. It might be desirable 
