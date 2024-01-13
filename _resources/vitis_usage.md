@@ -27,7 +27,7 @@ If you want to configure your local Linux Desktop by yourself. Below is the one 
 * Latest possible CPU cores.
 * Large DDR memory with possible 64GB+.
 * Large SSD to accomodate the installation and large generated project files.
-* Try to avoid dual system.
+* Try to avoid dual operating system.
 
 # Tutorial 
 Vitis provide tutorial in Xilinx github page [https://github.com/Xilinx/Vitis_Accel_Examples/tree/main](https://github.com/Xilinx/Vitis_Accel_Examples/tree/main). There probably have multiple versions for this tool online. Please try to follow the latest one. 
