@@ -1,0 +1,27 @@
+# main links links
+main:
+  - title: "Publications"
+    url: /publications/
+
+  # - title: "Talks"
+    # url: /talks/    
+
+  - title: "Teaching"
+    url: /teaching/    
+    
+  # - title: "Portfolio"
+    # url: /portfolio/
+        
+  # - title: "Blog Posts"
+    # url: /year-archive/
+    
+
+    
+  - title: "Resources"
+    url: /resources/
+    
+  # - title: "Future1"
+    # url: /future/
+    
+  # - title: "Future2"
+    # url: /future2/

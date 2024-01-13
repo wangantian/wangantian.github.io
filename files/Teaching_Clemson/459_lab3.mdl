@@ -1,0 +1,24 @@
+//spectremdl -batch 459_lab3.mdl -design  459_lab3.scs +log 459_lab3.log
+// alias measurement definition
+alias measurement rise_fall_trans{
+	// definition of transient analysis with autostop turned on
+	run trans1 
+	// computation of risetime for signal V(inv_out2) from 10% to 90%
+	export real rise = risetime(sig=V(inv_out2), initval=vdd*.1, finalval=vdd*.9)
+
+	//computation of falltime for signal V(inv_out2) from 90% to 10%
+	export real fall= falltime(sig=V(inv_out2), initval=vdd*.9, finalval=vdd*.1)	
+
+	//computation of of actual tplh based on the definition 
+	export real tplh = deltax(sig1=V(inv_in2), sig2=V(inv_out2),dir1='fall, thresh1=vdd*.5,dir2='rise, thresh2=vdd*.5, start1=0, start2=0)
+
+	//computation of of actual tphl based on the definition 
+	export real tphl = deltax(sig1=V(inv_in2), sig2=V(inv_out2),dir1='rise, thresh1=vdd*.5,dir2='fall, thresh2=vdd*.5, start1=0, start2=0)
+}
+
+//run rise_fall_trans
+
+foreach vdd from {0.5,0.6} 
+{ 
+run rise_fall_trans
+}

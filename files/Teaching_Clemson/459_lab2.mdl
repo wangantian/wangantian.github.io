@@ -1,0 +1,16 @@
+// alias measurement definition
+alias measurement dc_vdsat_measure {
+
+  // definition of transient analysis with autostop turned on
+  run dc_sweep_nmos_vgn
+
+     export real mn0_vdsat_0p0=mn0:vdsat@0
+     export real mn0_vdsat_0p2=mn0:vdsat@0.2
+     export real mn0_vdsat_0p4=mn0:vdsat@0.4
+     export real mn0_vdsat_0p6=mn0:vdsat@0.6
+     export real mn0_vdsat_0p8=mn0:vdsat@0.8
+     export real mn0_vdsat_1p0=mn0:vdsat@1.0
+     export real mn0_vdsat_1p1=mn0:vdsat@1.1
+}
+
+run dc_vdsat_measure

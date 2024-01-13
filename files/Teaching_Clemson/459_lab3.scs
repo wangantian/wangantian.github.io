@@ -1,0 +1,37 @@
+* define the simulator language
+simulator lang=spectre
+*command to run the script below
+*spectremdl -batch 459_lab3.mdl -design  459_lab3.scs +log 459_lab3.log
+*functionality of this code
+*simple inverter
+*Include the library for target technology, here is 45 nm.
+*You need to find this directory by yourself.
+include "/software/commercial/cadence/pdk/gpdk045_v_6_0/models/spectre/gpdk045_mos.scs" section=tt
+
+*below is use the parameterization of the circuit script
+parameters w_p=600n w_n=300n l_p=100n l_n=100n
+parameters vdd=1.1 vs0=0 vs1=0 vs2=0
+*Identify the power supply and ground for this entire circuit script
+global 0 vdd! 
+
+*Using subckt to define a CMOS logic gate. It is highly recommend to only use it once the internal structure is complicated and you do not want to change any parameters within this sub circuit/macro.
+subckt invs_subckt inv_out inv_in
+   mp1 (inv_out inv_in vdd! vdd!) g45p1svt w=w_p l=l_p 
+   mn1 (inv_out inv_in 0 0) g45n1svt w=w_n l=l_n
+ends invs_subckt 
+*this line indicate the power supply.
+vdd_s (vdd! 0) vsource dc=vdd type=dc 
+ 
+*Instantiate another inverter using sub circuit
+inv_2 (inv_out2 inv_in2) invs_subckt
+*Define a pulse wave with corrsponding initial value and period, rising time and fall time, pulse wave width.
+v1 (inv_in2 0) vsource dc=vs2 type=pulse val0=0 val1=vdd period=10u rise=5p fall=5p width=5u 
+*Define the starting time and end time of transient analysis.
+trans1 tran stop=50u method =trap 
+
+* this line indicate the simulation temperature
+simOptions options temp=25
+
+* these lines indicatae saving some information within the log file.
+outputInfo info what=output where=logfile 
+element info what=inst where=logfile
