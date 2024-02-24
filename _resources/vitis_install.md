@@ -24,14 +24,13 @@ The above settings were provided by Zhenyu Xu from Dr. Wei's [NEXT Lab research 
 
 # Operation system preparation
 You are not expected to run it over Virtual Machine. Thus, you need to install Linux in your desktop. We use Ubuntu 22.04 LTS for convinence, which is avaliable in [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop). Different from Virtual Machine, you need to use tool like Rufs which is avaliable here [https://rufus.ie/en](https://rufus.ie/en) to make your USB flash drive as a bootstrable drive. The following video below shows how you use it:
+[![How to Download and Install Linux from USB Flash Drive Step-By-Step Guide.]
 (https://img.youtube.com/vi/pwWfJwlZLWg/0.jpg)](https://youtu.be/pwWfJwlZLWg "How to Download and Install Linux from USB Flash Drive Step-By-Step Guide.")
 
 # Vitis unified design download and installation
 The Vitis is can be download from [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html)
 
-Once downloaded, you need to get the sudo authority, and come to the download path.
-
-Once in the download path, you need to make the .bin file executable and start the running by 
+Once you signin, and download the .bin file, you need to change your directory to your download path, you need to make the .bin file executable and start the running by 
 
 ```bash
 chmod +x <installer>.bin && sudo ./<installer>.bin
