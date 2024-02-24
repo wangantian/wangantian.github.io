@@ -39,7 +39,7 @@ Note that there may be an issue with logisim evolution, making some download fil
 The draft of the basic usage is avalible below:<embed src="https://wangantian.github.io/files/Teaching_Clemson/LogisimEvollution_Tutorial.pdf" width="100%" height="50px"/> 
 
 <h2 id="Extra_material">Extra materials for students' interests</h2>
-There are 10 lab sessions of this lab courses, below are the collected extra materials that related to the corresponding lab content from theory, simulation, and circuit board building. The original webpage was designed for Canvas page.  You can click the image, and it will redirect you to the corresponding Youtube url.
+There are 10 lab sessions of this lab courses, below are the collected extra materials apart from the lab manual that related to the corresponding lab content from theory, simulation, and circuit board building. The original webpage was designed for Canvas page.  You can click the image, and it will redirect you to the corresponding Youtube url.
 
 [Lab 01 Course Description](#lab01_extra)
 
@@ -477,6 +477,7 @@ This open-ended project involving design, simulation, and analysis of a digital 
 
 * For parking meter/vending machine:
 * Accept quarter/half-dollar/$1, $2, $5 bills. You can consider penny/dime/nickel.
+* Counting the remaining available spots using sensors (use switch here to simulate).
 * For pill separator:
 ** Count-down timer to decide which types of pills should be consumed. The time intervals can be reconfigured.
 ** Allow purchasing/consuming multiple types of parking time/merchandise/types of pills.
