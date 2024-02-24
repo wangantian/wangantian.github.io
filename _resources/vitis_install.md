@@ -33,8 +33,10 @@ The Vitis is can be download from [https://www.xilinx.com/support/download/index
 
 Once you signin, we have two option, Single File Download (SFD) or using web installer.
 
+
 ## Single File Download (SFD) [Recommend]
-Extract the files from the Xilinx_<version>.tar.gz archive:
+
+The download speed will probably faster than useing web installer. Extract the files from the Xilinx_<version>.tar.gz archive:
 ```bash
 tar -xvf Xilinx_<version>.tar.gz
 ```
@@ -51,22 +53,50 @@ Download the .bin file, you need to change your directory to your download path,
 ```bash
 chmod +x <installer>.bin && sudo ./<installer>.bin
 ```
-The above command is copied from [https://digilent.com/reference/programmable-logic/guides/installing-vivado-and-sdk](https://digilent.com/reference/programmable-logic/guides/installing-vivado-and-sdk)
 
-Please follow the default installation setting for your convinence.
+## Known issue 
+If you stopped generating installed device, you need to install the following, and restart the installation after completion. 
+
+```bash
+sudo apt install libtinfo5 libncurses5
+```
 
 # Platform data download
 Similar but different from Vivado, you need to download the Alveo data accelearation card from [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html) by choosing the appropriate software and operating system.
 
-Here we only download the .tar.gz files for your desired platform. We only do U200, U250, U280 here.
+Apart from download the .tar.gz files for your desired platform. We only do U200, U250, U280, and untar the tarball, install using the following command: 
+
+```bash
+sudo apt install ./*.deb
+```
+
+You also need to download the Development Target Platform, this part seems to have to be installed one platform by another rather than install every platform at once. 
 
 # XRT download and build
 
+XRT can is also downloaded from [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html) in xrt_<version>.deb or xrt_<version>.rpm file based on your operation system.
 
-# Uninstall Vitis 
+The build instruction is avaliable [https://xilinx.github.io/XRT/master/html/build.html](https://xilinx.github.io/XRT/master/html/build.html) and [https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu](https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu)
+
 ```bash
-sudo apt remove xrt
+git clone https://github.com/Xilinx/XRT.git
+sudo <XRT>/src/runtime_src/tools/scripts/xrtdeps.sh
+cd <XRT>/build
+./build.sh
+sudo apt install ./xrt*.deb
 ```
+
+If you happen to have two cmake version within your XILINX library, you may change it similar as follows:
+```bash
+export PATH=/tools/Xilinx/Vitis/2023.1/tps/lnx64/cmake-3.XXX:$PATH
+```
+
+It is inspired from [https://support.xilinx.com/s/question/0D54U00006RtdwzSAB/cmake-version-upgrade-can-not-find-library?language=en_US](https://support.xilinx.com/s/question/0D54U00006RtdwzSAB/cmake-version-upgrade-can-not-find-library?language=en_US) used for other installation step.
+
+```bash
+export LD_LIBRARY_PATH=/<YOUR PATH>/Vitis/2022.2/tps/lnx64/cmake-3.21.4/libs/Ubuntu:$LD_LIBRARY_PATH
+```
+
 # Uninstall XRT
 ```bash
 sudo apt remove xrt
