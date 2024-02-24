@@ -31,7 +31,22 @@ You are not expected to run it over Virtual Machine. Thus, you need to install L
 # Vitis unified design download and installation
 The Vitis is can be download from [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html)
 
-Once you signin, and download the .bin file, you need to change your directory to your download path, you need to make the .bin file executable and start the running by 
+Once you signin, we have two option, Single File Download (SFD) or using web installer.
+
+## Single File Download (SFD) [Recommend]
+Extract the files from the Xilinx_<version>.tar.gz archive:
+```bash
+tar -xvf Xilinx_<version>.tar.gz
+```
+ 
+Run the installer:
+ 
+```bash
+sudo ./xsetup
+```
+
+## Use web installer
+Download the .bin file, you need to change your directory to your download path, you need to make the .bin file executable and start the running by 
 
 ```bash
 chmod +x <installer>.bin && sudo ./<installer>.bin
@@ -48,3 +63,11 @@ Here we only download the .tar.gz files for your desired platform. We only do U2
 # XRT download and build
 
 
+# Uninstall Vitis 
+```bash
+sudo apt remove xrt
+```
+# Uninstall XRT
+```bash
+sudo apt remove xrt
+```
