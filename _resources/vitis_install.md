@@ -16,7 +16,7 @@ Designing system scale hardware is costly but worthwhile. Below is one possible 
 * Intel i7 14700k CPU.
 * SSD hard drive with at least 4TB, heatsink and latest PCIe. 
 * DDR5 RAM ideally 96GB (2 x 48GB).
-* CPU cooler, idealy using water cooling solution, since wind cooler may limit the space of avaliable RAM slots. 
+* CPU cooler, idealy using water cooling solution, since wind cooler may limit avaliable RAM slots. 
 * High Power supply with Fan.
 * Large Computer case with additional PWM Fans, we use Lian Li LancooL 216 Black Steel/Tempered Glass ATX Mid Tower Computer Case,2X 160 mm PWM Fans Included (Non-RGB)- LANCOOL 216X Black. 
 
@@ -37,7 +37,13 @@ chmod +x <installer>.bin && sudo ./<installer>.bin
 ```
 The above command is copied from [https://digilent.com/reference/programmable-logic/guides/installing-vivado-and-sdk](https://digilent.com/reference/programmable-logic/guides/installing-vivado-and-sdk)
 
+Please follow the default installation setting for your convinence.
+
 # Platform data download
-Similar but different from Vivado, you need to download the Alveo data accelear
+Similar but different from Vivado, you need to download the Alveo data accelearation card from [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html) by choosing the appropriate software and operating system.
+
+Here we only download the .tar.gz files for your desired platform. We only do U200, U250, U280 here.
 
 # XRT download and build
+
+

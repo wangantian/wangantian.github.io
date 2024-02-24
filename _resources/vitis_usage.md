@@ -28,6 +28,7 @@ If you want to configure your local Linux Desktop by yourself. Below is the one 
 * Large DDR memory with possible 64GB+.
 * Large SSD to accomodate the installation and large generated project files.
 * Try to avoid dual operating system.
+
 In this [link](https://wangantian.github.io//vitis_install/), a detialed step-by-step installation tutorial is provided.
 
 # Tutorial 
