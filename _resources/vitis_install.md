@@ -36,7 +36,7 @@ Once you signin, we have two option, Single File Download (SFD) or using web ins
 
 ## Single File Download (SFD) [Recommend]
 
-The download speed will probably faster than useing web installer. Extract the files from the Xilinx_<version>.tar.gz archive:
+The download speed will probably faster than using web installer. Extract the files from the Xilinx_<version>.tar.gz archive:
 ```bash
 tar -xvf Xilinx_<version>.tar.gz
 ```
@@ -74,9 +74,7 @@ You also need to download the Development Target Platform, this part seems to ha
 
 # XRT download and build
 
-XRT can is also downloaded from [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html) in xrt_<version>.deb or xrt_<version>.rpm file based on your operation system.
-
-The build instruction is avaliable [https://xilinx.github.io/XRT/master/html/build.html](https://xilinx.github.io/XRT/master/html/build.html) and [https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu](https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu)
+XRT is avaliable at [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html) in xrt_<version>.deb or xrt_<version>.rpm file based on your operation system. While, it might fail. A better way is to build it from github, which can be followed using the build instruction is avaliable [https://xilinx.github.io/XRT/master/html/build.html](https://xilinx.github.io/XRT/master/html/build.html) and [https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu](https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu)
 
 ```bash
 git clone https://github.com/Xilinx/XRT.git
@@ -86,7 +84,7 @@ cd <XRT>/build
 sudo apt install ./xrt*.deb
 ```
 
-If you happen to have two cmake version within your XILINX library, you may change it similar as follows:
+If you happen to have two cmake version within your XILINX library after load the Vitis, you may change it similar as follows:
 ```bash
 export PATH=/tools/Xilinx/Vitis/2023.1/tps/lnx64/cmake-3.XXX:$PATH
 ```
