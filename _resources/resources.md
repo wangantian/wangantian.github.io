@@ -8,7 +8,9 @@ redirect_from:
 
 ## Hardware Design and Tool usage 
 [Vivado usage memo](https://wangantian.github.io//vivado/)
+
 [Vitis install memo](https://wangantian.github.io//vitis_install/)
+
 [Vitis usage memo](https://wangantian.github.io//vitis/)
 
 [Cadence workflow memo](https://wangantian.github.io//cadence/)

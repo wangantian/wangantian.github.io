@@ -42,14 +42,13 @@ There exist multiple versions for Vitis online. Please try to follow the latest 
 If you prefer GUI interface, the tutorial [https://xilinx.github.io/xup_compute_acceleration/Vitis_intro-1.html](https://xilinx.github.io/xup_compute_acceleration/Vitis_intro-1.html) provides necessary setting steps.
 
 # OpenCL and XRT (Xilinx RunTime) 
-There exists multiple way to design the host side program, OpenCL and XRT Native API are the ones that close to hardware layer, and OpenCL version is built upon XRT Native API in short. It might be desirable 
+There exists multiple way to design the host side program, OpenCL and XRT Native API are the ones that close to hardware layer, and OpenCL version is built upon XRT Native API in short. It might be desirable
 
 [OpenCL](https://en.wikipedia.org/wiki/OpenCL) stands for Open Computing Language, which can also used for General Purpose GPU program desgin. Its design idea can be generalized to different computing devices. However, it is not a good programming platform/language you can create without a template. It is a good idea to find the corresponding examples, and then modify them to fits our usage. Lots of online course resources provide OpenCL tutorials.
  
 
 # AXI interface
 The RTL IP core for vitis needs to follow AXI interfaces, there exist lots of variant of AXI protocol for RTL IP core. This youtube playlist [https://www.youtube.com/playlist?list=PLkqJVNOiuuHtNrVaNK4O1BSgczja4obeW](https://www.youtube.com/playlist?list=PLkqJVNOiuuHtNrVaNK4O1BSgczja4obeW) provides a good overview. Under the installation path of vivado: VIVADO_INSTAL_PATH/VERSION/data/xilinx_vip/hdl/ gives necessary HDL description of the protocol to deepen the understanding.  
-
 
 # Basic Vitis running
 
@@ -112,3 +111,14 @@ make all TARGET=hw PLATFORM=/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202
 ### HW build run 
 
 To update 
+
+## Typical error:
+ * Fail to check the file name, kernel name, or add necessary files.
+ * Forget export XCL_EMULATION_MODE before emulation.
+ 
+## Custom tutorial
+The following tutorial was developed for helping Lao's group in developing Vitis and Vivado workflow. The tool we are using is Vitis 2023.1. Some featues may not be avaliable in earlier/later versions.
+ * Tutorial 1 Simple custom RTL kernel using AXI-stream.
+ * Tutorial 2
+
+
