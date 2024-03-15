@@ -49,5 +49,7 @@ Clicking the menus in GUI/Project mode could be devastating. Use of the TCL scri
 [Here](https://wangantian.github.io/files/finalstep.tcl) is the example TCL file we typically used. Xilinx also provide [TCL reference]() for exploration
 
 # Non-project mode Vivado workflow in Linux 
-To update 
+```bash
+vivado -mode batch -source ./flow.tcl
+```
 
