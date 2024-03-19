@@ -74,4 +74,3 @@ CAD For Assurance 	https://cadforassurance.org/
 ## Workshops
 
 ## Interviews
-* Y. Chen, "An Interview With Professor Jason Cong [Interview]," in IEEE Circuits and Systems Magazine, vol. 23, no. 4, pp. 3-66, Fourthquarter 2023,[https://ieeexplore.ieee.org/abstract/document/10378993](https://ieeexplore.ieee.org/abstract/document/10378993)

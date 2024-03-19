@@ -20,6 +20,7 @@ redirect_from:
 ## Privacy Preserving Machine Learning
 [Homommorphic Encryption](https://wangantian.github.io//he/)
 
+
 ## Conference and Journal
 [China Computer Federation (CCF) Conference Journal Category Version 2019](http://wangantian.github.io/files/CCF_journal_conference-2019.pdf)
 
@@ -30,5 +31,11 @@ redirect_from:
 
 [Courses](https://wangantian.github.io//courses/)
 
+[Online books](https://wangantian.github.io//books/)
 
+## Other miscelounous links
+
+[Ph.D. comics](https://phdcomics.com/)
+
+[xkcd](https://xkcd.com/)
  
