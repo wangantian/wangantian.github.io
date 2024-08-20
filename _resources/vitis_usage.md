@@ -113,8 +113,15 @@ make all TARGET=hw PLATFORM=/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202
 To update 
 
 ## Typical error:
- * Fail to check the file name, kernel name, or add necessary files.
- * Forget export XCL_EMULATION_MODE before emulation.
+ * Fail to check the file name, kernel name, or add necesWsary files.
+ * Forget export XCL_EMULATION_MODE before emulation. We typically include as part of the command when we load the tool.
+ * Below is the typical issue happen when we do the emulation, if it happen, delete any generate file, and rebuild. It should work.
+  * ERROR: [VPL 10-3180] cannot find port 'BLP_M_AXI_DATA_C2H_00_awsize' on this module [/SOME_DIRECTORY/vivado/vpl/prj/prj.ip_user_files/bd/pfm_top/sim/pfm_top.v:754]
+  * ERROR: [VPL 10-3180] cannot find port 'BLP_M_AXI_DATA_C2H_00_arsize' on this module [/SOME_DIRECTORY/vivado/vpl/prj/prj.ip_user_files/bd/pfm_top/sim/pfm_top.v:743]
+  * ERROR: [VPL 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed
+  * ERROR: [VPL 60-773] In '[/SOME_DIRECTORY/vivado/vpl/vivado.log', caught Tcl error: 
+  * ERROR: [VPL 60-704] Integration error, Step failed: config_hw_emu.elaborate An error stack with function names and arguments may be available in the 'vivado.log'.
+
  
 ## Custom tutorial
 The following tutorial was developed for helping Lao's group in developing Vitis and Vivado workflow. The tool we are using is Vitis 2023.1. Some featues may not be avaliable in earlier/later versions.

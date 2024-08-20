@@ -28,7 +28,8 @@ You are not expected to run it over Virtual Machine. Thus, you need to install L
 
 [![How to Download and Install Linux from USB Flash Drive Step-By-Step Guide.](https://img.youtube.com/vi/pwWfJwlZLWg/0.jpg)](https://youtu.be/pwWfJwlZLWg "How to Download and Install Linux from USB Flash Drive Step-By-Step Guide.")
 
-WARNING, if you used provided motherboard, please check your BIOS version, IT HAVE TO BE 0816[preferred] OR 0904 X86 to be fully support 22.04 installation, otherwise, it will return out of memory.
+WARNING, if you used provided motherboard, please check your BIOS version, IT HAVE TO BE 0816 [preferred] OR 0904 X86 to be fully support 22.04 installation. Otherwise, it will return out of memory.
+
 Version 0904 has an issue with SSD port labeled as C is not usable with Intel i7 14700k CPU. Later BIOS versions may fix this issue. 0816 version has good support for Intel i7 13700k CPU.
 You can install Ubuntu 24.04 with later BIOS (like 1801), but it cannot support Xilinx toolchain at this moment. 
 The steps for the installation is avaliable [https://www.asus.com/support/faq/1012815/](https://www.asus.com/support/faq/1012815/).
@@ -59,7 +60,7 @@ Download the .bin file, you need to change your directory to your download path,
 chmod +x <installer>.bin && sudo ./<installer>.bin
 ```
 
-## Known issue 
+## Known issues 
 If you stopped generating installed device, you need to install the following, and restart the installation after completion. 
 
 ```bash
@@ -71,9 +72,7 @@ sudo apt install libtinfo5 libncurses5
 
 XRT is avaliable at [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html) in xrt_<version>.deb or xrt_<version>.rpm file based on your operation system. While, it might fail. 
 
-A better way is to build it from github, which can be followed using the build instruction is avaliable at [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html)
-
- [https://xilinx.github.io/XRT/master/html/build.html](https://xilinx.github.io/XRT/master/html/build.html) and  [https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu](https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu)
+A better way is to build it from github, which can be followed using the build instruction is avaliable at [https://xilinx.github.io/XRT/master/html/build.html](https://xilinx.github.io/XRT/master/html/build.html) and  [https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu](https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu)
 
 ```bash
 git clone https://github.com/Xilinx/XRT.git
@@ -84,6 +83,8 @@ source /tools/Xilinx/Vitis/2023.1/settings64.sh
 cd /Release 
 sudo apt install ./xrt*.deb
 ```
+
+## Known issues 
 If you encounter the error: 
 cmake: error while loading shared libraries: libidn.so.11: cannot open shared object file: No such file or directory
 From [https://askubuntu.com/questions/1477217/cant-install-libidn11-on-my-ubuntu-22-04](https://askubuntu.com/questions/1477217/cant-install-libidn11-on-my-ubuntu-22-04), you need to:
