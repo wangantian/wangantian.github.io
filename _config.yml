@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Antian Wang/ Ph.D Candidate"
+title                    : "Antian Wang/ Ph.D."
 title_separator          : "-"
 name                     : &name "Antian Wang"
 description              : &description "personal description"
@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Antian Wang"
   avatar           : "bio-photo.jpg"
-  bio              : " I am currently a Ph.D. candidate in the Holcombe Department of Electrical and Computer Engineering at Clemson University, SC, USA, under the guidance of Dr. Yingjie Lao."
-  location         : "Clemson SC"
+  bio              : "I am currently an Assistant Professor of Computer Engineering at Department of Electrical and Computer Engineering, Purdue University, Fort Wayne, Fort Wayne, IN, USA."
+  location         : "Fort Wayne, IN"
   employer         :
   #pubmed           :  
   googlescholar    : "https://scholar.google.com/citations?user=WjCXb44AAAAJ&hl=en"
