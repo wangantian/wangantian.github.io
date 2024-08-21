@@ -121,6 +121,7 @@ include:
   - .htaccess
   - _pages
   - _resources
+  - _team
   - files
 exclude:
   - "*.sublime-project"
