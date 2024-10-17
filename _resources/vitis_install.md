@@ -13,12 +13,13 @@ Below show the step-by-step software installation on your local Linux Desktop.
 
 # Hardware preparation
 Designing system scale hardware is costly but worthwhile. Below is one possible setting of installation:
-* Intel i7 14700k CPU.
+* Intel i7 14700k, I9 14900K CPU.
 * SSD hard drive with at least 4TB, heatsink and latest PCIe. 
 * Motherboard ASUS ProArt Z790, please note that the DP input is INPUT to the motherboard. Use Type-C or HDMI for the display purpose. Error x 2.
-* DDR5 RAM ideally 96GB (2 x 48GB), we tried an 2 x 32GB +2 x 48GB version. 
-* CPU cooler, idealy using water cooling solution, since wind cooler may limit avaliable RAM slots. Be mindful over Case, water cooling might not fit within the case comfortablly.
-* High Power supply with Fan.
+* DDR5 RAM ideally 96GB (2 x 48GB), we tried an 2 x 32GB +2 x 48GB version. You may consider the ones higher MegaTransfers per second.
+* CPU cooler, idealy using water cooling solution, since air cooler may limit avaliable RAM slots. Be mindful over Case, water cooling might not fit within the case comfortablly. A possible air cooler is 
+Noctua NH-U12A.
+* High Power supply with Fan. You may go up to 1000W if needed. Please also be aware of the dimension.
 * Large Computer case with additional PWM Fans, we use Lian Li LancooL 216 Black Steel/Tempered Glass ATX Mid Tower Computer Case,2X 160 mm PWM Fans Included (Non-RGB)- LANCOOL 216X Black. 
 
 The above settings were provided by Zhenyu Xu from Dr. Wei's [NEXT Lab research group](https://sites.google.com/g.clemson.edu/nextlabdoc/home) at Clemson University. 
@@ -33,7 +34,7 @@ WARNING, if you used provided motherboard, please check your BIOS version, IT HA
 Version 0904 has an issue with SSD port labeled as C is not usable with Intel i7 14700k CPU. Later BIOS versions may fix this issue. 0816 version has good support for Intel i7 13700k CPU.
 You can install Ubuntu 24.04 with later BIOS (like 1801), but it cannot support Xilinx toolchain at this moment. 
 The steps for the installation is avaliable [https://www.asus.com/support/faq/1012815/](https://www.asus.com/support/faq/1012815/).
-You can download the driver from [https://www.asus.com/us/motherboards-components/motherboards/proart/proart-z790-creator-wifi/helpdesk_bios?model2Name=ProArt-Z790-CREATOR-WIFI](https://www.asus.com/us/motherboards-components/motherboards/proart/proart-z790-creator-wifi/helpdesk_bios?model2Name=ProArt-Z790-CREATOR-WIFI)
+You can download the driver from [https://www.asus.com/us/motherboards-components/motherboards/proart/proart-z790-creator-wifi/helpdesk_bios?model2Name=ProArt-Z790-CREATOR-WIFI](https://www.asus.com/us/motherboards-components/motherboards/proart/proart-z790-creator-wifi/helpdesk_bios?model2Name=ProArt-Z790-CREATOR-WIFI) And you can refresh your BIOS following the method in [https://www.youtube.com/watch?v=zDAP7DQOSgU](https://www.youtube.com/watch?v=zDAP7DQOSgU).
 
 # Vitis unified design download and installation
 The Vitis is can be download from [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html)
