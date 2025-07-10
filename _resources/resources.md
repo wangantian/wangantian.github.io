@@ -14,6 +14,7 @@ redirect_from:
 [Vitis usage memo](https://wangantian.github.io//vitis/)
 
 [Cadence workflow memo](https://wangantian.github.io//cadence/)
+
 [Synopsys workflow memo](https://wangantian.github.io//synopsys/)
 
 
@@ -26,6 +27,7 @@ redirect_from:
 
 [https://gotorankings.org/](https://gotorankings.org/)
 
+[Student professional activity resources](https://wangantian.github.io//conf/)
 
 ## Related Electrical Engineering, Computer Engineering, and Computer Science Courses, Tutorials, Interviews
 
@@ -33,9 +35,13 @@ redirect_from:
 
 [Online books](https://wangantian.github.io//books/)
 
+
+
 ## Other miscelounous links
 
 [Ph.D. comics](https://phdcomics.com/)
 
 [xkcd](https://xkcd.com/)
+
+[Email](https://wangantian.github.io//email/)
  
