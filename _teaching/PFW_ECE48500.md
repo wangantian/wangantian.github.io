@@ -1,10 +1,10 @@
 ---
-title: "ECE 48500 Embedded Real-Time Operating Systems (2024/2025 Fall)"
+title: "ECE 48500 Embedded Real-Time Operating Systems (2024 Fall, 2025 Fall)"
 collection: teaching
 type: "Undergraduate Course with Lab section"
 permalink: /teaching/PFW_ECE48500
 venue: "Purdue University Fort Wayne, Department of Electrical and Computer Engineering"
-date: 2024-08-16
+date: 2025-08-25
 location: "Fort Wayne, IN, USA"
 ---
 
