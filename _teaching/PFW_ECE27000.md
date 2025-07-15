@@ -1,5 +1,5 @@
 ---
-title: "ECE 27000 Introduction to Digital System Design (2024 Fall)"
+title: "ECE 27000 Introduction to Digital System Design (24 Fall)"
 collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/PFW_ECE27000
