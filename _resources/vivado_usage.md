@@ -27,7 +27,9 @@ I typically includes every related HDL code included in one project, and set the
 ## Avoid IP core in Vivado
 One of the issue with vivado is the IP core in prior/alter version will not be available. 
 
-The most widely used one is BRAM/ROM, it is highly recommended to use [XPM](https://docs.xilinx.com/r/en-US/ug974-vivado-ultrascale-libraries/XPM_MEMORY_TDPRAM) rathrer than block memory IP core to design BRAM/ROM to avoid the issue of transferring the project between different board/vivado versions. While it is still good to browse through the BRAM document avaliable at [https://docs.xilinx.com/r/en-US/ug583-ultrascale-pcb-design/9.-Block-RAM](https://docs.xilinx.com/r/en-US/ug583-ultrascale-pcb-design/9.-Block-RAM)
+The most widely used one is BRAM/ROM, it is highly recommended to use [XPM](https://docs.xilinx.com/r/en-US/ug974-vivado-ultrascale-libraries/XPM_MEMORY_TDPRAM) rathrer than block memory IP core to design BRAM/ROM to avoid the issue of transferring the project between different board/vivado versions. While it is still good to browse through the BRAM document avaliable at [https://docs.xilinx.com/r/en-US/ug583-ultrascale-pcb-design/9.-Block-RAM](https://docs.xilinx.com/r/en-US/ug583-ultrascale-pcb-design/9.-Block-RAM).
+
+If you find the various types of the xpram went missing when you try to do simulation/ synthesis. Try to directly load the xpm IP from your installation path, which is $XILINX_VIVADO/data/ip/xpm.
 
 ## Use of constraint
 Clock signals and set false paths for reset signal are the major constraints we used for FPGA implementation.
