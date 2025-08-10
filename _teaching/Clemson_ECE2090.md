@@ -1,5 +1,5 @@
 ---
-title: "ECE 2090 Logic and Computing Devices Laboratory (2023 Fall, 2023 Spring, 2022 Fall)"
+title: "ECE 2090 Logic and Computing Devices Laboratory (23 Fall, 23 Spring, 22 Fall)"
 collection: teaching
 type: "Undergraduate lab"
 permalink: /teaching/Clemson_ECE2090

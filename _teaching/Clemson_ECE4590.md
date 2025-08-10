@@ -1,5 +1,5 @@
 ---
-title: "ECE 4590/6590 Integrated Circuit Design (2023 Fall)"
+title: "ECE 4590/6590 Integrated Circuit Design (23 Fall)"
 collection: teaching
 type: "Undergraduate/Graduate course lab session"
 permalink: /teaching/Clemson_ECE4590
