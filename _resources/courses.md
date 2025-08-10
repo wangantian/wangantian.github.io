@@ -71,6 +71,9 @@ IEEE Council on Electronic Design Automation	https://www.youtube.com/@ieeecounci
 IEEEComputerSociety	https://www.youtube.com/@IEEEComputerSociety
 People in Computer Architecture	https://www.youtube.com/@TCuArch
 CAD For Assurance 	https://cadforassurance.org/
+
 ## Workshops
 
 ## Interviews
+
+## Others 
