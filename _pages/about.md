@@ -14,7 +14,7 @@ My latest CV is available [here](https://wangantian.github.io/files/CV_Antian_Wa
 
 I am seeking self-motivated students with flexible research interests, including but not limited to FPGA/ASIC hardware implementations with various applications, AI with a security focus, and embedded systems. Please email me first_name.last_name at pfw.edu with your possible interest(s), CV, and transcripts.
 
-For PFW graduate program application, please refer to this [link](https://www.pfw.edu/academics-research/majors-minors/electrical-computer-and-systems-engineering-mse).
+For the PFW master-level graduate program application, please refer to this [link](https://www.pfw.edu/academics-research/majors-minors/electrical-computer-and-systems-engineering-mse).
 
 News and Updates
 ======
