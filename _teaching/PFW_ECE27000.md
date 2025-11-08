@@ -1,10 +1,10 @@
 ---
-title: "ECE 27000 Introduction to Digital System Design (24 Fall)"
+title: "ECE 27000 Introduction to Digital System Design (24 Fall, 26 Spring)"
 collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/PFW_ECE27000
 venue: "Purdue University Fort Wayne, Department of Electrical and Computer Engineering"
-date: 2024-08-16
+date: 2026-01-12
 location: "Fort Wayne, IN, USA"
 ---
 
