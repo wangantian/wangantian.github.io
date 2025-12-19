@@ -17,7 +17,8 @@ I am seeking self-motivated students with flexible research interests, including
 For the PFW master-level graduate program application, please refer to this [link](https://www.pfw.edu/academics-research/majors-minors/electrical-computer-and-systems-engineering-mse).
 
 News and Updates
-======
+======  
+  * [10/2025] One paper was presented at Asilomar 2025. 
   * [02/2025] One poster was presented at ISFPGA 2025. 
   * [10/2024] One paper was presented at ICCAD 2024. 
   * [08/2024] I will join [Department of Electrical and Computer Engineering](https://www.pfw.edu/etcs/ece), [Purdue University, Fort Wayne](https://www.pfw.edu), Fort Wayne, IN, USA as Assistant Professor of Computer Engineering. Go Dons!
