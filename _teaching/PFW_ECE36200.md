@@ -24,7 +24,7 @@ This course is divided into two main parts: assembly programming and interfacing
   <li>Assembly programming: Branch operations, Subroutine assembly program design, and mixed Assembly/C programming </li>
   <li>Interfacing: General Purpose Input Output (GPIO) structure and registers; SysTick timer; Interrupt.</li>
   <li>Interfacing: Serial communication: UART communication; and brief introduction to I2C, SPI, One-wire protocol with additional application examples.</li>
-  <li>Interfacing: Data Conversion (ADC/DAC): ADC/DAC circuit structures, performance evaluation parameters; on-board ADC configurations; ADC/DAC embedded system applications.</li>
+  <li>Interfacing: Data Conversion (ADC/DAC): ADC/DAC circuit structures, performance evaluation metrics; on-board ADC configurations; ADC/DAC embedded system applications.</li>
   <li>Interfacing: Timer/PWM: Concept of Timer; Timer use cases; On-board timer configurations; Concept of PWM; on-board PWM configurations; PWM use cases.</li>
   <li>Special Topics: Complex Instruction Set Computers; CMSIS Library; AHB/APB/AXI bus protocol; floating point instructions.</li>
 </ul>
