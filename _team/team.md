@@ -6,7 +6,8 @@ redirect_from:
   - /team.html
 ---
 
-I am seeking self-motivated students with flexible research interests, which include but are not limited to FPGA/ASIC hardware implementations with various applications, AI with security focus, and embeded system. Please send me an email to first_name.last_name at pfw.edu with your possible interest(s), CV, and transcripts. 
+I am seeking self-motivated students with flexible research interests, including but not limited to FPGA/ASIC hardware implementations with various applications, AI with a security focus, and embedded systems. Please email me at first_name.last_name@pfw.edu with your potential interest(s), CV, and transcripts. 
+
 
 
 ## Graduate students at Purdue University, Fort Wayne
@@ -14,4 +15,5 @@ I am seeking self-motivated students with flexible research interests, which inc
 
 ## Undergraduate students at Purdue University, Fort Wayne
   * 
+  * Sankalp Sinha (Honor Project)  ``Cross-Language Analysis of Prompt Injection in Large Language Models Using Behavioral Detection'' 2026 Spring
  
