@@ -9,7 +9,6 @@ redirect_from:
 I am seeking self-motivated students with flexible research interests, including but not limited to FPGA/ASIC hardware implementations with various applications, AI with a security focus, and embedded systems. Please email me at first_name.last_name@pfw.edu with your potential interest(s), CV, and transcripts. 
 
 
-
 ## Graduate students at Purdue University, Fort Wayne
   * 
 
