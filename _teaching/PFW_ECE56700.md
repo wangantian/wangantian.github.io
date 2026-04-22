@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate/ Graduate Course"
 permalink: /teaching/PFW_ECE56700
 venue: "Purdue University Fort Wayne, Department of Electrical and Computer Engineering"
-date: TBD
+date: 2024-08-25
 location: "Fort Wayne, IN, USA"
 ---
 
