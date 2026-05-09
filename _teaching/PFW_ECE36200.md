@@ -1,10 +1,10 @@
 ---
-title: "ECE 36200 Microprocessor Systems and Interfacing (25 Fall, 25 Spring)"
+title: "ECE 36200 Microprocessor Systems and Interfacing (26 Fall, 25 Fall, 25 Spring)"
 collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/PFW_ECE36200
 venue: "Purdue University Fort Wayne, Department of Electrical and Computer Engineering"
-date: 2025-08-25
+date: 2026-08-24
 location: "Fort Wayne, IN, USA"
 ---
 

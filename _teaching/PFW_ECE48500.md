@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate Course with Lab section"
 permalink: /teaching/PFW_ECE48500
 venue: "Purdue University Fort Wayne, Department of Electrical and Computer Engineering"
-date: 2026-08-25
+date: 2026-08-24
 location: "Fort Wayne, IN, USA"
 ---
 
