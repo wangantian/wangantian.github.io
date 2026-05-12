@@ -52,5 +52,5 @@ This course uses FreeRTOS with Texas Instrument TM4C123 Tiva Board.
 <li> Jane Win Shih Liu (張韻詩), Real-Time Systems. Prentice-Hall, Englewood Cliffs  </li> 
 <li> André M. van Tilborg, Gary M. Koob, Foundations of Real-Time Computing: Formal Specifications and Methods  </li> 
 <li> André M. van Tilborg, Gary M. Koob, Foundations of Real-Time Computing: Scheduling and Resource Management </li> 
-
+<li>  Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-Dusseau Operating Systems: Three Easy Pieces </li> 
 </ul>
