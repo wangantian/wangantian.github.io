@@ -36,3 +36,9 @@ The lab component is expected to strengthen students' comprehension of the lectu
 <h3 id="lab04"> Lab 04 5-stage pipelined processor design</h3>
 
 <h3 id="lab05"> Lab 05 Memory system design</h3>
+
+<h2>Reference books</h2>
+
+<ul>
+  <li>Course introduction</li> 
+</ul>

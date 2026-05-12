@@ -12,11 +12,14 @@ An introduction to digital system design and hardware engineering, with an empha
 
 
 <h2>Course Coverage</h2>
-This course cover typical content as the first course for the digital logic course.
+This course cover typical content as the first course for the digital logic course. The general course schedule is listed below: 
 
-This webpage displays a portion of the content serve as extra materials for student interests.
+<ul>
+  <li>Course introduction</li> 
+</ul>
 
-[Lab 01 Course Description](#lab01_extra)
+<h2>Reference books</h2>
 
-
-<h3 id="lab01_extra"> Lab 01 Course Description</h3>
+<ul>
+  <li>Course introduction</li> 
+</ul>

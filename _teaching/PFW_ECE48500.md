@@ -11,19 +11,16 @@ location: "Fort Wayne, IN, USA"
 An introduction to embedded real-time operating systems, with an emphasis on embedded system software development, tasks, inter-task communications and synchronization as well as network software.
 
 <h2>Course Coverage</h2>
+The general course schedule is listed below:
 
-
-<h2>Similar Courses</h2>
+<ul>
+  <li>Course introduction</li>
+</ul>
 
 This course uses FreeRTOS with Texas Instrument TM4C123 Tiva Board.
 
-This webpage displays a portion of the content serve as extra materials for student interests.
+<h2>Reference books</h2>
 
-[Lab 01 Course Description](#lab01_extra)
-
-
-<h3 id="lab01_extra"> Lab 01 Course Description</h3>
-
-
-
-
+<ul>
+  <li>TBD</li> 
+</ul>

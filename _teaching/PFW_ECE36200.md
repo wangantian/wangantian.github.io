@@ -32,3 +32,7 @@ This course is divided into two main parts: assembly programming and interfacing
 <h2>Reference books</h2>
 
 This course sources the course materials from multiple books in providing comprehensive experience in both assembly programming and interfacing experience. 
+
+<ul>
+  <li>Course introduction</li> 
+</ul>
