@@ -1,5 +1,5 @@
 ---
-title: "ECE 43700 Computer Design and Prototyping (25, 26 Spring)"
+title: "ECE 43700 Computer Design and Prototyping (26, 25 Spring)"
 collection: teaching
 type: "Undergraduate Course with Lab section"
 permalink: /teaching/PFW_ECE43700

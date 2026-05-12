@@ -1,5 +1,5 @@
 ---
-title: "ECE 36200 Microprocessor Systems and Interfacing (26 Fall, 25 Fall, 25 Spring)"
+title: "ECE 36200 Microprocessor Systems and Interfacing (26, 25 Fall, 25 Spring)"
 collection: teaching
 type: "Undergraduate Course"
 permalink: /teaching/PFW_ECE36200

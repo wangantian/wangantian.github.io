@@ -1,5 +1,5 @@
 ---
-title: "ECE 48500 Embedded Real-Time Operating Systems (26 Fall, 25 Fall, 24 Fall)"
+title: "ECE 48500 Embedded Real-Time Operating Systems (26, 25, 24 Fall)"
 collection: teaching
 type: "Undergraduate Course with Lab section"
 permalink: /teaching/PFW_ECE48500
