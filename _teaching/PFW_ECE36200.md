@@ -34,5 +34,13 @@ This course is divided into two main parts: assembly programming and interfacing
 This course sources the course materials from multiple books in providing comprehensive experience in both assembly programming and interfacing experience. 
 
 <ul>
-  <li>Course introduction</li> 
+<li>	Joseph Yiu, The Definitive Guide to ARM Cortex-M3 and Cortex-M4 Processors, current edition	</li> 
+<li>	Cortex-M3M4F Instruction Set Technical User’s Manual, current version, Texas Instruments	</li> 
+<li>	Tiva TM4C123GH6PM Microcontroller Data Sheet, current version, Texas Instruments	</li> 
+<li>	Yifeng Zhu, Embedded Systems with Arm Cortex-M Microcontrollers in Assembly Language and C, Current Edition	</li> 
+<li>	Jonathan W Valvano, Embedded Systems: Introduction to ARM Cortex-M Microcontrollers, current edition	</li> 
+<li>	Edward A. Lee and Sanjit A. Seshia, Introduction to Embedded Systems — A Cyber-Physical Systems Approach link	</li> 
+<li>	Alexander G Den, Embedded Systems Fundamentals with ARM Cortex-M based Microcontrollers: A Practical Approach FRDM-KL25Z Edition	</li> 
+<li>	David Harris, Sarah Harris, Digital design and computer architecture ARM Edition, current edition, Morgan Kaufmann, 2015.	</li> 
+
 </ul>
