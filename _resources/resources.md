@@ -6,7 +6,7 @@ redirect_from:
   - /resources.html
 ---
 
-## Hardware Design and Tool usage 
+## Hardware Design and Tool Usage 
 [Vivado usage memo](https://wangantian.github.io//vivado/)
 
 [Vitis install memo](https://wangantian.github.io//vitis_install/)
@@ -37,7 +37,7 @@ redirect_from:
 
 
 
-## Other miscelounous links
+## Other miscellaneous links
 
 [Ph.D. comics](https://phdcomics.com/)
 
