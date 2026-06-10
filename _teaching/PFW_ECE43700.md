@@ -1,5 +1,5 @@
 ---
-title: "ECE 43700 Computer Design and Prototyping (25, 26 Spring)"
+title: "ECE 43700 Computer Design and Prototyping (26, 25 Spring)"
 collection: teaching
 type: "Undergraduate Course with Lab section"
 permalink: /teaching/PFW_ECE43700
@@ -36,3 +36,9 @@ The lab component is expected to strengthen students' comprehension of the lectu
 <h3 id="lab04"> Lab 04 5-stage pipelined processor design</h3>
 
 <h3 id="lab05"> Lab 05 Memory system design</h3>
+
+<h2>Reference books</h2>
+
+<ul>
+  <li>Course introduction</li> 
+</ul>

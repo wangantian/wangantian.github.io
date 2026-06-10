@@ -1,10 +1,10 @@
 ---
-title: "ECE 56700 FPGA Designs for Signal Processing Applications ()"
+title: "ECE 56700 FPGA Designs for Signal Processing Applications (27 Spring)"
 collection: teaching
 type: "Undergraduate/ Graduate Course"
 permalink: /teaching/PFW_ECE56700
 venue: "Purdue University Fort Wayne, Department of Electrical and Computer Engineering"
-date: 2024-08-25
+date: 2026-04-01
 location: "Fort Wayne, IN, USA"
 ---
 
@@ -12,17 +12,15 @@ This course introduces methodologies of FPGA designs for signal processing appli
 
 
 <h2>Course Coverage</h2>
+The general course schedule is listed below:
 
+<ul>
+  <li>Course introduction</li>
+</ul>
+ 
 
-<h2>Similar Courses</h2>
+<h2>Reference books</h2>
 
-
-
-[Lab 01 Course Description](#lab01_extra)
-
-
-<h3 id="lab01_extra"> Lab 01 Course Description</h3>
-
-
-
-
+<ul>
+  <li>TBD</li> 
+</ul>
