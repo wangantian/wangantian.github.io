@@ -5,19 +5,19 @@ author_profile: true
 redirect_from:  
   - /vitis_install.html
 ---
-[Vitis](https://www.xilinx.com/products/design-tools/vitis.html) is the tool allow platform design for data acceleration card for Alevo series data center acceleration cards or embeded design for embedded Arm processors. 
+[Vitis](https://www.xilinx.com/products/design-tools/vitis.html) is a tool that allows platform design for data acceleration cards for Alevo series data center acceleration cards or embedded design for embedded Arm processors. 
 
-Notice that, Vitis's linux edition only can do the design for data center acceleration card, while the windows edition only can do design for embeded system. The software requires high CPU and memory performance, thus it might not be ideal to do Vitis platform design on your own laptop.
+Notice that Vitis's Linux edition can only do the design for data center acceleration cards, while the Windows edition can only do design for embedded systems. The software requires high CPU and memory performance; thus, it might not be ideal to do Vitis platform design on your own laptop.
 
-Below show the step-by-step software installation on your local Linux Desktop. 
+Below shows the step-by-step software installation on your local Linux Desktop. 
 
 # Hardware preparation
-Designing system scale hardware is costly but worthwhile. Below is one possible setting of installation:
+Designing system-scale hardware is costly but worthwhile. Below is one possible installation setting:
 * Intel i7 14700k, I9 14900K CPU.
 * SSD hard drive with at least 4TB, heatsink and latest PCIe. 
 * Motherboard ASUS ProArt Z790, please note that the DP input is INPUT to the motherboard. Use Type-C or HDMI for the display purpose. Error x 2.
-* DDR5 RAM ideally 96GB (2 x 48GB), we tried an 2 x 32GB +2 x 48GB version. You may consider the ones higher MegaTransfers per second.
-* CPU cooler, idealy using water cooling solution, since air cooler may limit avaliable RAM slots. Be mindful over Case, water cooling might not fit within the case comfortablly. A possible air cooler is 
+* DDR5 RAM ideally 96GB (2 x 48GB), we tried an 2 x 32GB +2 x 48GB version. You may consider the ones with higher MegaTransfers per second.
+* CPU cooler, ideally using a water cooling solution, since an air cooler may limit available RAM slots. Be mindful of the case; water cooling might not fit within the case comfortably. A possible air cooler is 
 Noctua NH-U12A.
 * High Power supply with Fan. You may go up to 1000W if needed. Please also be aware of the dimensions.
 * Large Computer case with additional PWM Fans; we use Lian Li LancooL 216 Black Steel/Tempered Glass ATX Mid Tower Computer Case,2X 160 mm PWM Fans Included (Non-RGB)- LANCOOL 216X Black. 
@@ -29,7 +29,7 @@ You are not expected to run it over a virtual machine. Thus, you need to install
 
 [![How to Download and Install Linux from USB Flash Drive Step-By-Step Guide.](https://img.youtube.com/vi/pwWfJwlZLWg/0.jpg)](https://youtu.be/pwWfJwlZLWg "How to Download and Install Linux from USB Flash Drive Step-By-Step Guide.")
 
-WARNING: If you used the provided motherboard, please check your BIOS version; it must be 0816 [preferred] or 0904 X86 to support the 22.04 installation fully. Otherwise, it will return an out-of-memory error.
+Warning: If you used the provided motherboard, please check your BIOS version; it must be 0816 [preferred] or 0904 X86 to fully support the 22.04 installation. Otherwise, it will return an out-of-memory error.
 
 Version 0904 has an issue: the SSD port labeled as C is not usable with the Intel i7 14700k CPU. Later BIOS versions may fix this issue. The 0816 version has good support for the Intel i7 13700 K CPU.
 You can install Ubuntu 24.04 with a later BIOS (like 1801), but it cannot support the Xilinx toolchain at this moment. 
