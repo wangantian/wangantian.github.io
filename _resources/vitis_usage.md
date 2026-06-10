@@ -36,29 +36,29 @@ If you want to configure your local Linux Desktop by yourself. Below is the one 
 In this [link](https://wangantian.github.io//vitis_install/), a detialed step-by-step installation tutorial is provided.
 
 # Tutorial 
-Vitis provide tutorial in Xilinx github page [https://github.com/Xilinx/Vitis_Accel_Examples/tree/main](https://github.com/Xilinx/Vitis_Accel_Examples/tree/main). I personally prefer the github repository for 2023.1 toolchain given its broader scope in examples. 
-There exist multiple versions for Vitis online. Please try to follow the latest one. 
+Vitis provides tutorials on the Xilinx GitHub page [https://github.com/Xilinx/Vitis_Accel_Examples/tree/main](https://github.com/Xilinx/Vitis_Accel_Examples/tree/main). I personally prefer the GitHub repository for the 2023.1 toolchain, given its broader scope in examples. 
+There are multiple versions of Vitis available online. Please try to follow the latest one. 
 
-If you prefer GUI interface, the tutorial [https://xilinx.github.io/xup_compute_acceleration/Vitis_intro-1.html](https://xilinx.github.io/xup_compute_acceleration/Vitis_intro-1.html) provides necessary setting steps.
+If you prefer a GUI interface, the tutorial [https://xilinx.github.io/xup_compute_acceleration/Vitis_intro-1.html](https://xilinx.github.io/xup_compute_acceleration/Vitis_intro-1.html) provides necessary setting steps.
 
 # OpenCL and XRT (Xilinx RunTime) 
-There exists multiple way to design the host side program, OpenCL and XRT Native API are the ones that close to hardware layer, and OpenCL version is built upon XRT Native API in short. It might be desirable
+There are multiple ways to design the host-side program; OpenCL and XRT (Xilinx RunTime) Native API are the ones closest to the hardware layer, and the OpenCL version is built upon the XRT Native API, in short. It might be desirable.
 
-[OpenCL](https://en.wikipedia.org/wiki/OpenCL) stands for Open Computing Language, which can also used for General Purpose GPU program desgin. Its design idea can be generalized to different computing devices. However, it is not a good programming platform/language you can create without a template. It is a good idea to find the corresponding examples, and then modify them to fits our usage. Lots of online course resources provide OpenCL tutorials.
+[OpenCL](https://en.wikipedia.org/wiki/OpenCL) stands for Open Computing Language, which can also be used for general-purpose GPU program design. Its design idea can be generalized to different computing devices. However, it is not a good programming platform or language to create without a template. It is a good idea to find the corresponding examples and then modify them to fit our usage. Many online course resources offer OpenCL tutorials.
  
 
 # AXI interface
-The RTL IP core for vitis needs to follow AXI interfaces, there exist lots of variant of AXI protocol for RTL IP core. This youtube playlist [https://www.youtube.com/playlist?list=PLkqJVNOiuuHtNrVaNK4O1BSgczja4obeW](https://www.youtube.com/playlist?list=PLkqJVNOiuuHtNrVaNK4O1BSgczja4obeW) provides a good overview. Under the installation path of vivado: VIVADO_INSTAL_PATH/VERSION/data/xilinx_vip/hdl/ gives necessary HDL description of the protocol to deepen the understanding.  
+The RTL IP core for Vitis needs to follow the AXI protocol; there are many variants of the AXI protocol for RTL IP cores. This YouTube playlist [https://www.youtube.com/playlist?list=PLkqJVNOiuuHtNrVaNK4O1BSgczja4obeW](https://www.youtube.com/playlist?list=PLkqJVNOiuuHtNrVaNK4O1BSgczja4obeW) provides a good overview. Under the Vivado installation path, VIVADO_INSTAL_PATH/VERSION/data/xilinx_vip/hdl/, the necessary HDL description of the protocol can be found to deepen understanding.  
 
 # Basic Vitis running
 
-The below tutorial is adapted from [https://github.com/OCT-FPGA/Vitis-Tutorials-U280/tree/2022.2/VitisAccelHelloWorld](https://github.com/OCT-FPGA/Vitis-Tutorials-U280/tree/2022.2/VitisAccelHelloWorld). 
+The tutorial below is adapted from [https://github.com/OCT-FPGA/Vitis-Tutorials-U280/tree/2022.2/VitisAccelHelloWorld](https://github.com/OCT-FPGA/Vitis-Tutorials-U280/tree/2022.2/VitisAccelHelloWorld). 
 
 ## Lazy method for RTL kernel emulation
-Copy the entire directory of Vitis_Accel_Examples, and only keep the common and rtl_kernel directory, so you do not need to change the directory within the makefiles. 
+Copy the entire Vitis_Accel_Examples directory, and keep only the common and rtl_kernel directories, so you do not need to change the directory in the makefiles. 
 
 ## Cleaning building results
-There are lots of files generated during the building process, if you make any change, the safest way is to execute the following command to make sure your new build reflects the latest using the example makefiles.
+There are many files generated during the build process. If you make any change, the safest way is to run the following command to ensure your new build reflects the latest using the example makefiles.
 
 ```bash
 make cleanall
@@ -78,7 +78,7 @@ cd Vitis_Accel_Examples/hello_world
 ```
 
 ## Emulation 
-You are not required to perform SW emulation if it is too hard to do it. The directory maybe different based on your or your system administor's installation, but the files should looks similar. 
+You are not required to perform SW emulation if it is too difficult. The directory may be different based on your or your system administrator's installation, but the files should look similar. 
 
 ### SW emulation
 
@@ -113,18 +113,18 @@ make all TARGET=hw PLATFORM=/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202
 To update 
 
 ## Typical error:
- * Fail to check the file name, kernel name, or add necesWsary files.
- * Forget export XCL_EMULATION_MODE before emulation. We typically include as part of the command when we load the tool.
- * Below is the typical issue happen when we do the emulation, if it happen, delete any generate file, and rebuild. It should work.
+ * Fail to check the file name, kernel name, or add necessary files.
+ * Forget export XCL_EMULATION_MODE before emulation. We typically include it in the command when we load the tool.
+ * Below is the typical issue that happens when we do the emulation. If it happens, delete any generated files and rebuild. It should work.
   * ERROR: [VPL 10-3180] cannot find port 'BLP_M_AXI_DATA_C2H_00_awsize' on this module [/SOME_DIRECTORY/vivado/vpl/prj/prj.ip_user_files/bd/pfm_top/sim/pfm_top.v:754]
   * ERROR: [VPL 10-3180] cannot find port 'BLP_M_AXI_DATA_C2H_00_arsize' on this module [/SOME_DIRECTORY/vivado/vpl/prj/prj.ip_user_files/bd/pfm_top/sim/pfm_top.v:743]
   * ERROR: [VPL 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed
   * ERROR: [VPL 60-773] In '[/SOME_DIRECTORY/vivado/vpl/vivado.log', caught Tcl error: 
-  * ERROR: [VPL 60-704] Integration error, Step failed: config_hw_emu.elaborate An error stack with function names and arguments may be available in the 'vivado.log'.
+  * ERROR: [VPL 60-704] Integration error, Step failed: config_hw_emu.elaborate. An error stack with function names and arguments may be available in the 'vivado.log'.
 
  
 ## Custom tutorial
-The following tutorial was developed for helping Lao's group in developing Vitis and Vivado workflow. The tool we are using is Vitis 2023.1. Some featues may not be avaliable in earlier/later versions.
+The following tutorial was developed to help Lao's group develop a Vitis and Vivado workflow. The tool we are using is Vitis 2023.1. Some features may not be available in earlier/later versions.
  * Tutorial 1 Simple custom RTL kernel using AXI-stream.
  * Tutorial 2
 
