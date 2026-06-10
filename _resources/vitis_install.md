@@ -19,31 +19,31 @@ Designing system scale hardware is costly but worthwhile. Below is one possible 
 * DDR5 RAM ideally 96GB (2 x 48GB), we tried an 2 x 32GB +2 x 48GB version. You may consider the ones higher MegaTransfers per second.
 * CPU cooler, idealy using water cooling solution, since air cooler may limit avaliable RAM slots. Be mindful over Case, water cooling might not fit within the case comfortablly. A possible air cooler is 
 Noctua NH-U12A.
-* High Power supply with Fan. You may go up to 1000W if needed. Please also be aware of the dimension.
-* Large Computer case with additional PWM Fans, we use Lian Li LancooL 216 Black Steel/Tempered Glass ATX Mid Tower Computer Case,2X 160 mm PWM Fans Included (Non-RGB)- LANCOOL 216X Black. 
+* High Power supply with Fan. You may go up to 1000W if needed. Please also be aware of the dimensions.
+* Large Computer case with additional PWM Fans; we use Lian Li LancooL 216 Black Steel/Tempered Glass ATX Mid Tower Computer Case,2X 160 mm PWM Fans Included (Non-RGB)- LANCOOL 216X Black. 
 
-The above settings were provided by Zhenyu Xu from Dr. Wei's [NEXT Lab research group](https://sites.google.com/g.clemson.edu/nextlabdoc/home) at Clemson University. 
+Zhenyu Xu provided the above settings from Dr. Wei's [NEXT Lab research group](https://sites.google.com/g.clemson.edu/nextlabdoc/home) at Clemson University. 
 
-# Operation system preparation
-You are not expected to run it over Virtual Machine. Thus, you need to install Linux in your desktop. We use Ubuntu 22.04 LTS for convinence, which is avaliable in [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop). Different from Virtual Machine, you need to use tool like Rufs which is avaliable here [https://rufus.ie/en](https://rufus.ie/en) to make your USB flash drive as a bootstrable drive. The following video below shows how you use it:
+# Operating system preparation
+You are not expected to run it over a virtual machine. Thus, you need to install Linux on your desktop. We use Ubuntu 22.04 LTS for convenience, which is available at [https://ubuntu.com/download/desktop](https://ubuntu.com/download/desktop). Unlike a virtual machine, you need to use a tool like Rufus, which is available here [https://rufus.ie/en](https://rufus.ie/en), to make your USB flash drive bootable. The video below shows how you use it:
 
 [![How to Download and Install Linux from USB Flash Drive Step-By-Step Guide.](https://img.youtube.com/vi/pwWfJwlZLWg/0.jpg)](https://youtu.be/pwWfJwlZLWg "How to Download and Install Linux from USB Flash Drive Step-By-Step Guide.")
 
-WARNING, if you used provided motherboard, please check your BIOS version, IT HAVE TO BE 0816 [preferred] OR 0904 X86 to be fully support 22.04 installation. Otherwise, it will return out of memory.
+WARNING: If you used the provided motherboard, please check your BIOS version; it must be 0816 [preferred] or 0904 X86 to support the 22.04 installation fully. Otherwise, it will return an out-of-memory error.
 
-Version 0904 has an issue with SSD port labeled as C is not usable with Intel i7 14700k CPU. Later BIOS versions may fix this issue. 0816 version has good support for Intel i7 13700k CPU.
-You can install Ubuntu 24.04 with later BIOS (like 1801), but it cannot support Xilinx toolchain at this moment. 
-The steps for the installation is avaliable [https://www.asus.com/support/faq/1012815/](https://www.asus.com/support/faq/1012815/).
-You can download the driver from [https://www.asus.com/us/motherboards-components/motherboards/proart/proart-z790-creator-wifi/helpdesk_bios?model2Name=ProArt-Z790-CREATOR-WIFI](https://www.asus.com/us/motherboards-components/motherboards/proart/proart-z790-creator-wifi/helpdesk_bios?model2Name=ProArt-Z790-CREATOR-WIFI) And you can refresh your BIOS following the method in [https://www.youtube.com/watch?v=zDAP7DQOSgU](https://www.youtube.com/watch?v=zDAP7DQOSgU).
+Version 0904 has an issue: the SSD port labeled as C is not usable with the Intel i7 14700k CPU. Later BIOS versions may fix this issue. The 0816 version has good support for the Intel i7 13700 K CPU.
+You can install Ubuntu 24.04 with a later BIOS (like 1801), but it cannot support the Xilinx toolchain at this moment. 
+The installation steps are available at [https://www.asus.com/support/faq/1012815/](https://www.asus.com/support/faq/1012815/).
+You can download the driver from [https://www.asus.com/us/motherboards-components/motherboards/proart/proart-z790-creator-wifi/helpdesk_bios?model2Name=ProArt-Z790-CREATOR-WIFI](https://www.asus.com/us/motherboards-components/motherboards/proart/proart-z790-creator-wifi/helpdesk_bios?model2Name=ProArt-Z790-CREATOR-WIFI), and you can refresh your BIOS following the method in [https://www.youtube.com/watch?v=zDAP7DQOSgU](https://www.youtube.com/watch?v=zDAP7DQOSgU).
 
 # Vitis unified design download and installation
-The Vitis is can be download from [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html)
+Vitis can be downloaded from [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html)
 
-Once you signin, we have two option, Single File Download (SFD) or using web installer.
+Once you sign in, we have two options: Single File Download (SFD) or the web installer.
 
-## Single File Download (SFD) [Recommend]
+## Single File Download (SFD) [Recommended]
 
-The download speed will probably faster than using web installer. Extract the files from the Xilinx_<version>.tar.gz archive:
+The download speed will probably be faster than using the web installer. Extract the files from the Xilinx_<version>.tar.gz archive:
 ```bash
 tar -xvf Xilinx_<version>.tar.gz
 ```
@@ -55,14 +55,14 @@ sudo ./xsetup
 ```
 
 ## Use web installer
-Download the .bin file, you need to change your directory to your download path, you need to make the .bin file executable and start the running by 
+Download the .bin file. You need to change your directory to your download path, make the .bin file executable, and start the installation by 
 
 ```bash
 chmod +x <installer>.bin && sudo ./<installer>.bin
 ```
 
 ## Known issues 
-If you stopped generating installed device, you need to install the following, and restart the installation after completion. 
+If you stopped generating the installed device, you need to install the following and restart the installation after completion. 
 
 ```bash
 sudo apt install libtinfo5 libncurses5
@@ -71,9 +71,9 @@ sudo apt install libtinfo5 libncurses5
 
 # XRT download and build
 
-XRT is avaliable at [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html) in xrt_<version>.deb or xrt_<version>.rpm file based on your operation system. While, it might fail. 
+XRT is avaliable at [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html) in xrt_<version>.deb or xrt_<version>.rpm file based on your operating system. While it might fail. 
 
-A better way is to build it from github, which can be followed using the build instruction is avaliable at [https://xilinx.github.io/XRT/master/html/build.html](https://xilinx.github.io/XRT/master/html/build.html) and  [https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu](https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu)
+A better way is to build it from GitHub, which can be followed using the build instructions available at [https://xilinx.github.io/XRT/master/html/build.html](https://xilinx.github.io/XRT/master/html/build.html) and  [https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu](https://docs.xilinx.com/r/en-US/ug1301-getting-started-guide-alveo-accelerator-cards/XRT-and-Deployment-Package-Installation-Procedures-on-Ubuntu)
 
 ```bash
 git clone https://github.com/Xilinx/XRT.git
@@ -82,7 +82,7 @@ cd <XRT>/build
 source /tools/Xilinx/Vitis/2023.1/settings64.sh
 ./build.sh
 cd /Release 
-sudo apt install ./xrt*.deb
+sudo apt install ./xrt*.deb---------------
 ```
 
 ## Known issues 
@@ -96,7 +96,7 @@ wget http://mirrors.kernel.org/ubuntu/pool/main/libi/libidn/libidn11_1.33-2.2ubu
 sudo apt install ./libidn11_1.33-2.2ubuntu2_amd64.deb
 ```
 
-If you happen to have two cmake version within your XILINX library after load the Vitis.
+If you happen to have two cmake versions within your XILINX library after loading the Vitis.
 With the issue as
 cmake version issue:
 CMake Error at CMakeLists.txt:4 (cmake_minimum_required):
@@ -108,7 +108,7 @@ which cmake
 ```
 which may possibly returns: /tools/Xilinx/Vitis/2023.1/tps/lnx64/cmake-3.3.2/bin/cmake
 
-Go to the directory of "/tools/Xilinx/Vitis/2023.1/tps/lnx64", and see if there is a newer cmake there. If so, copy that directory, and the ENTIRE PATH environment variable by first copy the current PATH variable, and then :
+Go to the directory "/tools/Xilinx/Vitis/2023.1/tps/lnx64" and check if there is a newer cmake there. If so, copy that directory and the ENTIRE PATH environment variable by first copying the current PATH variable, and then :
 
 ```bash
 export PATH=/tools/Xilinx/Vitis_HLS/2023.1/bin:/tools/Xilinx/Model_Composer/2023.1/bin:/tools/Xilinx/Vitis/2023.1/bin:/tools/Xilinx/Vitis/2023.1/gnu/microblaze/lin/bin:/tools/Xilinx/Vitis/2023.1/gnu/arm/lin/bin:/tools/Xilinx/Vitis/2023.1/gnu/microblaze/linux_toolchain/lin64_le/bin:/tools/Xilinx/Vitis/2023.1/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin:/tools/Xilinx/Vitis/2023.1/gnu/aarch32/lin/gcc-arm-none-eabi/bin:/tools/Xilinx/Vitis/2023.1/gnu/aarch64/lin/aarch64-linux/bin:/tools/Xilinx/Vitis/2023.1/gnu/aarch64/lin/aarch64-none/bin:/tools/Xilinx/Vitis/2023.1/gnu/armr5/lin/gcc-arm-none-eabi/bin:/tools/Xilinx/Vitis/2023.1/tps/lnx64/cmake-3.24.2/bin:/tools/Xilinx/Vitis/2023.1/aietools/bin:/tools/Xilinx/Vivado/2023.1/bin:/tools/Xilinx/DocNav:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
@@ -140,9 +140,9 @@ sudo apt remove xrt
 ```
 
 # Platform data download
-Similar but different from Vivado, you need to download the Alveo data accelearation card from [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html) by choosing the appropriate software and operating system.
+Similar but different from Vivado, you need to download the Alveo data acceleration card from [https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/alveo.html) by choosing the appropriate software and operating system.
 
-Apart from download the .tar.gz files for your desired platform. We only do U200, U250, U280, and untar the tarball, install using the following command: 
+Apart from downloading the .tar.gz files for your desired platform (U55C, U200, U250, U280), untar the tarball and install using the following command: 
 
 ```bash
 source /tools/Xilinx/Vitis/2023.1/settings64.sh
