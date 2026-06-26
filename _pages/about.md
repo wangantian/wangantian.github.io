@@ -18,6 +18,7 @@ For the PFW master-level graduate program application, please refer to this [lin
 
 News and Updates
 ======  
+  * [05/2026] Two HDL-based custom digital silicon designs have been submitted to the [TinyTapeout Sky130 26b shuttle](https://tinytapeout.com/chips/ttsky26b/). Cheers!
   * [10/2025] One paper was presented at Asilomar 2025. 
   * [02/2025] One poster was presented at ISFPGA 2025. 
   * [10/2024] One paper was presented at ICCAD 2024. 
