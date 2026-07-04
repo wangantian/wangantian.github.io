@@ -9,6 +9,10 @@ redirect_from:
 ## Hardware Design and Tool Usage 
 [Vivado usage memo](https://wangantian.github.io//vivado/)
 
+[RealDigital Urbana Board usage memo](https://wangantian.github.io//urbana/)
+
+[RealDigital AUP-ZU3 Development Board usage memo](https://wangantian.github.io//aup-zu3/)
+
 [Vitis install memo](https://wangantian.github.io//vitis_install/)
 
 [Vitis usage memo](https://wangantian.github.io//vitis/)
