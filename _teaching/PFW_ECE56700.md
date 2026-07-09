@@ -22,5 +22,9 @@ The general course schedule is listed below:
 <h2>Reference books</h2>
 
 <ul>
-  <li>TBD</li> 
+  <li>Uwe Meyer-Baese, Digital Signal Processing with Field Programmable Gate Arrays, current Edition, Springer, ISBN: 978-3540726128.</li> 
+  <li>Mark Zwolinski, Digital System Design Using VHDL, current Edition, Prentice Hall, ISBN: ISBN 0-13-039985-X</li> 
+  <li>Keshab K Parhi. VLSI digital signal processing systems: design and implementation. John Wiley & Sons, 2007. ISBN: 978-0-471-24186-7. </li> 
+  <li>Xinmiao Zhang VLSI Architectures for Modern Error-Correcting Codes, CRC Press, 2020, ISBN: 978-0367738037</li> 
+  <li>Roger Woods, John McAllister, Gaye Lightbody, and Ying Yi. FPGA-based implementation of signal processing systems. Vol. 40. New York, NY, USA: Wiley, 2017. </li> 
 </ul>
