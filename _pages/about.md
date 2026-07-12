@@ -18,6 +18,8 @@ For the PFW master-level graduate program application, please refer to this [lin
 
 News and Updates
 ======  
+  * [07/2026] I will serve as the session chair at the Design Automation Conference (DAC) 2026. 
+  * [07/2026] One paper was accepted at TCAS-I. 
   * [05/2026] Two HDL-based custom digital silicon designs have been submitted to the [TinyTapeout Sky130 26b shuttle](https://tinytapeout.com/chips/ttsky26b/). Cheers!
   * [10/2025] One paper was presented at Asilomar 2025. 
   * [02/2025] One poster was presented at ISFPGA 2025. 
