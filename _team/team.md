@@ -6,7 +6,7 @@ redirect_from:
   - /team.html
 ---
 
-I am seeking self-motivated students with flexible research interests, including but not limited to FPGA/ASIC hardware implementations with various applications, AI with a security focus, and embedded systems. Please email me at first_name.last_name@pfw.edu with your potential interest(s), CV, and transcripts. Current PFW students are expected to take one of my courses during my current teaching cycle. Please note that PFW does not offer a Ph.D. program, and I do not have any postdoctoral position openings at this time.
+I am seeking self-motivated students with flexible research interests, including but not limited to FPGA/ASIC hardware implementations with various applications, AI with a security focus, and embedded systems. Please email me at first_name.last_name@pfw.edu with your potential interest(s), CV, and transcripts.  Current PFW students are expected to take one of my courses during my current teaching cycle. The group is tentatively named "Secure and Innovative Computing System Research Group," in commemoration of the group name my advisor used at Clemson. Please note that PFW does not offer a Ph.D. program, and I do not have any postdoctoral position openings at this time.
 
 
 ## Graduate students (master level) at Purdue University Fort Wayne
