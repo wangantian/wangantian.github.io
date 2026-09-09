@@ -6,20 +6,20 @@ redirect_from:
   - /aup-zu3.html
 ---
 
-<p>This page provides an evolving summary of resources and notes for using the AUP-ZU3 FPGA board. The AUP-ZU3 is a newer Zynq-based FPGA development board, available <a href="https://www.realdigital.org/hardware/aup-zu3">here</a>. It is currently available for purchase only by academic institutions. Consider purchasing the Accessory Kit, especially if you do not already have the required cables, SD card, and power adapter. Note that the kit comes with only two cables and one adapter. If you want to download the design to the board, you need a third cable to perform the download to the UART/PROG port</p>
+<p>This page provides an evolving summary of resources and notes for using the AUP-ZU3 FPGA board. The AUP-ZU3 is a newer Zynq-based FPGA development board, available <a href="https://www.realdigital.org/hardware/aup-zu3">here</a>. It is currently available for purchase only by academic institutions. Consider purchasing the Accessory Kit, especially if you do not already have the required cables, SD card, and power adapter. The kit includes only two cables and one adapter. If you want to download the design to the board, you need a third cable to perform the download to the UART/PROG port</p>
 
 <p>The official documentation is available <a href="https://xilinx.github.io/AUP-ZU3/">here</a>.</p>
 
 Part of the document is adapted from the discussions <a href="https://uri-nextlab.github.io/ParallelProgrammingLabs/">here</a>. The Generative AI tools assist with part of the content.
 
 # Blink the LEDs in HDL
-In this part, you are expected to blink the LEDs using the switches and buttons on the board. The design itself is no different from the existing HDL design at this stage: write the HDL design, run synthesis and implementation, and see the design run. Here, a small working HDL design is provided below, along with the constraint file [here](https://wangantian.github.io/files/zu3.xdc), with some minor modifications from the official documents. 
+In this part, you are expected to blink the LEDs using the board's switches and buttons. The design is the same as the existing HDL design at this stage: write the HDL design, run synthesis and implementation, and see the design run. Below is a small working HDL design, along with the constraint file [here](https://wangantian.github.io/files/zu3.xdc), with minor modifications from the official documents. 
 
 # Blink the LEDs using Zynq 
 
-In this exercise you will complete a Verilog module for the RealDigital AUP-ZU3 board (Zynq UltraScale+ XCZU3EG). The board gives you slide switches, push buttons, white LEDs, RGB LEDs, and servo headers on the programmable logic (PL) side, all clocked from a 100 MHz differential clock.
+In this exercise, you will complete a Verilog module for the RealDigital AUP-ZU3 board (Zynq UltraScale+ XCZU3EG). The board provides slide switches, push buttons, white LEDs, RGB LEDs, and servo headers on the programmable logic (PL) side, all clocked by a 100 MHz differential clock.
 
-By the end of this exercise your design should do three things at once:
+By the end of this exercise, your design should do three things at once:
 
 1. Blink the white LEDs at 1 Hz, but only for the switches that are turned on.
 2. Use three push buttons as a 3-bit binary value that lights up the RGB LEDs, with the fourth push button flipping two of the four RGB LEDs to the opposite color.
@@ -30,9 +30,9 @@ By the end of this exercise your design should do three things at once:
 - The board clock is 100 MHz, delivered as a differential pair (`PL_CLK_100_P` / `PL_CLK_100_N`). You will need an `IBUFDS` primitive to turn this into a single clean clock signal before using it anywhere else.
 - Switches, buttons, and LEDs are all active high.
 - Push buttons and switches are mechanical and asynchronous to your clock, so raw button/switch values should never be used directly in clocked logic. Pass them through a synchronizer first.
-- The RGB LED outputs and the servo outputs are both 3-pin and 4-pin buses respectively, matching one LED or one servo motor per index.
+- The RGB LED outputs and the servo outputs are both 3-pin and 4-pin buses, respectively, matching one LED or one servo motor per index.
 - A servo expects a repeating pulse roughly every 20 ms, where the *width* of the high pulse (not its presence or absence) tells the servo where to go. This is standard across hobby servos.
-- The servo signal pin is separate from the servo's motor power pin. Even a perfectly correct signal will not move a servo whose power jumper is not set. Check your board's servo header jumper (labeled `SPWR SEL`) before assuming your design is broken.
+- The servo signal pin is separate from the servo's motor power pin. Even a perfectly correct signal will not move a servo if its power jumper isn't set. Check your board's servo header jumper (labeled `SPWR SEL`) before assuming your design is broken.
 
 ## Your task
 
@@ -118,4 +118,4 @@ module switch_blink (
 endmodule
 ```
 
-# Let the Zynq (PS) and HDL (PL) talks
+# Let the Zynq (PS) and HDL (PL) talk
