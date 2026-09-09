@@ -35,7 +35,7 @@ set_property PACKAGE_PIN AB6 [get_ports {PL_USER_PB[0]}]
 set_property PACKAGE_PIN AB7 [get_ports {PL_USER_PB[1]}]
 set_property PACKAGE_PIN AB2 [get_ports {PL_USER_PB[2]}]
 set_property PACKAGE_PIN AC6 [get_ports {PL_USER_PB[3]}]
-set_property IOSTANDARD LVDS [get_ports PL_USER_PB*]
+set_property IOSTANDARD LVCMOS12 [get_ports PL_USER_PB*]
 
 
 set_property -dict {PACKAGE_PIN D7 IOSTANDARD DIFF_SSTL12} [get_ports {PL_CLK_100_P}]
