@@ -12,10 +12,8 @@ redirect_from:
 
 Part of the document is adapted from the discussions <a href="https://uri-nextlab.github.io/ParallelProgrammingLabs/">here</a>. The Generative AI tools assist with part of the content.
 
-# Blink the LEDs in HDL
-In this part, you are expected to blink the LEDs using the board's switches and buttons. The design is the same as the existing HDL design at this stage: write the HDL design, run synthesis and implementation, and see the design run. Below is a small working HDL design, along with the constraint file [here](https://wangantian.github.io/files/zu3.xdc), with minor modifications from the official documents. 
-
-# Blink the LEDs using Zynq 
+# Task 1: Blink the LEDs in HDL
+In this part, you are expected to blink the LEDs using the board's switches and buttons. The design is the same as the existing HDL design at this stage: write the HDL design, run synthesis and implementation, and see the design run. Below is a small working HDL design, along with the constraint file [here](https://wangantian.github.io/files/aup-zu3_files/zu3.xdc), with minor modifications from the official documents. 
 
 In this exercise, you will complete a Verilog module for the RealDigital AUP-ZU3 board (Zynq UltraScale+ XCZU3EG). The board provides slide switches, push buttons, white LEDs, RGB LEDs, and servo headers on the programmable logic (PL) side, all clocked by a 100 MHz differential clock.
 
@@ -119,7 +117,7 @@ endmodule
 ```
 
 
-# Let the Zynq (PS) run
+# Task 2: Let the Zynq (PS) run
 
 This design lets you hold the single PS pushbutton and blink a green PS LED at about 2 Hz. This uses only the processing system (PS). This design uses no programmable logic and no bitstream.
 
@@ -319,4 +317,186 @@ Note for a newer toolchain: Vitis Unified with the System Device Tree flow does 
 
 ---
 
-# Let the Zynq (PS) and HDL (PL) talk
+# Task 3: Let the Zynq (PS) and HDL (PL) talk
+
+Goal: move one bit across the PS/PL boundary in each direction, with custom HDL on one side and C on the other.
+
+- PS to PL: the PS reads its button, sends the bit over AXI to the PL, and the custom HDL blinks a PL LED while the bit is high.
+- PL to PS: a PL slide switch is synchronized in the custom HDL, sent back over AXI, and the PS mirrors it onto a PS LED.
+
+## New reminders for Task 3
+
+The four rules that made Task 2 work still apply. Task 3 adds two more, because Task 3 uses the programmable logic (PL) and Task 2 did not. Apart from the rules listed for the Task 2, there are several more added for the Task 3. 
+
+5. **A bitstream is required, and must be included in the XSA.** Task 2 exported "Pre-synthesis" with no bitstream because the PL was empty. Task 3 has real PL logic, so you must run implementation and generate a bitstream, then export the hardware **with the bitstream included**. The build script does this with `write_hw_platform -include-bit`.
+6. **The FPGA must be programmed at launch.** If the PL is not programmed, the AXI GPIO does not physically exist, and the first AXI read or write from the PS hangs (a bus transaction to a missing slave never completes). In Vitis Classic this is the "Program FPGA" option in the run configuration, which is on by default when the platform's XSA contains a bitstream. Verify it, and confirm the board's DONE LED lights after launch, which means the bitstream loaded.
+
+## Board facts for Task 3
+
+| Item | Value |
+|---|---|
+| Device part | `xczu3eg-sfvc784-2-e` |
+| Vivado board part (8 GB) | `realdigital.org:aup-zu3-8gb:part0:1.0` |
+| Processor | `psu_cortexa53_0` |
+| Console UART | PS UART1, MIO32 (RXD) / MIO33 (TXD), 115200 8N1 |
+| PS button | MIO6, input, active high |
+| PS green LED1 | MIO17, output, active high |
+| PL white LED LD1 | package pin AE7, LVCMOS12 |
+| PL slide switch SW0 | package pin AB1, LVCMOS12 |
+
+## The data path
+
+```
+  PS button (MIO6)                              PL slide switch (SW0, AB1)
+        |                                                 |
+   XGpioPs read                                     sw_in (pin)
+        |                                                 |
+   XGpio write ch1  --AXI-->  gpio_io_o[0]        pl_signal synchronizer
+                                   |                      |
+                             pl_signal:                sw_out[0]
+                             enable & blink               |
+                                   |               gpio2_io_i[0] <--AXI--  XGpio read ch2
+                              led_out (pin)                                     |
+                                   |                                     XGpioPs write
+                           PL white LED (LD1, AE7)                        PS LED1 (MIO17)
+```
+
+The blinking itself happens in `pl_signal` (HDL). The PS only sends "enable or not". That is what puts custom HDL on the data path rather than letting AXI GPIO drive the LED directly.
+
+## Prerequisite: board support files and source files
+
+You already have the vendor repository from Task 2. If not, clone it into a folder you can write to (not `C:\Program Files` or `C:\Xilinx`):
+
+```bash
+git clone https://github.com/RealDigitalOrg/aup-zu3-bsp.git
+```
+
+Put these three files, provided alongside this guide, into one working folder:
+
+- `pl_signal.v` (the custom PL module) available [here].(https://wangantian.github.io/files/aup-zu3_files/pl_signal.v)
+- `ps_pl_link.xdc` (the two pin constraints)  [here].(https://wangantian.github.io/files/aup-zu3_files/ps_pl_link.xdc)
+- `build_ps_pl.tcl` (the hardware build script)  [here].(https://wangantian.github.io/files/aup-zu3_files/build_ps_pl.tcl) You need to change the direcoty of the board support package in this file. 
+
+In the paths below, replace `<BSP>` with the full path to your `aup-zu3-bsp` folder, and `<OUT>` with a working folder of your choice. 
+
+
+## Part A: build the hardware in Vivado (one script)
+
+The script builds the PS with correct 8 GB DDR, adds the AXI GPIO and the custom module, wires the AXI bus explicitly, runs implementation and bitstream, and exports the XSA with the bitstream. 
+
+1. Open `build_ps_pl.tcl` and edit the two paths at the top: `bsp_boardfiles` to `<BSP>/board-files`, and `xsa_out` to `<OUT>/ps_pl_8gb.xsa`. Use forward slashes in every path, even on Windows; backslashes are treated as escape characters in Tcl.
+
+2. Open the **Vivado 2023.1 Tcl Shell** from the Start menu. You may need to change versions based on the Vivado you installed. 
+
+3. Change into your working folder (the one holding the three files) and run the script:
+
+```tcl
+cd <your working folder>
+source build_ps_pl.tcl
+```
+
+4. The script runs for several minutes, mostly in implementation and bitstream. When it finishes it prints `Wrote <OUT>/ps_pl_8gb.xsa`. That XSA contains the bitstream. You may choose to build it in GUI. 
+
+If you would rather build it in the GUI, you need to add the Zynq block and run block automation, enable `M_AXI_HPM0_LPD` and `pl_clk0` in the PS, add an AXI GPIO set to dual channel (channel 1 one output, channel 2 one input), add `pl_signal` with Add Module, run Connection Automation for the AXI GPIO, then connect `gpio_io_o[0]` to `pl_signal/enable_in`, connect `pl_signal/sw_out` to `gpio2_io_i[0]`, connect `pl_clk0` to `pl_signal/clk`, make `led_out` and `sw_in` external and rename them `pl_led` and `pl_sw`, then generate output products, create the HDL wrapper, run synthesis, implementation, and bitstream, and export hardware including the bitstream. The script is more convinent for such a procedure. 
+
+## Part B: create a brand-new platform in Vitis
+
+Do not reuse the Task 2 platform. This XSA has PL and a bitstream; the Task 2 XSA does not.
+
+5. Remove any leftover run configurations so you cannot launch the wrong thing: menu Run, Run Configurations, delete any existing entries under Single Application Debug.
+
+6. Create the platform: File, New, Platform Project. Name it, for example, `plat_pspl`. Choose "Create from hardware specification (XSA)" and select `<OUT>/ps_pl_8gb.xsa`. Set OS to standalone and processor to `psu_cortexa53_0`. Finish.
+
+7. Build the platform: right-click `plat_pspl`, Build Project. Wait for it to finish. This regenerates the FSBL for the 8 GB DDR and packages the bitstream into the platform.
+ 
+## Part C: prove the hardware with Hello World
+
+8. File, New, Application Project. Select the `plat_pspl` platform. Domain standalone on `psu_cortexa53_0`. Template: **Hello World**. Name it `hello`. Finish. Then right-click `hello`, Build Project.
+
+9. Board setup, and repeat this before every launch: BOOT switch on **JTAG**, SD card **removed**, powered from the **9V/3A** supply, PROG UART cable connected.
+
+10. Open the serial terminal before launching: Window, Show View, Vitis Serial Terminal. Click the plus, select the board's COM port, set 115200 baud, 8 data bits, no parity, 1 stop bit. To find which COM port is the board, unplug the USB cable and see which one disappears.
+
+11. Right-click `hello`, Run As, Launch Hardware (Single Application Debug).
+
+12. Two checks. First, the launch log must **not** show the FSBL exit-breakpoint timeout. Second, the board's DONE LED should light, which confirms the bitstream was programmed. If the program pauses at `main`, click once in the Debug panel and press **F8** to resume. Do not press Suspend. "Hello World" prints on the serial terminal.
+
+If Hello World prints and DONE is lit, the platform is correct and the FPGA programs. Move on. If not, fix that first.
+ 
+## Part D: run the PS/PL link application
+
+13. File, New, Application Project. Select `plat_pspl`. Domain standalone on `psu_cortexa53_0`. Template: **Empty Application(C)**. Name it `ps_pl_link`. Finish.
+
+14. Right-click the application's `src` folder, New, File, name it `ps_pl_link.c`, and paste the code below (also provided as a file). If the template left any stub `.c`, delete it so there is only one `main`.
+
+15. Right-click `ps_pl_link`, Build Project.
+
+16. With the board set up as in step 9 and the terminal connected as in step 10, right-click `ps_pl_link`, Run As, Launch Hardware. Resume with F8 if it pauses.
+
+17. What you should see. The startup line prints on the terminal. Press and hold the single PS button at the bottom edge of the board; the white PL LED (LD1) blinks about once a second, because the PS sent the enable bit and the PL generated the blink. Separately, slide PL switch SW0; the green PS LED1 turns on, because the switch value traveled over AXI into the PS. Each direction is a real AXI transfer.
+
+```c
+/*
+ * ps_pl_link.c   AUP-ZU3 (8 GB), bare metal, Task 3.
+ *   PS -> PL : PS button (MIO6) -> AXI GPIO ch1 -> PL blinks LED
+ *   PL -> PS : PL switch -> AXI GPIO ch2 -> PS mirrors onto LED1 (MIO17)
+ * All GPIO on this board is active high.
+ */
+#include "xparameters.h"
+#include "xgpiops.h"
+#include "xgpio.h"
+#include "sleep.h"
+#include "xil_printf.h"
+
+#define PS_BTN_PIN    6U    /* MIO6  : PS button, input  */
+#define PS_LED1_PIN  17U    /* MIO17 : PS LED1,  output  */
+
+#define AXI_CH_LED    1U    /* channel 1 : 1-bit output -> enable to PL */
+#define AXI_CH_SW     2U    /* channel 2 : 1-bit input  <- switch from PL */
+
+int main(void)
+{
+    XGpioPs_Config *ps_cfg;
+    XGpioPs ps;
+    XGpio   pl;
+
+    ps_cfg = XGpioPs_LookupConfig(XPAR_XGPIOPS_0_DEVICE_ID);
+    if (ps_cfg == NULL) {
+        return XST_FAILURE;
+    }
+    if (XGpioPs_CfgInitialize(&ps, ps_cfg, ps_cfg->BaseAddr) != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+    XGpioPs_SetDirectionPin(&ps, PS_BTN_PIN, 0U);
+    XGpioPs_SetDirectionPin(&ps, PS_LED1_PIN, 1U);
+    XGpioPs_SetOutputEnablePin(&ps, PS_LED1_PIN, 1U);
+    XGpioPs_WritePin(&ps, PS_LED1_PIN, 0U);
+
+    if (XGpio_Initialize(&pl, XPAR_AXI_GPIO_0_DEVICE_ID) != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+    XGpio_SetDataDirection(&pl, AXI_CH_LED, 0x0U);   /* outputs */
+    XGpio_SetDataDirection(&pl, AXI_CH_SW,  0x1U);   /* input   */
+    XGpio_DiscreteWrite(&pl, AXI_CH_LED, 0x0U);
+
+    xil_printf("AUP-ZU3 PS/PL link: PS button -> PL LED (blinks), "
+               "PL switch -> PS LED1.\r\n");
+
+    while (1) {
+        u32 btn = XGpioPs_ReadPin(&ps, PS_BTN_PIN) & 0x1U;  /* PS -> PL */
+        XGpio_DiscreteWrite(&pl, AXI_CH_LED, btn);
+
+        u32 sw = XGpio_DiscreteRead(&pl, AXI_CH_SW) & 0x1U; /* PL -> PS */
+        XGpioPs_WritePin(&ps, PS_LED1_PIN, sw);
+
+        usleep(10000U);
+    }
+    return 0;
+}
+```
+
+Note for a newer toolchain [untested]: on Vitis Unified with the System Device Tree flow, the device-ID macros do not exist. Use `XPAR_XGPIOPS_0_BASEADDR` and `XPAR_AXI_GPIO_0_BASEADDR` in the lookup and initialize calls, and if `XGpioPs_Config` has no `BaseAddr` member, it is `BaseAddress`. On 2023.1 Classic the code above is correct as written.
+
+# Task 4: Script-based PS and PL workflow
+
+In the Task 3, we try the script-based PL-side configurations, and now we could consider a fully scripted based PS and PL workflow. 
