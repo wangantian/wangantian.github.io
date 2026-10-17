@@ -25,13 +25,13 @@ Select a required course or technical elective to explore prerequisites, corequi
 
 .robotics{border-top:4px solid #246b73}.robotics-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}.robotics-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.robotics-item{display:flex;gap:8px;align-items:flex-start;background:#f7fbfb;border:1px solid #b9d2d4;border-radius:6px;padding:8px;min-width:0}.robotics-item button{flex:1;min-width:0;border:0;background:transparent;text-align:left;cursor:pointer;font:inherit;color:inherit;padding:3px}.robotics-item button strong{display:block;font-size:13px}.robotics-item button span{display:block;font-size:12px}.robotics-item input{margin-top:7px;accent-color:#246b73}.robotics-item.selected{outline:3px solid #1b324e}.robotics-item.highlight{background:#b8e4df}.robotics-item.immediate{background:var(--immediate)}.robotics-item.prereq{background:var(--pre);color:white}.robotics-item.coreq{background:var(--co)}.robotics-item.postreq{background:var(--post)}.course.robotic-mark,.te-course.robotic-mark{border:2px solid #27818b}.course.robotic-mark .code::after,.te-course.robotic-mark strong::after{content:&#x27;  ◈&#x27;;color:#0b6871}.robotics-highlight .course.robotic-mark,.robotics-highlight .te-course.robotic-mark{background:#b8e4df}.robotics-highlight .course.robotic-mark.prereq,.robotics-highlight .te-course.robotic-mark.prereq{background:var(--pre)}.robotics-highlight .course.robotic-mark.immediate,.robotics-highlight .te-course.robotic-mark.immediate{background:var(--immediate)}.robotics-highlight .course.robotic-mark.coreq,.robotics-highlight .te-course.robotic-mark.coreq{background:var(--co)}.robotics-highlight .course.robotic-mark.postreq,.robotics-highlight .te-course.robotic-mark.postreq{background:var(--post)}@media(max-width:900px){.robotics-list{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:540px){.robotics-list{grid-template-columns:1fr}}
 .offering-label{font-size:11px!important;color:#355b68!important;font-weight:650}.robotics-item .offering-label{display:block;margin-top:4px}.offering-detail{background:#eaf4f5;border-left:4px solid #27818b;padding:9px 12px}.offering-table{width:100%;border-collapse:collapse;font-size:13px}.offering-table th,.offering-table td{border-bottom:1px solid #dce0e6;padding:9px;text-align:left;vertical-align:top}.offering-table th{background:#eef1f4}.offering-course{border:0;background:none;color:#075b91;text-align:left;font:inherit;cursor:pointer;text-decoration:underline}.offering-section{overflow-x:visible;max-width:100%}.offering-table th:first-child,.offering-table td:first-child{position:sticky;left:0;background:#fff;min-width:120px}.offering-table th:first-child{background:#eef1f4}.offering-table th{white-space:nowrap}.offering-table td:not(:first-child){text-align:center;min-width:105px}/* Fit the entire schedule within the page without a right-side nested scrollbar. */
-html,body{overflow-x:hidden;overflow-y:hidden}
+html,body{overflow-x:hidden;overflow-y:visible}
 .offering-table{width:100%;table-layout:fixed}
 .offering-table th,.offering-table td{min-width:0!important;overflow-wrap:anywhere;word-break:normal;padding:6px 3px;font-size:clamp(9px,.8vw,12px)}
 .offering-table th:first-child,.offering-table td:first-child{width:18%;min-width:0!important}
 .offering-section{overflow:visible}
 .sem-list .offering-label{display:block;font-size:0.72rem;opacity:.82;margin-top:3px;line-height:1.25}.robotics-item .offering-label{display:block;margin-top:4px}&lt;/style&gt;&lt;style&gt;.emag-grid{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:12px 0}.emag-prereq{display:grid;gap:3px;padding:12px;border:1px solid #dce0e6;border-radius:8px;background:#f8fafb}.emag-prereq span{font-size:12px;margin-bottom:7px}.emag-arrow{font-size:28px;color:#586675}.emag-options{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.emag-choice{display:flex;flex-direction:column;gap:5px;text-align:left;border:2px solid #d1d8dd;border-radius:8px;background:#fff;padding:12px;cursor:pointer;max-width:220px;color:#1d242d}.emag-choice span{font-size:13px}.emag-choice small{font-size:12px;color:#355b68}.emag-choice:focus-visible{outline:3px solid #186a9b}.emag-or{font-weight:bold}/* Fit the entire schedule within the page without a right-side nested scrollbar. */
-html,body{overflow-x:hidden;overflow-y:hidden}
+html,body{overflow-x:hidden;overflow-y:visible}
 .offering-table{width:100%;table-layout:fixed}
 .offering-table th,.offering-table td{min-width:0!important;overflow-wrap:anywhere;word-break:normal;padding:6px 3px;font-size:clamp(9px,.8vw,12px)}
 .offering-table th:first-child,.offering-table td:first-child{width:18%;min-width:0!important}
@@ -60,7 +60,7 @@ const safeStorage={
  setItem(k,v){try{window.localStorage.setItem(k,v);return true}catch(e){return false}},
  removeItem(k){try{window.localStorage.removeItem(k)}catch(e){}}
 };
-let semesters=JSON.parse(safeStorage.getItem(&#x27;pfw-cpe-fall2026-te-v1&#x27;)||&#x27;null&#x27;)||structuredClone(original);
+let semesters=structuredClone(original); // Always load the published 8-semester curriculum; edits can be imported explicitly.
 let selected=null;
 const $=id=&gt;document.getElementById(id);
 const all=()=&gt;[...semesters.flatMap((items,semester)=&gt;items.map((item,index)=&gt;({...item,semester,index,key:`${semester}:${index}`}))),...electiveCatalog.map((c,index)=&gt;({...c,semester:8,index,key:`te:${index}`}))];
@@ -148,6 +148,13 @@ $(&#x27;reset&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{semesters=struct
 $(&#x27;download&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{const blob=new Blob([JSON.stringify(semesters,null,2)],{type:&#x27;application/json&#x27;});const url=URL.createObjectURL(blob);const a=document.createElement(&#x27;a&#x27;);a.href=url;a.download=&#x27;curriculum-courses.json&#x27;;a.click();setTimeout(()=&gt;URL.revokeObjectURL(url),1000)});
 $(&#x27;upload&#x27;).addEventListener(&#x27;change&#x27;,async e=&gt;{const f=e.target.files?.[0];if(!f)return;try{semesters=valid(JSON.parse(await f.text()));$(&#x27;jsonedit&#x27;).value=JSON.stringify(semesters,null,2);safeStorage.setItem(&#x27;pfw-cpe-fall2026-te-v1&#x27;,JSON.stringify(semesters));selected=null;render();$(&#x27;editstatus&#x27;).textContent=&#x27;Imported &#x27;+f.name}catch(err){$(&#x27;editstatus&#x27;).textContent=&#x27;Import failed: &#x27;+err.message}e.target.value=&#x27;&#x27;});
 render();
+// Explicitly notify the parent of the full height, even if inline onload is blocked.
+function reportHeight(){try{parent.postMessage({type:&#x27;pfw-curriculum-height&#x27;,height:Math.ceil(document.documentElement.scrollHeight+24)},&#x27;*&#x27;)}catch(e){}}
+reportHeight();
+if(window.ResizeObserver)new ResizeObserver(reportHeight).observe(document.body);
+window.addEventListener(&#x27;load&#x27;,reportHeight);
+window.addEventListener(&#x27;resize&#x27;,reportHeight);
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+<script>window.addEventListener("message",function(e){if(e.data&&e.data.type==="pfw-curriculum-height"){const f=document.querySelector("iframe[title='PFW Fall 2026 Computer Engineering interactive curriculum map']");if(f&&e.source===f.contentWindow&&Number.isFinite(e.data.height))f.style.height=Math.max(1100,Math.min(30000,e.data.height))+"px";}});</script>
 </div>
 {% endraw %}
