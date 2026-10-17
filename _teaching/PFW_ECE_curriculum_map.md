@@ -68,6 +68,7 @@ function renderOfferings(){
  for(const label of [&#x27;Course&#x27;,...terms]){const th=document.createElement(&#x27;th&#x27;);th.textContent=label;th.scope=&#x27;col&#x27;;hr.append(th)}
  head.append(hr);table.append(head);
  const body=document.createElement(&#x27;tbody&#x27;);
+ const byId=new Map(all().map(c=&gt;[c.id,c]));
  const idsToShow=Object.keys(offeringInfo).filter(id=&gt;!semesters.some(s=&gt;s.some(c=&gt;c.id===id)));
  idsToShow.sort((a,b)=&gt;{const aa=byId.get(a),bb=byId.get(b);return (aa?.label||a).localeCompare(bb?.label||b)});
  for(const id of idsToShow){const o=offeringInfo[id]||{};const c=byId.get(id);const tr=document.createElement(&#x27;tr&#x27;);

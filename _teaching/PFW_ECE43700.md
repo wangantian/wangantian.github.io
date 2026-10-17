@@ -1,10 +1,10 @@
 ---
-title: "ECE 43700 Computer Design and Prototyping (26, 25 Spring)"
+title: "ECE 43700 Computer Design and Prototyping (27, 26, 25 Spring)"
 collection: teaching
 type: "Undergraduate Course with Lab section"
 permalink: /teaching/PFW_ECE43700
 venue: "Purdue University Fort Wayne, Department of Electrical and Computer Engineering"
-date: 2026-01-12
+date: 2027-01-12
 location: "Fort Wayne, IN, USA"
 ---
 
