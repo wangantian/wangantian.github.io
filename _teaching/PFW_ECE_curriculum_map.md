@@ -8,13 +8,13 @@ date: 2026-10-17
 location: "Fort Wayne, IN, USA"
 ---
 
-This **Fall 2026 PFW Computer Engineering curriculum map**, including Group 1 and Group 2 technical elective dependencies and a Robotics and Automation concentration, is generated from the department's *Bachelor of Science in Engineering Major in Computer Engineering* bingo sheet (effective Fall 2026). The interactive presentation is built from and adapted from the [Purdue West Lafayette Computer Engineering curriculum map](https://engineering.purdue.edu/Engr/Academics/Undergraduate/majors/2026-27/majors/CMPE_curriculum_map), which acknowledges original flowsheet work by the University at Buffalo School of Engineering and Applied Sciences.
+This **Fall 2026 PFW Computer Engineering curriculum map**, including Group 1 and Group 2 technical elective dependencies, is generated from the department's *Bachelor of Science in Engineering Major in Computer Engineering* bingo sheet (effective Fall 2026). The interactive presentation is built from and adapted from the [Purdue West Lafayette Computer Engineering curriculum map](https://engineering.purdue.edu/Engr/Academics/Undergraduate/majors/2026-27/majors/CMPE_curriculum_map), which acknowledges original flowsheet work by the University at Buffalo School of Engineering and Applied Sciences.
 
-Select a required course, technical elective, or Robotics and Automation concentration option to explore prerequisites, corequisites, and subsequent courses. **Alternative, external, and minimum-grade requirements remain in course notes**; the highlighted dependency graph is a visual aid, not a full degree audit. Consult your academic advisor for official requirements.
+Select a required course or technical elective to explore prerequisites, corequisites, and subsequent courses. **Alternative, external, and minimum-grade requirements remain in course notes**; the highlighted dependency graph is a visual aid, not a full degree audit. Consult your academic advisor for official requirements.
 
 {% raw %}
 <div style="width:100%;margin:1rem 0;">
-<iframe title="PFW Fall 2026 Computer Engineering interactive curriculum map" style="display:block;position:relative;left:50%;transform:translateX(-50%);width:min(1540px, calc(100vw - 32px));max-width:none;height:1100px;overflow:hidden;border:1px solid #d0d0d0;border-radius:8px;background:white;" loading="eager" scrolling="no" onload="const f=this;const fit=()=>{try{f.style.height=Math.ceil(f.contentDocument.documentElement.scrollHeight+12)+'px'}catch(e){}};fit();if(window.ResizeObserver){new ResizeOb&lt;!doctype html&gt;
+<iframe title="PFW Fall 2026 Computer Engineering interactive curriculum map" style="display:block;position:relative;left:50%;transform:translateX(-50%);width:min(1540px, calc(100vw - 32px));max-width:none;height:1100px;overflow:hidden;border:1px solid #d0d0d0;border-radius:8px;background:white;" loading="eager" scrolling="no" onload="const f=this;const fit=()=>{try{f.style.height=Math.ceil(f.contentDocument.documentElement.scrollHeight+12)+'px'}catch(e){}};fit();if(window.ResizeObserver){new ResizeObserver(fit).observe(f.contentDocument.body)}window.addEventListener('resize',fit)" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
 &lt;title&gt;PFW Computer Engineering | Interactive Curriculum Map&lt;/title&gt;
 &lt;style&gt;
@@ -100,8 +100,6 @@ $(&#x27;apply&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{try{semesters=va
 $(&#x27;reset&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{semesters=structuredClone(original);localStorage.removeItem(&#x27;pfw-cpe-fall2026-te-v1&#x27;);$(&#x27;jsonedit&#x27;).value=JSON.stringify(semesters,null,2);selected=null;render();$(&#x27;editstatus&#x27;).textContent=&#x27;Restored original course data.&#x27;});
 $(&#x27;download&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{const blob=new Blob([JSON.stringify(semesters,null,2)],{type:&#x27;application/json&#x27;});const url=URL.createObjectURL(blob);const a=document.createElement(&#x27;a&#x27;);a.href=url;a.download=&#x27;curriculum-courses.json&#x27;;a.click();setTimeout(()=&gt;URL.revokeObjectURL(url),1000)});
 $(&#x27;upload&#x27;).addEventListener(&#x27;change&#x27;,async e=&gt;{const f=e.target.files?.[0];if(!f)return;try{semesters=valid(JSON.parse(await f.text()));$(&#x27;jsonedit&#x27;).value=JSON.stringify(semesters,null,2);localStorage.setItem(&#x27;pfw-cpe-fall2026-te-v1&#x27;,JSON.stringify(semesters));selected=null;render();$(&#x27;editstatus&#x27;).textContent=&#x27;Imported &#x27;+f.name}catch(err){$(&#x27;editstatus&#x27;).textContent=&#x27;Import failed: &#x27;+err.message}e.target.value=&#x27;&#x27;});
-render();
-&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;.message}e.target.value=&#x27;&#x27;});
 render();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
 </div>
