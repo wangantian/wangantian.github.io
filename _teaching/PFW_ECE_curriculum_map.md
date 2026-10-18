@@ -604,3 +604,446 @@ render();
 "></iframe>
 </div>
 {% endraw %}
+
+{% raw %}
+<div style="width:100%;margin:1rem 0;">
+<iframe title="PFW ECE curriculum technical course map" style="display:block;position:relative;left:50%;transform:translateX(-50%);width:min(1540px, calc(100vw - 32px));max-width:none;height:1100px;overflow:hidden;border:1px solid #d0d0d0;border-radius:8px;background:white;" loading="eager" scrolling="no" onload="const f=this;const fit=()=&gt;{try{f.style.height=Math.ceil(f.contentDocument.documentElement.scrollHeight+12)+&#x27;px&#x27;}catch(e){}};fit();if(window.ResizeObserver){new ResizeObserver(fit).observe(f.contentDocument.body)}window.addEventListener(&#x27;resize&#x27;,fit)" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;PFW ECE Curriculum | Technical Course Map&lt;/title&gt;
+&lt;style&gt;
+:root{--ink:#1d242d;--muted:#596373;--border:#dce0e6;--bg:#f5f6f8;--gold:#c69b27;--pre:#89888c;--immediate:#bbb9bf;--co:#ffdf70;--post:#d9a526}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,&quot;Segoe UI&quot;,sans-serif}
+a{color:#075b91}
+button:focus-visible,input:focus-visible,textarea:focus-visible,label:focus-visible{outline:3px solid #0968c8;outline-offset:3px}
+header{background:#171a1e;color:#fff;padding:28px 22px}
+header .eyebrow{font-size:12px;letter-spacing:.13em;color:#f1ca6a;font-weight:700}
+h1{font-size:clamp(25px,3vw,38px);margin:6px 0}
+header p{margin:5px 0;color:#e0e0e0}
+main{max-width:1540px;margin:auto;padding:22px}
+.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.toolbar input{min-width:220px;flex:1;max-width:380px;border:1px solid #aeb6c1;border-radius:7px;padding:10px 12px;font:inherit}
+.btn{border:1px solid #8a929d;background:#fff;border-radius:7px;padding:9px 13px;font:inherit;cursor:pointer;color:var(--ink);display:inline-block}
+.btn:hover{background:#eee}
+.btn.primary{background:#272b32;color:#fff}
+.legend{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}
+.legend span{border-radius:5px;padding:6px 9px;font-size:12px;border:1px solid #a8a8a8;color:#151515}
+.legend .pre{background:var(--pre);color:#fff}
+.legend .immediate{background:var(--immediate)}
+.legend .co{background:var(--co)}
+.legend .post{background:var(--post)}
+.map{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;align-items:start}
+.col{min-width:0}
+.col-head{background:#292e36;color:#fff;text-align:center;padding:12px 6px;border-top:4px solid var(--gold);border-radius:6px 6px 0 0;font-weight:700;font-size:18px}
+.col-head small{display:block;font-weight:400;font-size:12px;color:#d4d6da}
+.col-list{display:flex;flex-direction:column;gap:7px;padding:8px 0}
+.course{width:100%;min-height:100px;text-align:left;border:1px solid #d1d5db;background:#fff;border-radius:6px;padding:10px 9px;cursor:pointer;color:#23262d;font:inherit;display:flex;flex-direction:column;gap:4px}
+.course:hover{box-shadow:0 2px 9px #0002;border-color:#4b5563}
+.course .code{font-weight:750;font-size:13px}
+.course .name{font-size:12px;line-height:1.35}
+.course .credits{font-size:11px;color:#535c69;margin-top:auto}
+.course small{font-size:11px;color:#355b68}
+.course small.tag{font-weight:650}
+.course.elective{border-style:dashed}
+.course.selected,.te-course.selected{outline:3px solid #1b324e;outline-offset:-3px}
+.course.prereq,.te-course.prereq{background:var(--pre);color:#fff}
+.course.prereq .credits,.course.prereq small{color:#fff}
+.course.immediate,.te-course.immediate{background:var(--immediate);color:#111}
+.course.coreq,.te-course.coreq{background:var(--co);color:#111}
+.course.postreq,.te-course.postreq{background:var(--post);color:#111}
+.course.immediate small,.course.coreq small,.course.postreq small,.course.immediate .credits,.course.coreq .credits,.course.postreq .credits{color:#222}
+.course.filtered,.te-course.filtered{opacity:.25}
+.te{margin-top:22px;padding:18px;background:#fff;border:1px solid var(--border);border-radius:9px}
+.te h2{margin:0 0 8px}
+.te-groups{display:block}
+.te-group h3{margin:10px 0;font-size:16px}
+.te-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.te-course{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:3px;min-width:0;min-height:86px;padding:9px;background:#fff;border:1px solid #d1d5db;border-radius:5px;cursor:pointer;font:inherit;color:var(--ink)}
+.te-course strong{font-size:12px}
+.te-course span{font-size:12px}
+.te-course small{font-size:11px;color:#444}
+.te-course .offering-label{color:#355b68;font-weight:650}
+.table-wrap{overflow-x:auto}
+.offering-table{border-collapse:collapse;font-size:13px;min-width:860px;width:100%}
+.offering-table th,.offering-table td{border-bottom:1px solid var(--border);padding:8px;text-align:center;white-space:nowrap}
+.offering-table th{background:#eef1f4}
+.offering-table th:first-child,.offering-table td:first-child{text-align:left;position:sticky;left:0;background:#fff}
+.offering-table th:first-child{background:#eef1f4}
+.offering-table td.on{font-weight:700;background:#eaf4f5}
+.offering-course{border:0;background:none;color:#075b91;text-align:left;font:inherit;cursor:pointer;text-decoration:underline;padding:0}
+.hint{font-size:13px;color:var(--muted)}
+.details{background:#fff;border:1px solid var(--border);padding:18px 20px;border-radius:9px;margin-top:18px;min-height:130px}
+.details h2{margin:0 0 8px;font-size:20px}
+.details p{margin:6px 0}
+.details .meta{font-size:13px;color:var(--muted)}
+.details .offering-detail{background:#eaf4f5;border-left:4px solid #27818b;padding:9px 12px}
+.details a{overflow-wrap:anywhere}
+.editor{margin-top:20px;background:#fff;border:1px solid var(--border);border-radius:9px;padding:16px}
+.editor textarea{width:100%;min-height:300px;font:12px/1.4 ui-monospace,monospace;padding:10px}
+.editor .buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+footer{padding:18px 22px;text-align:center;color:#5a6069;font-size:13px}
+@media(max-width:1250px){.map{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:900px){.te-groups{grid-template-columns:1fr}}
+@media(max-width:650px){.map{grid-template-columns:repeat(2,minmax(0,1fr));}main{padding:14px}.toolbar input{max-width:none;width:100%}}
+@media(max-width:420px){.map{grid-template-columns:minmax(0,1fr)}.te-list{grid-template-columns:1fr}}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+  &lt;div class=&quot;eyebrow&quot;&gt;TECHNICAL COURSE MAP&lt;/div&gt;
+  &lt;h1&gt;PFW ECE Curriculum&lt;/h1&gt;
+  &lt;p&gt;MA, ECE, and PHYS courses grouped by course number (100, 200, 300, 400, 500, and 600 levels)&lt;/p&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;div class=&quot;toolbar&quot;&gt;
+    &lt;label class=&quot;sr-only&quot; for=&quot;search&quot;&gt;Search courses&lt;/label&gt;
+    &lt;input id=&quot;search&quot; type=&quot;search&quot; placeholder=&quot;Search courses or codes&quot;&gt;
+    &lt;button class=&quot;btn&quot; id=&quot;clear&quot; type=&quot;button&quot;&gt;Clear selection&lt;/button&gt;
+    &lt;button class=&quot;btn&quot; id=&quot;edit&quot; type=&quot;button&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;editor&quot;&gt;Edit course data&lt;/button&gt;
+    &lt;button class=&quot;btn&quot; id=&quot;download&quot; type=&quot;button&quot;&gt;Export JSON&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;legend&quot; aria-label=&quot;Course relationship colors&quot;&gt;
+    &lt;span class=&quot;pre&quot;&gt;Earlier prerequisites&lt;/span&gt;&lt;span class=&quot;immediate&quot;&gt;Direct prerequisites&lt;/span&gt;&lt;span class=&quot;co&quot;&gt;Corequisites&lt;/span&gt;&lt;span class=&quot;post&quot;&gt;Later dependent courses&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;p class=&quot;hint&quot;&gt;Select a course to highlight its prerequisites and dependent courses. Dashed cards are technical electives. Each card shows its offering pattern; required courses also show their semester in the flowsheet.&lt;/p&gt;
+
+  &lt;div class=&quot;map&quot; id=&quot;map&quot; aria-label=&quot;PFW ECE technical courses by course number&quot;&gt;&lt;/div&gt;
+
+  &lt;section class=&quot;te&quot; aria-labelledby=&quot;te-title&quot;&gt;
+    &lt;h2 id=&quot;te-title&quot;&gt;Technical electives (Fall 2026)&lt;/h2&gt;
+    &lt;p class=&quot;hint&quot;&gt;Choose a course to highlight its prerequisites. Alternative prerequisites are listed in the details, not as simultaneous requirements.&lt;/p&gt;
+    &lt;div class=&quot;te-groups&quot; id=&quot;te-groups&quot;&gt;&lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;te offering-section&quot; aria-labelledby=&quot;offering-title&quot;&gt;
+    &lt;h2 id=&quot;offering-title&quot;&gt;Technical elective offering schedule&lt;/h2&gt;
+    &lt;p class=&quot;hint&quot;&gt;Source: department workbook (last updated 6/3/2025). &quot;Scheduled&quot; means the workbook lists the course for that term, either as text or a colored cell. &quot;-&quot; means no offering is listed, not that the course is canceled. Fall 2026 is the current term.&lt;/p&gt;
+    &lt;p class=&quot;hint&quot;&gt;* The workbook labels the last two term columns &quot;Spring 2019&quot; and &quot;Fall 2019.&quot; They follow Fall 2028 in sequence, so they are shown here as Spring 2029 and Fall 2029. Confirm this with the department.&lt;/p&gt;
+    &lt;div class=&quot;table-wrap&quot; id=&quot;offering-table&quot;&gt;&lt;/div&gt;
+    &lt;p class=&quot;hint&quot; id=&quot;not-listed&quot;&gt;&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;details&quot; id=&quot;details&quot; aria-live=&quot;polite&quot;&gt;
+    &lt;h2&gt;Course information&lt;/h2&gt;
+    &lt;p&gt;Select any course to view its description, prerequisites, and later dependent courses.&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;editor&quot; id=&quot;editor&quot; hidden&gt;
+    &lt;h2&gt;Edit course data&lt;/h2&gt;
+    &lt;p class=&quot;hint&quot;&gt;The editor contains a list of course records. Edit a course&#x27;s &lt;code&gt;label&lt;/code&gt;, &lt;code&gt;name&lt;/code&gt;, &lt;code&gt;pre&lt;/code&gt;, &lt;code&gt;co&lt;/code&gt;, or &lt;code&gt;content&lt;/code&gt; fields. Prerequisite and corequisite fields hold course &lt;code&gt;id&lt;/code&gt; values separated by spaces. The course number determines the column, so keep the number in &lt;code&gt;label&lt;/code&gt;. Apply saves changes in this browser; export JSON to keep a permanent copy.&lt;/p&gt;
+    &lt;textarea id=&quot;jsonedit&quot; spellcheck=&quot;false&quot; aria-label=&quot;Course JSON&quot;&gt;&lt;/textarea&gt;
+    &lt;div class=&quot;buttons&quot;&gt;
+      &lt;button class=&quot;btn primary&quot; id=&quot;apply&quot; type=&quot;button&quot;&gt;Apply changes&lt;/button&gt;
+      &lt;button class=&quot;btn&quot; id=&quot;reset&quot; type=&quot;button&quot;&gt;Restore original&lt;/button&gt;
+      &lt;label class=&quot;btn&quot; for=&quot;upload&quot;&gt;Import JSON&lt;/label&gt;
+      &lt;input type=&quot;file&quot; id=&quot;upload&quot; accept=&quot;.json,application/json&quot; hidden&gt;
+    &lt;/div&gt;
+    &lt;p id=&quot;editstatus&quot; role=&quot;status&quot;&gt;&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;PFW ECE Curriculum: technical courses only (MA, ECE, PHYS). Requirements from the Electrical Engineering flowsheet (effective Fall 2026) and the Fall 2026 technical elective list. Offering patterns from the Fall 2025 flowchart, prior CPE offering data, and the department workbook. Confirm requirements with an academic advisor.&lt;/footer&gt;
+
+&lt;script&gt;
+&#x27;use strict&#x27;;
+const DATA = {&quot;courses&quot;: [{&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;MA16500&quot;, &quot;label&quot;: &quot;MA 16500&quot;, &quot;name&quot;: &quot;Analytic Geometry and Calculus I&quot;, &quot;credits_min&quot;: 4, &quot;credits_max&quot;: 4, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: MA 15400 or MA 15900 (C- or better), or placement; GenEd A3&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Fall and Spring&quot;, &quot;sem&quot;: 1, &quot;term&quot;: &quot;Fall&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ENGR12700&quot;, &quot;label&quot;: &quot;ENGR 12700&quot;, &quot;name&quot;: &quot;Engineering Fundamentals I&quot;, &quot;credits_min&quot;: 4, &quot;credits_max&quot;: 4, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;MA16500&quot;, &quot;content&quot;: &quot;C: MA 16500&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 1, &quot;term&quot;: &quot;Fall&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;MA16600&quot;, &quot;label&quot;: &quot;MA 16600&quot;, &quot;name&quot;: &quot;Analytic Geometry and Calculus II&quot;, &quot;credits_min&quot;: 4, &quot;credits_max&quot;: 4, &quot;pre&quot;: &quot;MA16500&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: MA 16500 (C- or better); GenEd A3&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Fall and Spring&quot;, &quot;sem&quot;: 2, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;PHYS15200&quot;, &quot;label&quot;: &quot;PHYS 15200&quot;, &quot;name&quot;: &quot;Mechanics&quot;, &quot;credits_min&quot;: 5, &quot;credits_max&quot;: 5, &quot;pre&quot;: &quot;MA16500&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: MA 16500 or MA 16600 or MA 26100 (C- or better); GenEd B4&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Fall and Spring&quot;, &quot;sem&quot;: 2, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ENGR12800&quot;, &quot;label&quot;: &quot;ENGR 12800&quot;, &quot;name&quot;: &quot;Engineering Fundamentals II&quot;, &quot;credits_min&quot;: 4, &quot;credits_max&quot;: 4, &quot;pre&quot;: &quot;ENGR12700&quot;, &quot;co&quot;: &quot;MA16500&quot;, &quot;content&quot;: &quot;P: ENGR 12700 (C- or better); C: MA 16500, ENGL 13100, or COM 11400; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 2, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;MA26100&quot;, &quot;label&quot;: &quot;MA 26100&quot;, &quot;name&quot;: &quot;Multivariate Calculus&quot;, &quot;credits_min&quot;: 4, &quot;credits_max&quot;: 4, &quot;pre&quot;: &quot;MA16600&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: MA 16600 (C- or better)&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 3, &quot;term&quot;: &quot;Fall&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;PHYS25100&quot;, &quot;label&quot;: &quot;PHYS 25100&quot;, &quot;name&quot;: &quot;Heat, Electricity and Optics&quot;, &quot;credits_min&quot;: 5, &quot;credits_max&quot;: 5, &quot;pre&quot;: &quot;PHYS15200&quot;, &quot;co&quot;: &quot;MA26100&quot;, &quot;content&quot;: &quot;P: PHYS 15200 (C or better); C: MA 26100&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 3, &quot;term&quot;: &quot;Fall&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE20100&quot;, &quot;label&quot;: &quot;ECE 20100&quot;, &quot;name&quot;: &quot;Linear Circuit Analysis I&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;MA26100&quot;, &quot;content&quot;: &quot;C: MA 26100&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 3, &quot;term&quot;: &quot;Fall&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE22900&quot;, &quot;label&quot;: &quot;ECE 22900&quot;, &quot;name&quot;: &quot;C Programming for Electrical and Computer Engineering&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ENGR12800&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: ENGR 12800 or equivalent course of computer programming&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 3, &quot;term&quot;: &quot;Fall&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;MA36300&quot;, &quot;label&quot;: &quot;MA 36300&quot;, &quot;name&quot;: &quot;Differential Equations&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;MA26100&quot;, &quot;co&quot;: &quot;MA35100&quot;, &quot;content&quot;: &quot;P: MA 26100 or MA 26300 (C- or better); C: MA 35100 (C- or better) or current enrollment in MA 35100&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 4, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;MA35100&quot;, &quot;label&quot;: &quot;MA 35100&quot;, &quot;name&quot;: &quot;Elementary Linear Algebra&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;MA16600&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: MA 16600 (C- or better)&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Fall, Spring, and Summer&quot;, &quot;sem&quot;: 4, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE20200&quot;, &quot;label&quot;: &quot;ECE 20200&quot;, &quot;name&quot;: &quot;Linear Circuit Analysis II&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE20100&quot;, &quot;co&quot;: &quot;MA36300&quot;, &quot;content&quot;: &quot;P: ECE 20100; C: MA 36300; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 4, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE20700&quot;, &quot;label&quot;: &quot;ECE 20700&quot;, &quot;name&quot;: &quot;Electronic Measurement Techniques&quot;, &quot;credits_min&quot;: 1, &quot;credits_max&quot;: 1, &quot;pre&quot;: &quot;ECE20100&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: ECE 20100; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 4, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE25500&quot;, &quot;label&quot;: &quot;ECE 25500&quot;, &quot;name&quot;: &quot;Introduction to Electronic Analysis and Design&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE20100&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: ECE 20100 and CHM 11500; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 4, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE27000&quot;, &quot;label&quot;: &quot;ECE 27000&quot;, &quot;name&quot;: &quot;Introduction to Digital System Design&quot;, &quot;credits_min&quot;: 4, &quot;credits_max&quot;: 4, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;ENGR12800&quot;, &quot;content&quot;: &quot;C: ENGR 12800 or equivalent course of computer programming&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 4, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE20800&quot;, &quot;label&quot;: &quot;ECE 20800&quot;, &quot;name&quot;: &quot;Electronic Devices and Design Laboratory&quot;, &quot;credits_min&quot;: 1, &quot;credits_max&quot;: 1, &quot;pre&quot;: &quot;ECE20700 ECE25500&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: ECE 20700, ECE 25500; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 5, &quot;term&quot;: &quot;Fall&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE30100&quot;, &quot;label&quot;: &quot;ECE 30100&quot;, &quot;name&quot;: &quot;Signals and Systems&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE20200&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: ECE 20200&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 5, &quot;term&quot;: &quot;Fall&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE30200&quot;, &quot;label&quot;: &quot;ECE 30200&quot;, &quot;name&quot;: &quot;Probabilistic Methods in Electrical and Computer Engineering&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;MA36300&quot;, &quot;co&quot;: &quot;ECE30100&quot;, &quot;content&quot;: &quot;P: MA 36300; C: ECE 30100&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring&quot;, &quot;sem&quot;: 6, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE31100&quot;, &quot;label&quot;: &quot;ECE 31100 or PHYS 31200&quot;, &quot;name&quot;: &quot;Electric and Magnetic Fields (or Intermediate Electricity and Magnetism)&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;MA36300 PHYS25100&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: MA 36300, PHYS 25100. Either ECE 31100 or PHYS 31200 satisfies this slot.&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring (ECE 31100) or Fall (PHYS 31200)&quot;, &quot;sem&quot;: 6, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE33300&quot;, &quot;label&quot;: &quot;ECE 33300&quot;, &quot;name&quot;: &quot;Automatic Control Systems&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE30100&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: ECE 30100; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring&quot;, &quot;sem&quot;: 6, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE36200&quot;, &quot;label&quot;: &quot;ECE 36200&quot;, &quot;name&quot;: &quot;Microprocessor Systems and Interfacing&quot;, &quot;credits_min&quot;: 4, &quot;credits_max&quot;: 4, &quot;pre&quot;: &quot;ECE27000 ECE20700 ECE22900&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: ECE 27000, ECE 20700, ECE 22900; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 6, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE23000&quot;, &quot;label&quot;: &quot;ECE 23000&quot;, &quot;name&quot;: &quot;Engineering Data Analysis in Python&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ENGR12800&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: ENGR 12800 or equivalent course of computer programming&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring&quot;, &quot;sem&quot;: 6, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE40500&quot;, &quot;label&quot;: &quot;ECE 40500&quot;, &quot;name&quot;: &quot;Senior Engineering Design I&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;Senior program standing; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 7, &quot;term&quot;: &quot;Fall&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE42800&quot;, &quot;label&quot;: &quot;ECE 42800&quot;, &quot;name&quot;: &quot;Modern Communication Systems&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE30100 ECE30200&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: ECE 30100, ECE 30200; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Fall&quot;, &quot;sem&quot;: 7, &quot;term&quot;: &quot;Fall&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE43600&quot;, &quot;label&quot;: &quot;ECE 43600&quot;, &quot;name&quot;: &quot;Digital Signal Processing&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE30100&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: ECE 30100; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Fall&quot;, &quot;sem&quot;: 7, &quot;term&quot;: &quot;Fall&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE40601&quot;, &quot;label&quot;: &quot;ECE 40601&quot;, &quot;name&quot;: &quot;Senior Engineering Design II&quot;, &quot;credits_min&quot;: 2, &quot;credits_max&quot;: 2, &quot;pre&quot;: &quot;ECE40500&quot;, &quot;co&quot;: &quot;ECE40602&quot;, &quot;content&quot;: &quot;P: ECE 40500; C: ECE 40602; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 8, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE40602&quot;, &quot;label&quot;: &quot;ECE 40602&quot;, &quot;name&quot;: &quot;Electrical and Computer Engineering Seminar&quot;, &quot;credits_min&quot;: 1, &quot;credits_max&quot;: 1, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;ECE20100&quot;, &quot;content&quot;: &quot;C/P: ECE 20100&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring and Fall&quot;, &quot;sem&quot;: 8, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;course&quot;, &quot;id&quot;: &quot;ECE46000&quot;, &quot;label&quot;: &quot;ECE 46000&quot;, &quot;name&quot;: &quot;Power Electronics&quot;, &quot;credits_min&quot;: 4, &quot;credits_max&quot;: 4, &quot;pre&quot;: &quot;ECE20200 ECE25500&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;P: ECE 20200, ECE 25500; DC&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring&quot;, &quot;sem&quot;: 8, &quot;term&quot;: &quot;Spring&quot;}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE30300&quot;, &quot;label&quot;: &quot;ECE 30300&quot;, &quot;name&quot;: &quot;Engineering Software Design&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE20100 ECE27000&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE31000&quot;, &quot;label&quot;: &quot;ECE 31000&quot;, &quot;name&quot;: &quot;Motor Engine Control&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE20100 PHYS25100&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE44901&quot;, &quot;label&quot;: &quot;ECE 44901&quot;, &quot;name&quot;: &quot;Machine Learning&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE30200&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Programming skills in MATLAB or Python&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE47800&quot;, &quot;label&quot;: &quot;ECE 47800&quot;, &quot;name&quot;: &quot;Robotics and Automation&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE36200 PHYS15200 MA36300&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE46500&quot;, &quot;label&quot;: &quot;ECE 46500&quot;, &quot;name&quot;: &quot;Embedded Microprocessors&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE36200&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring&quot;, &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE47400&quot;, &quot;label&quot;: &quot;ECE 47400&quot;, &quot;name&quot;: &quot;Introduction to RF Circuit Design&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;PHYS25100 ECE25500&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE48300&quot;, &quot;label&quot;: &quot;ECE 48300&quot;, &quot;name&quot;: &quot;Digital Control Systems Analysis and Design&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE30100&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Alternative prerequisite listed as ME 33300&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE50600&quot;, &quot;label&quot;: &quot;ECE 50600&quot;, &quot;name&quot;: &quot;Biomedical Instrumentation Design&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE25500 ECE30100 ECE22900&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Recommended: Circuits and Electronics, analog and digital signal processing, programming in C&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE53800&quot;, &quot;label&quot;: &quot;ECE 53800&quot;, &quot;name&quot;: &quot;Digital Signal Processing I&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE30100 ECE30200&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE54700&quot;, &quot;label&quot;: &quot;ECE 54700&quot;, &quot;name&quot;: &quot;Introduction to Computer Communication Networks&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE30200&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE51800&quot;, &quot;label&quot;: &quot;ECE 51800&quot;, &quot;name&quot;: &quot;Digital Image Processing&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE22900 ECE30100&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE66100&quot;, &quot;label&quot;: &quot;ECE 66100&quot;, &quot;name&quot;: &quot;Computer Vision&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;MA35100&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE29101&quot;, &quot;label&quot;: &quot;ECE 29101&quot;, &quot;name&quot;: &quot;ECE Internship Experience&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Instructor permission; internship/co-op guideline applies&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE35800&quot;, &quot;label&quot;: &quot;ECE 35800&quot;, &quot;name&quot;: &quot;Introduction to VHDL&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE27000 ECE22900&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Fall&quot;, &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE36800&quot;, &quot;label&quot;: &quot;ECE 36800&quot;, &quot;name&quot;: &quot;Data Structures&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE23000&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Fall&quot;, &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE43700&quot;, &quot;label&quot;: &quot;ECE 43700&quot;, &quot;name&quot;: &quot;Computer Design and Prototyping&quot;, &quot;credits_min&quot;: 4, &quot;credits_max&quot;: 4, &quot;pre&quot;: &quot;ECE35800 ECE36200&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Spring&quot;, &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE48500&quot;, &quot;label&quot;: &quot;ECE 48500&quot;, &quot;name&quot;: &quot;Embedded Real-Time Operating Systems&quot;, &quot;credits_min&quot;: 4, &quot;credits_max&quot;: 4, &quot;pre&quot;: &quot;ECE36200&quot;, &quot;co&quot;: &quot;ECE36800&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Prerequisite mathematics: MA 17500 or MA 27500 (alternative paths)&quot;, &quot;alternatives&quot;: [&quot;MA17500&quot;, &quot;MA27500&quot;], &quot;pattern&quot;: &quot;Fall&quot;, &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;MA17500&quot;, &quot;label&quot;: &quot;MA 17500&quot;, &quot;name&quot;: &quot;Introductory Discrete Mathematics&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Prerequisites as listed: MA 16500 or 15300 and CS 16000, or MA 15300 and EET 26400 (C or better in each course); MA 26100&quot;, &quot;alternatives&quot;: [], &quot;pattern&quot;: &quot;Fall, Spring, and Summer&quot;, &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;PHYS32200&quot;, &quot;label&quot;: &quot;PHYS 32200&quot;, &quot;name&quot;: &quot;Optics&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;PHYS25100&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;PHYS32500&quot;, &quot;label&quot;: &quot;PHYS 32500&quot;, &quot;name&quot;: &quot;Scientific Computing&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;ECE30300&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Prerequisite as listed: PHYS 20500 or ECE 30300&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;PHYS34200&quot;, &quot;label&quot;: &quot;PHYS 34200&quot;, &quot;name&quot;: &quot;Modern Physics&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;PHYS25100&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE49600&quot;, &quot;label&quot;: &quot;ECE 49600&quot;, &quot;name&quot;: &quot;Computer Engineering Projects&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Maximum 3 credits; requires EE curriculum committee approval&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE49700&quot;, &quot;label&quot;: &quot;ECE 49700&quot;, &quot;name&quot;: &quot;Research in Computer Engineering I&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Maximum 3 credits; requires EE curriculum committee approval&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE49800&quot;, &quot;label&quot;: &quot;ECE 49800&quot;, &quot;name&quot;: &quot;Research in Computer Engineering II&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Maximum 3 credits; requires EE curriculum committee approval&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE39595&quot;, &quot;label&quot;: &quot;ECE 39595&quot;, &quot;name&quot;: &quot;PCB Design, Signal Integrity and EMC&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Approval of the Electrical Curriculum Committee. Credit hours are not in the workbook; 3 assumed.&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE56700&quot;, &quot;label&quot;: &quot;ECE 56700&quot;, &quot;name&quot;: &quot;FPGA Designs for Signal Processing Applications&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Graduate level. Prerequisites are not in the supplied sources; verify with the department.&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE56900&quot;, &quot;label&quot;: &quot;ECE 56900&quot;, &quot;name&quot;: &quot;Introduction to Robotics Systems&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Graduate level. Prerequisites are not in the supplied sources; verify with the department.&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE59500_ENT&quot;, &quot;label&quot;: &quot;ECE 59500 (EID)&quot;, &quot;name&quot;: &quot;Entrepreneur and Innovative Design&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Graduate level; approval required&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}, {&quot;kind&quot;: &quot;catalog&quot;, &quot;id&quot;: &quot;ECE60000&quot;, &quot;label&quot;: &quot;ECE 60000&quot;, &quot;name&quot;: &quot;Random Variables and Signals&quot;, &quot;credits_min&quot;: 3, &quot;credits_max&quot;: 3, &quot;pre&quot;: &quot;&quot;, &quot;co&quot;: &quot;&quot;, &quot;content&quot;: &quot;&quot;, &quot;notes&quot;: &quot;Graduate level; listed as ECE 600 in the workbook; approval required&quot;, &quot;alternatives&quot;: [], &quot;sem&quot;: null, &quot;term&quot;: null}], &quot;offers&quot;: {&quot;ECE53800&quot;: {&quot;planned&quot;: [&quot;Spring 2027&quot;, &quot;Spring 2029&quot;], &quot;last&quot;: &quot;Spring 2025&quot;}, &quot;ECE54700&quot;: {&quot;planned&quot;: [&quot;Fall 2026&quot;, &quot;Fall 2028&quot;], &quot;last&quot;: &quot;Spring 2025&quot;}, &quot;ECE56900&quot;: {&quot;planned&quot;: [&quot;Fall 2026&quot;, &quot;Fall 2028&quot;], &quot;last&quot;: &quot;Fall 2024&quot;}, &quot;ECE60000&quot;: {&quot;planned&quot;: [&quot;Spring 2028&quot;], &quot;last&quot;: &quot;Spring 2026&quot;}, &quot;ECE66100&quot;: {&quot;planned&quot;: [&quot;Fall 2027&quot;, &quot;Fall 2029&quot;], &quot;last&quot;: &quot;Fall 2025&quot;}, &quot;ECE50600&quot;: {&quot;planned&quot;: [&quot;Spring 2028&quot;], &quot;last&quot;: &quot;Fall 2025&quot;}, &quot;ECE51800&quot;: {&quot;planned&quot;: [], &quot;last&quot;: &quot;Spring 2026&quot;}, &quot;ECE59500_ENT&quot;: {&quot;planned&quot;: [], &quot;last&quot;: &quot;Spring 2026&quot;}, &quot;ECE56700&quot;: {&quot;planned&quot;: [&quot;Spring 2027&quot;, &quot;Spring 2029&quot;], &quot;last&quot;: null}, &quot;ECE39595&quot;: {&quot;planned&quot;: [&quot;Fall 2026&quot;, &quot;Fall 2028&quot;], &quot;last&quot;: null}, &quot;ECE30300&quot;: {&quot;planned&quot;: [&quot;Spring 2028&quot;], &quot;last&quot;: &quot;Fall 2025&quot;}, &quot;ECE31000&quot;: {&quot;planned&quot;: [&quot;Spring 2027&quot;, &quot;Spring 2029&quot;], &quot;last&quot;: &quot;Spring 2025&quot;}, &quot;ECE44901&quot;: {&quot;planned&quot;: [&quot;Fall 2027&quot;], &quot;last&quot;: &quot;Fall 2024&quot;}, &quot;ECE48300&quot;: {&quot;planned&quot;: [], &quot;last&quot;: &quot;Spring 2024&quot;}, &quot;ECE47400&quot;: {&quot;planned&quot;: [], &quot;last&quot;: &quot;Spring 2026&quot;}, &quot;ECE47800&quot;: {&quot;planned&quot;: [&quot;Fall 2027&quot;], &quot;last&quot;: &quot;Fall 2025&quot;}}, &quot;terms&quot;: [&quot;Fall 2026&quot;, &quot;Spring 2027&quot;, &quot;Fall 2027&quot;, &quot;Spring 2028&quot;, &quot;Fall 2028&quot;, &quot;Spring 2029&quot;, &quot;Fall 2029&quot;], &quot;headers&quot;: [&quot;Fall 2026 (current)&quot;, &quot;Spring 2027&quot;, &quot;Fall 2027&quot;, &quot;Spring 2028&quot;, &quot;Fall 2028&quot;, &quot;Spring 2029*&quot;, &quot;Fall 2029*&quot;]};
+const KEY = &#x27;pfw-ece-curriculum-v1&#x27;;
+const original = DATA.courses;
+const offers = DATA.offers;
+let courses = loadSaved() || structuredClone(original);
+let selected = null;
+
+const $ = id =&gt; document.getElementById(id);
+const ids = s =&gt; (s || &#x27;&#x27;).trim().split(/\s+/).filter(Boolean);
+const credits = c =&gt; c.credits_min === c.credits_max ? String(c.credits_min) : `${c.credits_min}-${c.credits_max}`;
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text !== undefined) n.textContent = text;
+  return n;
+}
+function loadSaved() {
+  try { const v = localStorage.getItem(KEY); return v ? JSON.parse(v) : null; } catch (e) { return null; }
+}
+function persist() {
+  try { localStorage.setItem(KEY, JSON.stringify(courses)); return true; } catch (e) { return false; }
+}
+function levelOf(c) {
+  const m = (c.label || &#x27;&#x27;).match(/\d{3,5}/);
+  if (!m) return null;
+  return Math.floor(parseInt(m[0].slice(0, 3), 10) / 100);
+}
+function nameOf(id) {
+  const c = courses.find(x =&gt; x.id === id);
+  return c ? c.label : id;
+}
+function related(id) {
+  const rows = courses;
+  const byId = new Map(rows.map(c =&gt; [c.id, c]));
+  const direct = new Set(), ancestors = new Set(), coreq = new Set(), descendants = new Set();
+  const start = byId.get(id);
+  if (!start) return {direct, ancestors, coreq, descendants};
+  const startPre = [...ids(start.pre), ...(start.alternatives || [])];
+  startPre.forEach(x =&gt; direct.add(x));
+  function walkPre(cid, seen = new Set()) {
+    if (seen.has(cid)) return;
+    seen.add(cid);
+    const c = byId.get(cid);
+    if (!c) return;
+    ids(c.pre).forEach(x =&gt; { if (x !== id) { ancestors.add(x); walkPre(x, seen); } });
+  }
+  startPre.forEach(x =&gt; { ancestors.add(x); walkPre(x); });
+  ids(start.co).forEach(x =&gt; {
+    coreq.add(x);
+    const c = byId.get(x);
+    if (c) ids(c.pre).forEach(p =&gt; { ancestors.add(p); walkPre(p); });
+  });
+  const children = new Map();
+  for (const c of rows) {
+    for (const dep of [...ids(c.pre), ...ids(c.co), ...(c.alternatives || [])]) {
+      if (!children.has(dep)) children.set(dep, new Set());
+      children.get(dep).add(c.id);
+    }
+  }
+  function walkPost(cid, seen = new Set()) {
+    if (seen.has(cid)) return;
+    seen.add(cid);
+    for (const child of children.get(cid) || []) {
+      if (child !== id) { descendants.add(child); walkPost(child, seen); }
+    }
+  }
+  walkPost(id);
+  return {direct, ancestors, coreq, descendants};
+}
+function applyRelation(node, id, rel) {
+  if (selected === id) { node.classList.add(&#x27;selected&#x27;); return; }
+  if (!rel) return;
+  if (rel.coreq.has(id)) node.classList.add(&#x27;coreq&#x27;);
+  else if (rel.direct.has(id)) node.classList.add(&#x27;immediate&#x27;);
+  else if (rel.ancestors.has(id)) node.classList.add(&#x27;prereq&#x27;);
+  else if (rel.descendants.has(id)) node.classList.add(&#x27;postreq&#x27;);
+}
+function offerShort(c) {
+  if (c.kind === &#x27;course&#x27;) return c.pattern ? `Offered: ${c.pattern}` : &#x27;Not on flowchart&#x27;;
+  const o = offers[c.id];
+  if (o) {
+    if (o.planned.length) return `Next listed: ${o.planned[0]}`;
+    return o.last ? &#x27;No future offering listed&#x27; : &#x27;No offering listed in workbook&#x27;;
+  }
+  return c.pattern ? `Offered: ${c.pattern}` : &#x27;Not in workbook&#x27;;
+}
+function offerLong(c) {
+  if (c.kind === &#x27;course&#x27;) {
+    return `Offering pattern: ${c.pattern || &#x27;not shown on the flowchart&#x27;}.`;
+  }
+  const o = offers[c.id];
+  if (!o) {
+    return c.pattern
+      ? `Offering pattern (prior CPE offering data): ${c.pattern}. Not listed in the department workbook.`
+      : &#x27;Not listed in the department workbook.&#x27;;
+  }
+  const parts = [o.planned.length ? `Planned: ${o.planned.join(&#x27;, &#x27;)}` : (o.last ? &#x27;No future offering listed&#x27; : &#x27;No offering listed in the workbook for any term&#x27;)];
+  if (o.last) parts.push(`Most recent listed: ${o.last}`);
+  return parts.join(&#x27; · &#x27;);
+}
+function courseCard(c, rel, search) {
+  const b = el(&#x27;button&#x27;, &#x27;course&#x27; + (c.kind === &#x27;course&#x27; ? &#x27;&#x27; : &#x27; elective&#x27;));
+  b.type = &#x27;button&#x27;;
+  applyRelation(b, c.id, rel);
+  if (search &amp;&amp; !`${c.label} ${c.name} ${c.id}`.toLowerCase().includes(search)) b.classList.add(&#x27;filtered&#x27;);
+  b.append(el(&#x27;span&#x27;, &#x27;code&#x27;, c.label), el(&#x27;span&#x27;, &#x27;name&#x27;, c.name), el(&#x27;span&#x27;, &#x27;credits&#x27;, credits(c) + &#x27; credits&#x27;));
+  b.append(el(&#x27;small&#x27;, &#x27;tag&#x27;, offerShort(c)));
+  b.setAttribute(&#x27;aria-pressed&#x27;, String(selected === c.id));
+  b.setAttribute(&#x27;aria-label&#x27;, `${c.label}: ${c.name}, ${credits(c)} credits`);
+  b.addEventListener(&#x27;click&#x27;, () =&gt; select(c.id));
+  return b;
+}
+function renderMap(rel, search) {
+  const map = $(&#x27;map&#x27;);
+  map.replaceChildren();
+  for (let lv = 1; lv &lt;= 6; lv++) {
+    const sec = el(&#x27;section&#x27;, &#x27;col&#x27;);
+    const head = el(&#x27;div&#x27;, &#x27;col-head&#x27;);
+    head.innerHTML = `${lv}00&lt;small&gt;${lv}00-level courses&lt;/small&gt;`;
+    const list = el(&#x27;div&#x27;, &#x27;col-list&#x27;);
+    courses
+      .filter(c =&gt; levelOf(c) === lv)
+      .sort((a, b) =&gt; a.label.localeCompare(b.label, undefined, {numeric: true}))
+      .forEach(c =&gt; list.append(courseCard(c, rel, search)));
+    sec.append(head, list);
+    map.append(sec);
+  }
+}
+function renderElectives(rel, search) {
+  const root = $(&#x27;te-groups&#x27;);
+  root.replaceChildren();
+  const list = el(&#x27;div&#x27;, &#x27;te-list&#x27;);
+  const items = courses.filter(x =&gt; x.kind === &#x27;catalog&#x27;)
+    .sort((a, b) =&gt; a.label.localeCompare(b.label, undefined, {numeric: true}));
+  for (const c of items) {
+    const b = el(&#x27;button&#x27;, &#x27;te-course&#x27;);
+    b.type = &#x27;button&#x27;;
+    applyRelation(b, c.id, rel);
+    if (search &amp;&amp; !`${c.label} ${c.name}`.toLowerCase().includes(search)) b.classList.add(&#x27;filtered&#x27;);
+    b.append(el(&#x27;strong&#x27;, &#x27;&#x27;, c.label), el(&#x27;span&#x27;, &#x27;&#x27;, c.name), el(&#x27;small&#x27;, &#x27;&#x27;, credits(c) + &#x27; credits&#x27;), el(&#x27;small&#x27;, &#x27;offering-label&#x27;, offerShort(c)));
+    b.setAttribute(&#x27;aria-pressed&#x27;, String(selected === c.id));
+    b.addEventListener(&#x27;click&#x27;, () =&gt; {
+      select(c.id);
+      $(&#x27;details&#x27;).scrollIntoView({behavior: &#x27;smooth&#x27;, block: &#x27;nearest&#x27;});
+    });
+    list.append(b);
+  }
+  root.append(list);
+}
+function renderOffers() {
+  const root = $(&#x27;offering-table&#x27;);
+  root.replaceChildren();
+  const table = el(&#x27;table&#x27;, &#x27;offering-table&#x27;);
+  const thead = el(&#x27;thead&#x27;);
+  const hr = el(&#x27;tr&#x27;);
+  [&#x27;Course&#x27;, ...DATA.headers].forEach(h =&gt; {
+    const th = el(&#x27;th&#x27;, &#x27;&#x27;, h);
+    th.scope = &#x27;col&#x27;;
+    hr.append(th);
+  });
+  thead.append(hr);
+  table.append(thead);
+  const byId = new Map(courses.map(c =&gt; [c.id, c]));
+  const rowIds = Object.keys(offers).filter(id =&gt; byId.has(id))
+    .sort((a, b) =&gt; byId.get(a).label.localeCompare(byId.get(b).label, undefined, {numeric: true}));
+  const tbody = el(&#x27;tbody&#x27;);
+  for (const id of rowIds) {
+    const tr = el(&#x27;tr&#x27;);
+    const td = el(&#x27;td&#x27;);
+    const btn = el(&#x27;button&#x27;, &#x27;offering-course&#x27;, byId.get(id).label);
+    btn.type = &#x27;button&#x27;;
+    btn.title = byId.get(id).name;
+    btn.addEventListener(&#x27;click&#x27;, () =&gt; {
+      select(id);
+      $(&#x27;details&#x27;).scrollIntoView({behavior: &#x27;smooth&#x27;, block: &#x27;nearest&#x27;});
+    });
+    td.append(btn);
+    tr.append(td);
+    for (const term of DATA.terms) {
+      const on = offers[id].planned.includes(term);
+      const cell = el(&#x27;td&#x27;, on ? &#x27;on&#x27; : &#x27;&#x27;, on ? &#x27;Scheduled&#x27; : &#x27;-&#x27;);
+      if (on) cell.setAttribute(&#x27;aria-label&#x27;, `${term}: listed offering`);
+      tr.append(cell);
+    }
+    tbody.append(tr);
+  }
+  table.append(tbody);
+  root.append(table);
+  const missing = courses.filter(c =&gt; c.kind === &#x27;catalog&#x27; &amp;&amp; !offers[c.id]).map(c =&gt; `${c.label} ${c.name}`);
+  $(&#x27;not-listed&#x27;).textContent = missing.length ? `Not in the department workbook: ${missing.join(&#x27;; &#x27;)}.` : &#x27;&#x27;;
+}
+function para(text, cls) {
+  return el(&#x27;p&#x27;, cls || &#x27;&#x27;, text);
+}
+function renderDetails() {
+  const target = $(&#x27;details&#x27;);
+  target.replaceChildren();
+  if (!selected) {
+    target.append(el(&#x27;h2&#x27;, &#x27;&#x27;, &#x27;Course information&#x27;), para(&#x27;Select any course to view its description, prerequisites, and later dependent courses.&#x27;));
+    return;
+  }
+  const c = courses.find(x =&gt; x.id === selected);
+  if (!c) { selected = null; renderDetails(); return; }
+  const rel = related(selected);
+  target.append(el(&#x27;h2&#x27;, &#x27;&#x27;, `${c.label}: ${c.name}`));
+  const metaParts = [`${credits(c)} credits`];
+  target.append(para(metaParts.join(&#x27; · &#x27;), &#x27;meta&#x27;));
+  const desc = c.content || c.notes || &#x27;&#x27;;
+  if (desc) target.append(para(desc));
+  target.append(para(offerLong(c), &#x27;offering-detail&#x27;));
+  target.append(para(`Prerequisites: ${ids(c.pre).map(nameOf).join(&#x27;, &#x27;) || &#x27;None listed&#x27;} · Corequisites: ${ids(c.co).map(nameOf).join(&#x27;, &#x27;) || &#x27;None listed&#x27;}`));
+  if (c.notes &amp;&amp; c.content) target.append(para(c.notes));
+  if (c.alternatives &amp;&amp; c.alternatives.length) {
+    target.append(para(&#x27;Alternative prerequisite paths (choose one, not both): &#x27; + c.alternatives.map(nameOf).join(&#x27; OR &#x27;)));
+  }
+  target.append(para(`Later dependent courses: ${[...rel.descendants].map(nameOf).join(&#x27;, &#x27;) || &#x27;None listed&#x27;}`));
+}
+function select(id) {
+  selected = selected === id ? null : id;
+  render();
+}
+function render() {
+  const search = $(&#x27;search&#x27;).value.trim().toLowerCase();
+  const rel = selected ? related(selected) : null;
+  renderMap(rel, search);
+  renderElectives(rel, search);
+  renderDetails();
+}
+
+$(&#x27;search&#x27;).addEventListener(&#x27;input&#x27;, render);
+$(&#x27;clear&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; { selected = null; $(&#x27;search&#x27;).value = &#x27;&#x27;; render(); });
+$(&#x27;edit&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+  const show = $(&#x27;editor&#x27;).hidden;
+  $(&#x27;editor&#x27;).hidden = !show;
+  $(&#x27;edit&#x27;).setAttribute(&#x27;aria-expanded&#x27;, String(show));
+  if (show) { $(&#x27;jsonedit&#x27;).value = JSON.stringify(courses, null, 2); $(&#x27;jsonedit&#x27;).focus(); }
+});
+function valid(x) {
+  if (!Array.isArray(x)) throw new Error(&#x27;Expected a list of course records.&#x27;);
+  for (const c of x) {
+    if (!c || typeof c !== &#x27;object&#x27; || typeof c.id !== &#x27;string&#x27; || !c.id || typeof c.label !== &#x27;string&#x27; || !Number.isFinite(Number(c.credits_min)) || !Number.isFinite(Number(c.credits_max))) {
+      throw new Error(&#x27;Every course needs an id, a label, and numeric credit bounds.&#x27;);
+    }
+  }
+  return x;
+}
+$(&#x27;apply&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+  try {
+    courses = valid(JSON.parse($(&#x27;jsonedit&#x27;).value));
+    const saved = persist();
+    selected = null;
+    render();
+    $(&#x27;editstatus&#x27;).textContent = saved ? &#x27;Applied and saved in this browser. Export JSON to keep a permanent copy.&#x27; : &#x27;Applied for this session only (browser storage is unavailable). Export JSON to keep a copy.&#x27;;
+  } catch (e) {
+    $(&#x27;editstatus&#x27;).textContent = &#x27;Could not apply: &#x27; + e.message;
+  }
+});
+$(&#x27;reset&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+  courses = structuredClone(original);
+  try { localStorage.removeItem(KEY); } catch (e) {}
+  $(&#x27;jsonedit&#x27;).value = JSON.stringify(courses, null, 2);
+  selected = null;
+  render();
+  $(&#x27;editstatus&#x27;).textContent = &#x27;Restored original course data.&#x27;;
+});
+$(&#x27;download&#x27;).addEventListener(&#x27;click&#x27;, () =&gt; {
+  const blob = new Blob([JSON.stringify(courses, null, 2)], {type: &#x27;application/json&#x27;});
+  const url = URL.createObjectURL(blob);
+  const a = el(&#x27;a&#x27;);
+  a.href = url;
+  a.download = &#x27;pfw-ece-curriculum-courses.json&#x27;;
+  a.click();
+  setTimeout(() =&gt; URL.revokeObjectURL(url), 1000);
+});
+$(&#x27;upload&#x27;).addEventListener(&#x27;change&#x27;, async e =&gt; {
+  const f = e.target.files &amp;&amp; e.target.files[0];
+  if (!f) return;
+  try {
+    courses = valid(JSON.parse(await f.text()));
+    $(&#x27;jsonedit&#x27;).value = JSON.stringify(courses, null, 2);
+    persist();
+    selected = null;
+    render();
+    $(&#x27;editstatus&#x27;).textContent = &#x27;Imported &#x27; + f.name;
+  } catch (err) {
+    $(&#x27;editstatus&#x27;).textContent = &#x27;Import failed: &#x27; + err.message;
+  }
+  e.target.value = &#x27;&#x27;;
+});
+
+renderOffers();
+render();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</div>
+{% endraw %}
